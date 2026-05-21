@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vg-crimson: #a6192e;
+  --color-vg-vivid: #d2203a;
+  --color-vg-onyx: #111111;
+  --color-vg-void: #000000;
+  --color-vg-pewter: #a6a6a6;
+  --color-vg-silver: #d1d1d1;
+  --color-vg-cream: #f5f2ed;
+  --color-vg-gold: #b8952a;
+  --color-vg-gold-light: #d4a93a;
+  --color-vg-white: #ffffff;
+  --color-vg-deep: #0a0a0a;
+  --color-vg-card: #0f0f0f;
+
+  --color-elite-violet: #8b60ff;
+  --color-elite-violet-light: #a78bff;
+  --color-elite-navy: #050510;
+  --color-elite-navy-2: #0f0520;
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-raleway), "Raleway", system-ui, sans-serif;
+  --font-accent: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+
+  --radius-card: 4px;
+  --radius-btn: 2px;
+  --radius-pill: 20px;
+
+  --container-screen: 1280px;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --crimson-border: rgba(166, 25, 46, 0.3);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-vg-crimson);
+  color: #fff;
+}
+
+.eyebrow {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-vg-vivid);
+}
+
+.display-hero {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.display-h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(32px, 4vw, 40px);
+  line-height: 1.15;
+}
+
+.display-h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 26px);
+  line-height: 1.25;
+}
+
+.italic-accent {
+  font-style: italic;
+  color: var(--color-vg-vivid);
+}
+
+.hairline {
+  border-color: var(--hairline);
+}
+
+.diagonal-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-vg-vivid);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
