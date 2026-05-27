@@ -454,6 +454,14 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 /* Inner content max-width safety on all sizes */
 .vg-page main > section > div { width:100%; max-width:1280px; margin-left:auto !important; margin-right:auto !important; }
 
+/* Neighborhood grid: responsive 2/3/4-column */
+.vg-page .vg-neighborhood-grid { grid-template-columns: repeat(2, 1fr) !important; }
+@media (min-width: 640px) { .vg-page .vg-neighborhood-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+@media (min-width: 1024px) { .vg-page .vg-neighborhood-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+.vg-page .vg-neighborhood-card { transition: transform .25s ease, border-color .25s ease; }
+.vg-page .vg-neighborhood-card:hover { transform: translateY(-3px); border-color: rgba(210,32,58,0.55) !important; }
+.vg-page .vg-neighborhood-card:hover img { transform: scale(1.06); }
+
 /* === Floating chat bubble (bottom-right) === */
 .vg-chat-bubble {
   position: fixed;
