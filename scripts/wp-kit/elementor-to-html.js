@@ -236,6 +236,7 @@ header#header, header.site-header, footer#footer, footer.site-footer,
 html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#0a0a0a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
 
 /* The single most important rule: break out of any container WordPress puts around us. */
+body > .vg-page,
 .vg-page {
   position: relative;
   width: 100vw !important;
@@ -245,6 +246,17 @@ html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { backg
   margin-left: -50vw !important;
   margin-right: -50vw !important;
   box-sizing: border-box;
+}
+/* When the relocator JS runs, .vg-page becomes a body child — neutralize the
+   viewport hack since it no longer needs to break out. */
+body > .vg-page {
+  position: static;
+  width: 100% !important;
+  max-width: 100% !important;
+  left: auto;
+  right: auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 .vg-page section { width:100%; max-width:100%; box-sizing:border-box; }
 .vg-page .container, .vg-page > * { box-sizing:border-box; }
@@ -274,23 +286,26 @@ html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { backg
 .vg-button-elite:hover { background-color:#a78bff !important; }
 h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:300; color:#fff; }
 
-/* === Silver remap: lift pewter secondary text to the lighter palette tone === */
+/* === Silver remap & accents: weave #d1d1d1 throughout the body === */
 .vg-page [style*="color:#a6a6a6"],
-.vg-page [style*="color: #a6a6a6"] { color: #d1d1d1 !important; }
-.vg-page p { color: #d1d1d1; }
+.vg-page [style*="color: #a6a6a6"],
+.vg-page [style*="color:rgba(255,255,255,0.9)"] { color: #d1d1d1 !important; }
+.vg-page p, .vg-page main p { color: #d1d1d1 !important; }
+.vg-page main li, .vg-page main figcaption, .vg-page main blockquote { color: #d1d1d1 !important; }
 
 /* Silver hairlines on common hairline borders */
 .vg-page [style*="border:1px solid rgba(255,255,255,0.08)"],
-.vg-page [style*="border-top:1px solid rgba(255,255,255,0.08)"] {
-  border-color: rgba(209,209,209,0.18) !important;
+.vg-page [style*="border-top:1px solid rgba(255,255,255,0.08)"],
+.vg-page [style*="border-bottom:1px solid rgba(255,255,255,0.08)"] {
+  border-color: rgba(209,209,209,0.22) !important;
 }
-.vg-page .vg-card { border-color: rgba(209,209,209,0.18) !important; }
+.vg-page .vg-card { border-color: rgba(209,209,209,0.22) !important; }
 
-/* Section heading accent line (silver) under every h2 inside main */
+/* Section heading accent line (crimson → silver gradient) under every h2 inside main */
 .vg-page main h2::after {
   content:"";
   display:block;
-  width:56px;
+  width:64px;
   height:2px;
   margin-top:18px;
   background:linear-gradient(90deg, #d2203a 0%, #d1d1d1 100%);
@@ -298,10 +313,17 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-page main [style*="text-align:center"] h2::after,
 .vg-page main h2[style*="text-align:center"]::after { margin-left:auto; margin-right:auto; }
 
-/* Stat-label silver accent (every 2nd stat-label set to silver) */
-.vg-page div[style*="display:grid"][style*="grid-template-columns:repeat(4,1fr)"] > div:nth-child(even) [style*="color:#d2203a"] {
+/* Eyebrow / small caps labels — silver on even cards for visual rhythm */
+.vg-page div[style*="display:grid"] > *:nth-child(even) [style*="color:#d2203a"]:not(em):not(.vg-button-primary):not(.vg-button-outline):not(.vg-button-elite) {
   color: #d1d1d1 !important;
 }
+
+/* Top hairline on every section divides them with a subtle silver line */
+.vg-page main > section + section { border-top: 1px solid rgba(209,209,209,0.10); }
+
+/* Force silver on the property-card location and meta lines */
+.vg-page a[href^="/properties/"] > div:last-child > div:nth-child(3),
+.vg-page a[href^="/properties/"] > div:last-child > div:last-child { color: #d1d1d1 !important; }
 
 /* === VG site header (injected at top of every page) === */
 .vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(209,209,209,0.18); }
@@ -452,11 +474,38 @@ const SITE_FOOTER = `
 </footer>
 `;
 
+const RELOCATOR_JS = `
+<script>
+(function () {
+  function vgRelocate() {
+    var page = document.querySelector('.vg-page');
+    if (!page || page.parentNode === document.body) return;
+    // Remove every WordPress template part (header/footer) so nothing renders above us.
+    document.querySelectorAll('header.wp-block-template-part, footer.wp-block-template-part, .wp-block-template-part').forEach(function (n) { n.remove(); });
+    // Move the page to be the first child of <body>, escaping all theme wrappers.
+    document.body.insertBefore(page, document.body.firstChild);
+    // Hide any sibling left over (the now-empty .wp-site-blocks etc.)
+    Array.prototype.slice.call(document.body.children).forEach(function (child) {
+      if (child !== page && child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE' && child.id !== 'wpadminbar') {
+        child.style.display = 'none';
+      }
+    });
+    document.body.classList.add('vg-relocated');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', vgRelocate);
+  } else {
+    vgRelocate();
+  }
+})();
+</script>
+`;
+
 const pages = [];
 for (const t of Object.values(manifest.templates)) {
   const tpl = JSON.parse(fs.readFileSync(path.join(stagingDir, "templates", `${t.id}.json`), "utf8"));
   const innerHtml = renderTemplate(tpl.content || []);
-  const html = `${PAGE_CSS}\n<div class="vg-page">\n${SITE_HEADER}\n<main>\n${innerHtml}\n</main>\n${SITE_FOOTER}\n</div>`;
+  const html = `${PAGE_CSS}\n<div class="vg-page">\n${SITE_HEADER}\n<main>\n${innerHtml}\n</main>\n${SITE_FOOTER}\n</div>\n${RELOCATOR_JS}`;
   pages.push({
     id: t.id,
     slug: pageSlug(t),
