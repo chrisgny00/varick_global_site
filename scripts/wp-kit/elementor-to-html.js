@@ -370,14 +370,28 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-footer { margin-top:96px; background:#050505; border-top:1px solid rgba(209,209,209,0.18); padding:64px clamp(16px, 4vw, 48px) 32px; }
 .vg-footer__grid { max-width:1440px; margin:0 auto; display:grid; gap:48px; grid-template-columns:1fr; }
 @media (min-width:640px) { .vg-footer__grid { grid-template-columns:repeat(2,1fr); } }
-@media (min-width:1024px) { .vg-footer__grid { grid-template-columns:repeat(4,1fr); } }
+@media (min-width:900px) { .vg-footer__grid { grid-template-columns:repeat(3,1fr); } }
+@media (min-width:1200px) { .vg-footer__grid { grid-template-columns:1.2fr 1fr 1fr 1fr 1fr; } }
 .vg-footer h4 { font-family:'Montserrat',sans-serif !important; font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin:0 0 20px; }
 .vg-footer a { color:#d1d1d1; text-decoration:none; font-size:13px; line-height:1.9; }
 .vg-footer a:hover { color:#fff; }
 .vg-footer__col ul { list-style:none; padding:0; margin:0; }
 .vg-footer__contact p { color:#d1d1d1; font-size:13px; line-height:1.7; margin:8px 0; }
 .vg-footer__contact .vg-mark { color:#d2203a; }
-.vg-footer__bottom { max-width:1440px; margin:56px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
+
+/* Neighborhoods sitemap row */
+.vg-footer__sitemap { max-width:1440px; margin:56px auto 0; padding-top:32px; border-top:1px solid rgba(209,209,209,0.18); }
+.vg-footer__sitemap h4 { font-family:'Montserrat',sans-serif !important; font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin:0 0 18px; }
+.vg-footer__neighborhoods { display:grid; gap:6px 24px; grid-template-columns:repeat(2, 1fr); }
+@media (min-width:640px) { .vg-footer__neighborhoods { grid-template-columns:repeat(3, 1fr); } }
+@media (min-width:900px) { .vg-footer__neighborhoods { grid-template-columns:repeat(4, 1fr); } }
+@media (min-width:1200px) { .vg-footer__neighborhoods { grid-template-columns:repeat(6, 1fr); } }
+.vg-footer__neighborhoods a { color:#a6a6a6; text-decoration:none; font-size:12px; line-height:1.8; transition:color .15s; }
+.vg-footer__neighborhoods a:hover { color:#d1d1d1; }
+
+.vg-footer__bottom { max-width:1440px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
+.vg-footer__bottom a { color:#a6a6a6; text-decoration:none; }
+.vg-footer__bottom a:hover { color:#d1d1d1; }
 @media (min-width:768px) { .vg-footer__bottom { flex-direction:row; } }
 
 /* === Responsive breakpoints === */
@@ -530,37 +544,90 @@ const SITE_FOOTER = `
     <div class="vg-footer__col">
       <h4>Services</h4>
       <ul>
+        <li><a href="/services/">All Services</a></li>
         <li><a href="/services/buyer-seller-services/">Buyer &amp; Seller Services</a></li>
         <li><a href="/services/tenant-representation/">Tenant Representation</a></li>
         <li><a href="/services/landlord-representation/">Landlord Representation</a></li>
+        <li><a href="/services/lease-renewal/">Lease Renewal</a></li>
         <li><a href="/services/valuation/">Valuation &amp; Advisory</a></li>
         <li><a href="/services/investment-sales/">Investment Sales</a></li>
+        <li><a href="/services/foreclosures/">Foreclosures</a></li>
         <li><a href="/new-development/">New Development</a></li>
       </ul>
     </div>
     <div class="vg-footer__col">
-      <h4>HOA Division</h4>
+      <h4>Commercial &amp; HOA</h4>
       <ul>
+        <li><a href="/commercial/">Commercial</a></li>
+        <li><a href="/land/">Land</a></li>
+        <li><a href="/hoa/">HOA Division</a></li>
         <li><a href="/services/hoa-advisory/">HOA Advisory</a></li>
         <li><a href="/services/hoa-conversions/">HOA Conversions</a></li>
         <li><a href="/services/receivership/">Receivership</a></li>
         <li><a href="/services/hoa-sale/">HOA Sale &amp; Termination</a></li>
-        <li><a href="/hoa/">HOA Division</a></li>
       </ul>
     </div>
     <div class="vg-footer__col">
-      <h4>VG Elite</h4>
+      <h4>VG Elite &amp; Advisors</h4>
       <ul>
+        <li><a href="/elite/">VG Elite</a></li>
         <li><a href="/elite/#athlete">Athlete Services</a></li>
         <li><a href="/elite/#entertainment">Entertainment Services</a></li>
         <li><a href="/elite/#investment">Investment Division</a></li>
-        <li><a href="/elite/#inquiry">Private Inquiry</a></li>
+        <li><a href="/advisors/">All Advisors</a></li>
+        <li><a href="/agents/chris-gallego/">Chris Gallego</a></li>
+        <li><a href="/agents/nina-vazquez/">Nina Vazquez</a></li>
+        <li><a href="/agents/alfredo-morejon/">Alfredo Morejon</a></li>
+        <li><a href="/agents/gloria-grullon/">Gloria Grullon</a></li>
+      </ul>
+    </div>
+    <div class="vg-footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/properties/">Properties</a></li>
+        <li><a href="/valuation/">Valuation</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
       </ul>
     </div>
   </div>
+
+  <div class="vg-footer__sitemap">
+    <h4>Neighborhoods We Serve</h4>
+    <div class="vg-footer__neighborhoods">
+      <a href="/neighborhoods/miami-beach/">Miami Beach</a>
+      <a href="/neighborhoods/brickell/">Brickell</a>
+      <a href="/neighborhoods/coconut-grove/">Coconut Grove</a>
+      <a href="/neighborhoods/coral-gables/">Coral Gables</a>
+      <a href="/neighborhoods/aventura/">Aventura</a>
+      <a href="/neighborhoods/bal-harbour/">Bal Harbour</a>
+      <a href="/neighborhoods/surfside/">Surfside</a>
+      <a href="/neighborhoods/key-biscayne/">Key Biscayne</a>
+      <a href="/neighborhoods/fort-lauderdale/">Fort Lauderdale</a>
+      <a href="/neighborhoods/hollywood/">Hollywood</a>
+      <a href="/neighborhoods/hallandale-beach/">Hallandale Beach</a>
+      <a href="/neighborhoods/pompano-beach/">Pompano Beach</a>
+      <a href="/neighborhoods/deerfield-beach/">Deerfield Beach</a>
+      <a href="/neighborhoods/weston/">Weston</a>
+      <a href="/neighborhoods/davie/">Davie</a>
+      <a href="/neighborhoods/plantation/">Plantation</a>
+      <a href="/neighborhoods/palm-beach/">Palm Beach</a>
+      <a href="/neighborhoods/boca-raton/">Boca Raton</a>
+      <a href="/neighborhoods/delray-beach/">Delray Beach</a>
+      <a href="/neighborhoods/wellington/">Wellington</a>
+      <a href="/neighborhoods/west-palm-beach/">West Palm Beach</a>
+      <a href="/neighborhoods/jupiter/">Jupiter</a>
+      <a href="/neighborhoods/palm-beach-gardens/">Palm Beach Gardens</a>
+      <a href="/neighborhoods/boynton-beach/">Boynton Beach</a>
+    </div>
+  </div>
+
   <div class="vg-footer__bottom">
     <p>© ${new Date().getFullYear()} Varick Global Real Estate Advisors. All rights reserved.</p>
-    <p><a href="/privacy/">Privacy</a></p>
+    <p><a href="/privacy/">Privacy</a> · <a href="/contact/">Contact</a></p>
   </div>
 </footer>
 `;
