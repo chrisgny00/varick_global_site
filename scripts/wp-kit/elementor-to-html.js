@@ -141,34 +141,82 @@ function pageTitle(t) {
 const PAGE_CSS = `
 <style>
 /* === Twenty Twenty-Five / Twenty Twenty-Four block theme chrome reset === */
-.wp-site-blocks > header.wp-block-template-part,
-.wp-site-blocks > footer.wp-block-template-part,
-.wp-block-post-title,
-.entry-header,
+/* Hide every header template part, every site-title/logo/nav block, and any
+   pre-content chrome — even if the theme renders them with markup our :has()
+   selector wouldn't catch. */
+.wp-site-blocks > header,
+.wp-site-blocks > .wp-block-template-part,
+.wp-site-blocks > footer,
+body > header,
+body > footer,
 header.wp-block-template-part,
 footer.wp-block-template-part,
+.wp-block-template-part[data-type*="header"],
+.wp-block-template-part[data-type*="footer"],
 .wp-block-template-part:has(.wp-block-site-title),
 .wp-block-template-part:has(.wp-block-navigation),
-.is-position-sticky { display:none !important; }
+.wp-block-template-part:has(.wp-block-site-logo),
+.wp-block-site-title,
+.wp-block-site-logo,
+.wp-block-site-tagline,
+.wp-block-navigation:not(.vg-header__nav .wp-block-navigation),
+.wp-block-post-title,
+.wp-block-post-date,
+.wp-block-post-author,
+.entry-header,
+.entry-meta,
+.entry-footer,
+.post-navigation,
+.posts-navigation,
+.is-position-sticky,
+.skip-link { display:none !important; }
 
+/* And re-show OUR header even though it sits inside .vg-page. */
+.vg-page .vg-header { display:block !important; }
+.vg-page .vg-footer { display:block !important; }
+
+/* Neutralize every wrapper that WP / Twenty Twenty-Five may put around our content,
+   at every level of specificity. */
+body.wp-singular,
+body,
+html body,
 .wp-site-blocks,
+body .wp-site-blocks,
 .wp-site-blocks > main,
+.wp-site-blocks > .wp-block-group,
 .wp-block-post-content,
+.wp-block-post-content > .vg-page,
 .wp-block-group.is-layout-constrained,
+.wp-block-group.is-layout-flow,
 .entry-content,
+.entry-content.is-layout-constrained,
 .is-layout-constrained,
 .is-layout-flow,
+.is-layout-constrained > .vg-page,
 main.wp-block-group,
-main {
+main,
+article,
+.post,
+.page {
   max-width: none !important;
   width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  --wp--style--global--content-size: 100%;
+  --wp--style--global--wide-size: 100%;
 }
 
-body { padding:0 !important; margin:0 !important; overflow-x:hidden; }
+/* The :where() rules Twenty Twenty-Five injects for layout constraints — kill them. */
+:where(.is-layout-constrained) > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body { padding:0 !important; margin:0 !important; overflow-x:hidden; background:#0a0a0a !important; }
+html { background:#0a0a0a !important; }
 
 /* === Houzez selector reset (kept in case theme switches back) === */
 header#header, header.site-header, footer#footer, footer.site-footer,
@@ -186,9 +234,28 @@ header#header, header.site-header, footer#footer, footer.site-footer,
   --vg-pewter: #a6a6a6;
 }
 html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#0a0a0a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
-.vg-page { position:relative; width:100%; }
-.vg-page section { width:100%; box-sizing:border-box; }
+
+/* The single most important rule: break out of any container WordPress puts around us. */
+.vg-page {
+  position: relative;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box;
+}
+.vg-page section { width:100%; max-width:100%; box-sizing:border-box; }
 .vg-page .container, .vg-page > * { box-sizing:border-box; }
+.vg-page main { display:block; width:100%; max-width:100%; padding:0; margin:0; }
+
+/* Section padding scales with viewport. */
+.vg-page main > section {
+  padding-left: clamp(16px, 4vw, 48px) !important;
+  padding-right: clamp(16px, 4vw, 48px) !important;
+}
+
 .eyebrow { font-family:'Montserrat',sans-serif !important; font-weight:700 !important; font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#d2203a !important; line-height:1 !important; }
 .vg-card { background:#0f0f0f; border:1px solid rgba(255,255,255,0.08); border-radius:4px; }
 .vg-card.accent-top { border-top:2px solid #a6192e; }
@@ -207,26 +274,58 @@ html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { backg
 .vg-button-elite:hover { background-color:#a78bff !important; }
 h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:300; color:#fff; }
 
+/* === Silver remap: lift pewter secondary text to the lighter palette tone === */
+.vg-page [style*="color:#a6a6a6"],
+.vg-page [style*="color: #a6a6a6"] { color: #d1d1d1 !important; }
+.vg-page p { color: #d1d1d1; }
+
+/* Silver hairlines on common hairline borders */
+.vg-page [style*="border:1px solid rgba(255,255,255,0.08)"],
+.vg-page [style*="border-top:1px solid rgba(255,255,255,0.08)"] {
+  border-color: rgba(209,209,209,0.18) !important;
+}
+.vg-page .vg-card { border-color: rgba(209,209,209,0.18) !important; }
+
+/* Section heading accent line (silver) under every h2 inside main */
+.vg-page main h2::after {
+  content:"";
+  display:block;
+  width:56px;
+  height:2px;
+  margin-top:18px;
+  background:linear-gradient(90deg, #d2203a 0%, #d1d1d1 100%);
+}
+.vg-page main [style*="text-align:center"] h2::after,
+.vg-page main h2[style*="text-align:center"]::after { margin-left:auto; margin-right:auto; }
+
+/* Stat-label silver accent (every 2nd stat-label set to silver) */
+.vg-page div[style*="display:grid"][style*="grid-template-columns:repeat(4,1fr)"] > div:nth-child(even) [style*="color:#d2203a"] {
+  color: #d1d1d1 !important;
+}
+
 /* === VG site header (injected at top of every page) === */
-.vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(166,25,46,0.3); }
-.vg-header__inner { max-width:1440px; margin:0 auto; height:72px; padding:0 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-.vg-header__brand { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; letter-spacing:3px; color:#fff; text-decoration:none; display:inline-flex; gap:8px; align-items:baseline; }
+.vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(209,209,209,0.18); }
+.vg-header__inner { max-width:1440px; margin:0 auto; height:72px; padding:0 clamp(16px, 3vw, 32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.vg-header__brand { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; letter-spacing:3px; color:#fff; text-decoration:none; display:inline-flex; gap:8px; align-items:baseline; white-space:nowrap; }
 .vg-header__brand .vg-mark { color:#d2203a; }
-.vg-header__nav { display:none; gap:28px; align-items:center; }
-.vg-header__nav a { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; transition:color .15s; }
+.vg-header__nav { display:none; gap:clamp(14px, 1.8vw, 28px); align-items:center; }
+.vg-header__nav a { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; transition:color .15s; white-space:nowrap; }
 .vg-header__nav a:hover { color:#fff; }
 .vg-header__cta { display:none; align-items:center; gap:16px; }
-.vg-header__phone { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+.vg-header__phone { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
 .vg-header__phone:hover { color:#fff; }
 .vg-header__cta .vg-button-primary { padding:10px 20px !important; font-size:10px !important; }
-@media (min-width:1024px) {
+.vg-header__menu-toggle { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; background:transparent; border:1px solid rgba(209,209,209,0.3); color:#d1d1d1; cursor:pointer; border-radius:2px; }
+.vg-header__menu-toggle svg { width:20px; height:20px; }
+@media (min-width:900px) {
   .vg-header__nav, .vg-header__cta { display:inline-flex; }
+  .vg-header__menu-toggle { display:none; }
 }
 
 /* === VG site footer === */
-.vg-footer { margin-top:96px; background:#050505; border-top:1px solid rgba(166,25,46,0.3); padding:64px 32px 32px; }
+.vg-footer { margin-top:96px; background:#050505; border-top:1px solid rgba(209,209,209,0.18); padding:64px clamp(16px, 4vw, 48px) 32px; }
 .vg-footer__grid { max-width:1440px; margin:0 auto; display:grid; gap:48px; grid-template-columns:1fr; }
-@media (min-width:768px) { .vg-footer__grid { grid-template-columns:repeat(2,1fr); } }
+@media (min-width:640px) { .vg-footer__grid { grid-template-columns:repeat(2,1fr); } }
 @media (min-width:1024px) { .vg-footer__grid { grid-template-columns:repeat(4,1fr); } }
 .vg-footer h4 { font-family:'Montserrat',sans-serif !important; font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin:0 0 20px; }
 .vg-footer a { color:#d1d1d1; text-decoration:none; font-size:13px; line-height:1.9; }
@@ -234,18 +333,52 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-footer__col ul { list-style:none; padding:0; margin:0; }
 .vg-footer__contact p { color:#d1d1d1; font-size:13px; line-height:1.7; margin:8px 0; }
 .vg-footer__contact .vg-mark { color:#d2203a; }
-.vg-footer__bottom { max-width:1440px; margin:56px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
+.vg-footer__bottom { max-width:1440px; margin:56px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
 @media (min-width:768px) { .vg-footer__bottom { flex-direction:row; } }
 
-@media (max-width:768px) {
-  section { padding:48px 16px !important; }
-  h1 { font-size:48px !important; }
-  h2 { font-size:36px !important; }
-  div[style*="grid-template-columns:repeat(3,1fr)"], div[style*="grid-template-columns:repeat(4,1fr)"], div[style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns:1fr !important; }
-  div[style*="grid-template-columns:8fr 4fr"], div[style*="grid-template-columns:7fr 5fr"], div[style*="grid-template-columns:5fr 7fr"] { grid-template-columns:1fr !important; }
+/* === Responsive breakpoints === */
+/* Mobile: < 640px */
+@media (max-width:639px) {
+  .vg-page main > section { padding-top:56px !important; padding-bottom:56px !important; }
+  .vg-page h1 { font-size:clamp(36px, 9vw, 56px) !important; line-height:1.1 !important; }
+  .vg-page h2 { font-size:clamp(28px, 7vw, 40px) !important; line-height:1.15 !important; }
+  .vg-page h3 { font-size:clamp(20px, 5vw, 26px) !important; }
+  .vg-page div[style*="font-size:64px"] { font-size:44px !important; }
+  .vg-page div[style*="font-size:96px"] { font-size:48px !important; letter-spacing:4px !important; }
+  .vg-page div[style*="font-size:72px"] { font-size:42px !important; }
+  .vg-page div[style*="grid-template-columns:repeat(2,1fr)"],
+  .vg-page div[style*="grid-template-columns:repeat(3,1fr)"],
+  .vg-page div[style*="grid-template-columns:repeat(4,1fr)"],
+  .vg-page div[style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns:1fr !important; }
+  .vg-page div[style*="grid-template-columns:8fr 4fr"],
+  .vg-page div[style*="grid-template-columns:7fr 5fr"],
+  .vg-page div[style*="grid-template-columns:5fr 7fr"] { grid-template-columns:1fr !important; }
   .vg-header__inner { padding:0 16px; height:60px; }
   .vg-header__brand { font-size:18px; letter-spacing:2px; }
 }
+
+/* Tablet: 640–1023px */
+@media (min-width:640px) and (max-width:1023px) {
+  .vg-page main > section { padding-top:80px !important; padding-bottom:80px !important; }
+  .vg-page h1 { font-size:clamp(48px, 7vw, 64px) !important; }
+  .vg-page h2 { font-size:clamp(36px, 5.5vw, 44px) !important; }
+  .vg-page div[style*="grid-template-columns:repeat(3,1fr)"],
+  .vg-page div[style*="grid-template-columns:repeat(4,1fr)"],
+  .vg-page div[style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns:repeat(2, 1fr) !important; }
+  .vg-page div[style*="grid-template-columns:8fr 4fr"],
+  .vg-page div[style*="grid-template-columns:7fr 5fr"],
+  .vg-page div[style*="grid-template-columns:5fr 7fr"] { grid-template-columns:1fr !important; }
+}
+
+/* Desktop: 1024px+ — fluid type & sane caps */
+@media (min-width:1024px) {
+  .vg-page h1 { font-size:clamp(56px, 5.5vw, 84px) !important; line-height:1.05 !important; }
+  .vg-page h2 { font-size:clamp(42px, 4vw, 56px) !important; line-height:1.1 !important; }
+  .vg-page main > section > div[style*="max-width:1280px"] { max-width:min(1280px, 92vw) !important; }
+}
+
+/* Inner content max-width safety on all sizes */
+.vg-page main > section > div { width:100%; max-width:1280px; margin-left:auto !important; margin-right:auto !important; }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" />
 `;
@@ -267,6 +400,7 @@ const SITE_HEADER = `
       <a href="tel:+17863527547" class="vg-header__phone">786.352.7547</a>
       <a href="/contact/" class="vg-button-primary">Schedule</a>
     </div>
+    <a href="/contact/" class="vg-header__menu-toggle" aria-label="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></a>
   </div>
 </header>
 `;
