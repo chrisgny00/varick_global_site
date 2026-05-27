@@ -389,10 +389,26 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-footer__neighborhoods a { color:#a6a6a6; text-decoration:none; font-size:12px; line-height:1.8; transition:color .15s; }
 .vg-footer__neighborhoods a:hover { color:#d1d1d1; }
 
-.vg-footer__bottom { max-width:1440px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
+.vg-footer__bottom { max-width:1440px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:20px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
 .vg-footer__bottom a { color:#a6a6a6; text-decoration:none; }
 .vg-footer__bottom a:hover { color:#d1d1d1; }
 @media (min-width:768px) { .vg-footer__bottom { flex-direction:row; } }
+
+/* Social icons */
+.vg-footer__social { display:inline-flex; gap:10px; align-items:center; }
+.vg-footer__social a {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid rgba(209,209,209,0.25);
+  color:#a6a6a6;
+  transition: color .15s, border-color .15s, background-color .15s, transform .15s;
+}
+.vg-footer__social a:hover {
+  color:#fff;
+  border-color:#d2203a;
+  background-color:rgba(210,32,58,0.12);
+  transform: translateY(-1px);
+}
 
 /* === Responsive breakpoints === */
 /* Mobile: < 640px */
@@ -627,6 +643,23 @@ const SITE_FOOTER = `
 
   <div class="vg-footer__bottom">
     <p>© ${new Date().getFullYear()} Varick Global Real Estate Advisors. All rights reserved.</p>
+    <div class="vg-footer__social">
+      <a href="https://www.facebook.com/VarickGlobal/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="https://x.com/varickglobal" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/varickglobal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.67H5.67v8.67h2.67zm-1.34-9.84a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.84v-4.74c0-2.47-1.32-3.62-3.08-3.62-1.43 0-2.07.79-2.42 1.34V9.67H10.17c.04.76 0 8.67 0 8.67h2.67v-4.85c0-.24.02-.48.09-.65.19-.48.63-.98 1.36-.98.96 0 1.35.74 1.35 1.81v4.67h2.67z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/varickglobal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@VarickGlobal" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.5 6.51a3 3 0 0 0-2.11-2.12C19.51 4 12 4 12 4s-7.5 0-9.39.39A3 3 0 0 0 .5 6.51 31.5 31.5 0 0 0 .1 12a31.5 31.5 0 0 0 .39 5.49 3 3 0 0 0 2.12 2.12C4.5 20 12 20 12 20s7.5 0 9.39-.39a3 3 0 0 0 2.11-2.12A31.5 31.5 0 0 0 23.9 12a31.5 31.5 0 0 0-.4-5.49zM9.75 15.57V8.43L15.82 12z"/></svg>
+      </a>
+    </div>
     <p><a href="/privacy/">Privacy</a> · <a href="/contact/">Contact</a></p>
   </div>
 </footer>
