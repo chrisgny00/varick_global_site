@@ -186,6 +186,48 @@ module.exports = function buildHome({ services, properties }) {
       ],
     ),
 
+    // 5b. AI Property Matchmaker
+    section(
+      {
+        padding: { unit: "px", top: 80, right: 24, bottom: 100, left: 24, isLinked: false },
+        background_background: "gradient",
+        background_color: "#0a0a0a",
+        background_color_b: "#0f0f0f",
+        background_gradient_angle: { unit: "deg", size: 180 },
+      },
+      [
+        column({}, [
+          html({
+            markup: `
+<div style="max-width:880px;margin:0 auto;text-align:center;">
+  <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:linear-gradient(135deg, rgba(210,32,58,0.18), rgba(139,96,255,0.18));border:1px solid rgba(209,209,209,0.25);">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#d2203a,#a78bff);color:#fff;font-size:13px;">✦</span>
+    <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#d1d1d1;">AI Property Matchmaker</span>
+  </div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;color:#fff;line-height:1.1;margin:24px 0 16px;">
+    Describe your <em style="color:#d2203a;font-style:italic;">dream home</em>
+  </h2>
+  <p style="color:#d1d1d1;font-size:16px;line-height:1.7;max-width:640px;margin:0 auto;">
+    Tell us in your own words. Our AI will translate it into a curated set of South Florida properties.
+  </p>
+  <form action="/properties/" method="get" style="margin-top:40px;background:#0a0a0a;border:1px solid rgba(209,209,209,0.22);border-radius:8px;padding:8px;display:flex;gap:12px;align-items:center;max-width:760px;margin-left:auto;margin-right:auto;">
+    <input
+      type="text"
+      name="q"
+      placeholder="A 5-bedroom waterfront estate in Miami Beach under $20M, with a dock and pool…"
+      style="flex:1;background:transparent;border:none;outline:none;color:#fff;padding:14px 18px;font-size:14px;font-family:'Raleway',sans-serif;"
+    />
+    <button type="submit" class="vg-button-primary" style="border:none;cursor:pointer;white-space:nowrap;">Find Matches →</button>
+  </form>
+  <p style="margin-top:16px;font-size:11px;color:#a6a6a6;font-family:'Montserrat',sans-serif;letter-spacing:2px;text-transform:uppercase;">
+    Powered by Varick Global · Concierge follow-up within 24 hours
+  </p>
+</div>`,
+          }),
+        ]),
+      ],
+    ),
+
     // 6. VG Elite teaser
     section(
       {
