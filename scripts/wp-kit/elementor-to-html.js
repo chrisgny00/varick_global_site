@@ -140,10 +140,46 @@ function pageTitle(t) {
 // Stylesheet that mirrors the Elementor custom CSS — injected once per page.
 const PAGE_CSS = `
 <style>
+/* === Twenty Twenty-Five / Twenty Twenty-Four block theme chrome reset === */
+.wp-site-blocks > header.wp-block-template-part,
+.wp-site-blocks > footer.wp-block-template-part,
+.wp-block-post-title,
+.entry-header,
+header.wp-block-template-part,
+footer.wp-block-template-part,
+.wp-block-template-part:has(.wp-block-site-title),
+.wp-block-template-part:has(.wp-block-navigation),
+.is-position-sticky { display:none !important; }
+
+.wp-site-blocks,
+.wp-site-blocks > main,
+.wp-block-post-content,
+.wp-block-group.is-layout-constrained,
+.entry-content,
+.is-layout-constrained,
+.is-layout-flow,
+main.wp-block-group,
+main {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body { padding:0 !important; margin:0 !important; overflow-x:hidden; }
+
+/* === Houzez selector reset (kept in case theme switches back) === */
+header#header, header.site-header, footer#footer, footer.site-footer,
+.header_top, .header_top_section, .copy-section, .footer-section,
+.sidebar, aside, .breadcrumbs, .page-header, .houzez-search-banner { display:none !important; }
+
+/* === Varick page styles === */
 :root { --vg-hairline: rgba(255,255,255,0.08); }
-body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#0a0a0a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
-.vg-page { position:relative; width:100vw; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }
-.vg-page section { width:100%; }
+html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#0a0a0a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
+.vg-page { position:relative; width:100%; }
+.vg-page section { width:100%; box-sizing:border-box; }
 .vg-page .container, .vg-page > * { box-sizing:border-box; }
 .eyebrow { font-family:'Montserrat',sans-serif !important; font-weight:700 !important; font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#d2203a !important; line-height:1 !important; }
 .vg-card { background:#0f0f0f; border:1px solid rgba(255,255,255,0.08); border-radius:4px; }
