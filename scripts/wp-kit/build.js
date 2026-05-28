@@ -34,6 +34,7 @@ const buildNeighborhoodSingle = require("./templates/neighborhood-single");
 const buildValuation = require("./templates/valuation");
 const buildContact = require("./templates/contact");
 const buildFAQ = require("./templates/faq");
+const buildPrivacy = require("./templates/privacy");
 
 const root = path.join(__dirname, "..", "..");
 const distDir = path.join(root, "dist");
@@ -92,6 +93,7 @@ const agentsId = addTemplate("agents", "Advisors", "wp-page", buildAgents({ agen
 const valuationId = addTemplate("valuation", "Valuation", "wp-page", buildValuation());
 const contactId = addTemplate("contact", "Contact", "wp-page", buildContact());
 const faqId = addTemplate("faq", "FAQ", "wp-page", buildFAQ());
+const privacyId = addTemplate("privacy", "Privacy", "wp-page", buildPrivacy());
 
 // Dynamic: 12 services
 const serviceIds = {};
@@ -199,6 +201,7 @@ staticPage("agents", "Advisors", agentsId, 9);
 staticPage("valuation", "Valuation", valuationId, 10);
 staticPage("contact", "Contact", contactId, 11);
 staticPage("faq", "FAQ", faqId, 12);
+staticPage("privacy", "Privacy", privacyId, 13);
 
 // Service detail pages, parented to /services
 const servicesParentId = postId - 10; // approximate — they import as siblings; URL slug carries the path
