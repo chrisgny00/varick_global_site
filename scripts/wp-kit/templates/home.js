@@ -1,6 +1,6 @@
 const { section, column, heading, textEditor, html, spacer, eyebrow, ctaBand, iconBox } = require("../lib/widgets");
 
-module.exports = function buildHome({ services, properties }) {
+module.exports = function buildHome({ services, properties, neighborhoods }) {
   const featured = properties.filter((p) => p.transactionType === "buy" && p.price >= 4_000_000).slice(0, 6);
 
   return [
@@ -241,41 +241,15 @@ module.exports = function buildHome({ services, properties }) {
           spacer({ size: 48 }),
           html({
             markup: (() => {
-              const neighborhoods = [
-                ["Miami Beach", "miami-beach", "Miami-Dade"],
-                ["Brickell", "brickell", "Miami-Dade"],
-                ["Coconut Grove", "coconut-grove", "Miami-Dade"],
-                ["Coral Gables", "coral-gables", "Miami-Dade"],
-                ["Aventura", "aventura", "Miami-Dade"],
-                ["Bal Harbour", "bal-harbour", "Miami-Dade"],
-                ["Surfside", "surfside", "Miami-Dade"],
-                ["Key Biscayne", "key-biscayne", "Miami-Dade"],
-                ["Fort Lauderdale", "fort-lauderdale", "Broward"],
-                ["Hollywood", "hollywood", "Broward"],
-                ["Hallandale Beach", "hallandale-beach", "Broward"],
-                ["Pompano Beach", "pompano-beach", "Broward"],
-                ["Deerfield Beach", "deerfield-beach", "Broward"],
-                ["Weston", "weston", "Broward"],
-                ["Davie", "davie", "Broward"],
-                ["Plantation", "plantation", "Broward"],
-                ["Palm Beach", "palm-beach", "Palm Beach"],
-                ["Boca Raton", "boca-raton", "Palm Beach"],
-                ["Delray Beach", "delray-beach", "Palm Beach"],
-                ["Wellington", "wellington", "Palm Beach"],
-                ["West Palm Beach", "west-palm-beach", "Palm Beach"],
-                ["Jupiter", "jupiter", "Palm Beach"],
-                ["Palm Beach Gardens", "palm-beach-gardens", "Palm Beach"],
-                ["Boynton Beach", "boynton-beach", "Palm Beach"],
-              ];
               return `
 <div class="vg-neighborhood-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-  ${neighborhoods.map(([name, slug, county]) => `
-  <a href="/neighborhoods/${slug}/" class="vg-neighborhood-card" style="display:block;position:relative;text-decoration:none;border-radius:4px;overflow:hidden;border:1px solid rgba(209,209,209,0.18);aspect-ratio:4/3;">
-    <img loading="lazy" src="https://picsum.photos/seed/varick-${slug}/600/450" alt="${name}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;" />
+  ${neighborhoods.map((n) => `
+  <a href="/neighborhoods/${n.slug}/" class="vg-neighborhood-card" style="display:block;position:relative;text-decoration:none;border-radius:4px;overflow:hidden;border:1px solid rgba(209,209,209,0.18);aspect-ratio:4/3;background:#0f0f0f;">
+    <img loading="lazy" src="${n.photo || `https://picsum.photos/seed/varick-${n.slug}/600/450`}" alt="${n.name}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/varick-${n.slug}/600/450';" />
     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,10,0.0) 35%, rgba(10,10,10,0.45) 60%, rgba(10,10,10,0.92) 100%);"></div>
     <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;">
-      <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#d1d1d1;">${county}</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#fff;line-height:1.15;margin-top:4px;">${name}</div>
+      <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#d1d1d1;">${n.county}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#fff;line-height:1.15;margin-top:4px;">${n.name}</div>
     </div>
     <span style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(10,10,10,0.55);border:1px solid rgba(209,209,209,0.35);color:#d1d1d1;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:Montserrat,sans-serif;">→</span>
   </a>`).join("")}

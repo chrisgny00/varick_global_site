@@ -63,6 +63,7 @@ export interface Neighborhood {
   name: string;
   county: County;
   intro: string;
+  photo?: string;
   stats: {
     medianPrice: string;
     daysOnMarket: number;

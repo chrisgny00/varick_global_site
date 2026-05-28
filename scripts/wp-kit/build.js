@@ -80,7 +80,7 @@ function addTemplate(slug, title, docType, content) {
 }
 
 // Static pages
-const homeId = addTemplate("home", "Home", "wp-page", buildHome({ services, properties }));
+const homeId = addTemplate("home", "Home", "wp-page", buildHome({ services, properties, neighborhoods }));
 const aboutId = addTemplate("about", "About", "wp-page", buildAbout());
 const servicesId = addTemplate("services", "Services", "wp-page", buildServices({ services }));
 const commercialId = addTemplate("commercial", "Commercial", "wp-page", buildCommercial({ properties }));

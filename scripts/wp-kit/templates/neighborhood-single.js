@@ -9,6 +9,21 @@ module.exports = function buildNeighborhoodSingle(n, { related = [] } = {}) {
       italicWord: n.name,
       subtitle: n.intro,
     }),
+    n.photo
+      ? basicSection({
+          padTop: 0,
+          padBottom: 0,
+          children: [
+            html({
+              markup: `
+<div style="position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;background:#0f0f0f;">
+  <img loading="lazy" src="${n.photo}" alt="${n.name}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/varick-${n.slug}/1600/686';" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.0) 30%, rgba(10,10,10,0.0) 70%, rgba(10,10,10,0.6) 100%);"></div>
+</div>`,
+            }),
+          ],
+        })
+      : null,
     basicSection({
       padTop: 48,
       padBottom: 48,
