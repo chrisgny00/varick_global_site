@@ -744,7 +744,7 @@ const pages = [];
 for (const t of Object.values(manifest.templates)) {
   const tpl = JSON.parse(fs.readFileSync(path.join(stagingDir, "templates", `${t.id}.json`), "utf8"));
   const innerHtml = renderTemplate(tpl.content || []);
-  const html = `${PAGE_CSS}\n<div class="vg-page">\n${SITE_HEADER}\n<main>\n${innerHtml}\n</main>\n${SITE_FOOTER}\n${CHAT_BUBBLE}\n</div>\n${RELOCATOR_JS}`;
+  const html = `<!-- wp:html -->\n${PAGE_CSS}\n<div class="vg-page">\n${SITE_HEADER}\n<main>\n${innerHtml}\n</main>\n${SITE_FOOTER}\n${CHAT_BUBBLE}\n</div>\n${RELOCATOR_JS}\n<!-- /wp:html -->`;
   pages.push({
     id: t.id,
     slug: pageSlug(t),
