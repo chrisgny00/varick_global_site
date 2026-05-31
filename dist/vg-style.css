@@ -33,6 +33,45 @@ footer.wp-block-template-part,
 .entry-meta,
 .entry-footer,
 .post-navigation,
+
+/* === Twenty Twenty-Four specific spacing leak fix === */
+/* TT4 injects vertical padding/margin via theme.json layout tokens.
+   Our existing reset zeros horizontal padding but not vertical, leaving
+   a large black gap between our footer and the CTA section. Zero all. */
+.wp-site-blocks,
+.wp-site-blocks > main,
+main.wp-block-group,
+main.wp-block-group.is-layout-flow,
+main.wp-block-group.is-layout-constrained,
+.wp-block-post-content,
+.wp-block-post-content > .vg-page,
+.has-global-padding,
+body .is-root-container,
+body main.has-global-padding,
+body .wp-site-blocks > .wp-block-group,
+body .wp-block-group.has-global-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  row-gap: 0 !important;
+  gap: 0 !important;
+  --wp--style--root--padding-top: 0;
+  --wp--style--root--padding-bottom: 0;
+  --wp--style--root--padding-left: 0;
+  --wp--style--root--padding-right: 0;
+  --wp--style--block-gap: 0;
+}
+
+/* TT4 wraps each block with .alignfull spacing that pushes our content down */
+body .vg-page,
+body .vg-page > header,
+body .vg-page > main,
+body .vg-page > footer {
+  margin-top: 0 !important;
+}
 .posts-navigation,
 .is-position-sticky,
 .skip-link { display:none !important; }
