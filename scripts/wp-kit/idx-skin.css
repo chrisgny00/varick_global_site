@@ -1,0 +1,39 @@
+
+/* === Showcase IDX skin (match VG palette + buttons) === */
+.sidx-container { font-family:'Raleway',sans-serif !important; color:#d1d1d1 !important; }
+.sidx-container, .sidx-container .sidx-search, .sidx-container .sidx-hotsheet, .sidx-container .sidx-search-results { background:#0a0a0a !important; }
+.sidx-container button.sidx-primary, .sidx-container .sidx-button-primary, .sidx-container input[type="submit"].sidx-primary, .sidx-container .sidx-action-primary {
+  background-color:#a6192e !important; color:#fff !important;
+  font-family:'Montserrat',sans-serif !important; font-weight:700 !important;
+  letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-size:11px !important; border-radius:2px !important; border:none !important;
+  padding:14px 28px !important; box-shadow:none !important;
+}
+.sidx-container button.sidx-primary:hover, .sidx-container .sidx-button-primary:hover, .sidx-container .sidx-action-primary:hover { background-color:#d2203a !important; }
+.sidx-container button.sidx-secondary, .sidx-container .sidx-button-secondary {
+  background-color:transparent !important; color:#d1d1d1 !important;
+  border:1px solid rgba(209,209,209,0.35) !important;
+  font-family:'Montserrat',sans-serif !important; font-weight:700 !important;
+  letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-size:11px !important; border-radius:2px !important; padding:14px 28px !important;
+}
+.sidx-container button.sidx-secondary:hover { color:#fff !important; border-color:#d2203a !important; }
+.sidx-container .sidx-toggle-bar { border-bottom:1px solid rgba(209,209,209,0.18) !important; }
+.sidx-container .sidx-toggle-bar .sidx-toggle-bar-item { color:#a6a6a6 !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; font-size:11px !important; letter-spacing:2px !important; text-transform:uppercase !important; }
+.sidx-container .sidx-toggle-bar .sidx-toggle-bar-item.sidx-selected { color:#d2203a !important; border-bottom:2px solid #d2203a !important; }
+.sidx-container .sidx-ribbon, .sidx-container .sidx-ribbon.sidx-new-listing { background:#a6192e !important; color:#fff !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; letter-spacing:1.5px !important; text-transform:uppercase !important; font-size:10px !important; }
+.sidx-container input[type="text"], .sidx-container input[type="email"], .sidx-container input[type="search"], .sidx-container input:not([type]), .sidx-container select, .sidx-container textarea {
+  background:rgba(0,0,0,0.4) !important; border:1px solid rgba(209,209,209,0.30) !important;
+  color:#fff !important; border-radius:2px !important; font-family:'Raleway',sans-serif !important;
+}
+.sidx-container input:focus, .sidx-container select:focus, .sidx-container textarea:focus { border-color:#d1d1d1 !important; outline:none !important; }
+.sidx-container .sidx-listing { background:#0f0f0f !important; border:1px solid rgba(209,209,209,0.22) !important; border-radius:4px !important; overflow:hidden; }
+.sidx-container .sidx-listing .sidx-price { color:#fff !important; font-family:'Cormorant Garamond',serif !important; font-weight:300 !important; }
+.sidx-container .sidx-listing .sidx-address, .sidx-container .sidx-listing .sidx-summary, .sidx-container .sidx-listing .sidx-beds-baths, .sidx-container .sidx-listing .sidx-bed-bath-sqft { color:#d1d1d1 !important; }
+.sidx-container .sidx-listing-details .sidx-top-level-nav { background:#0f0f0f !important; border-bottom:1px solid rgba(209,209,209,0.18) !important; }
+.sidx-container .sidx-listing-details .sidx-top-level-nav a { color:#d1d1d1 !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; font-size:11px !important; letter-spacing:1.6px !important; text-transform:uppercase !important; }
+.sidx-container .sidx-listing-details .sidx-top-level-nav a:hover, .sidx-container .sidx-listing-details .sidx-top-level-nav a.sidx-selected { color:#d2203a !important; border-bottom:2px solid #d2203a !important; }
+.sidx-container a, .sidx-container .sidx-link { color:#d2203a !important; }
+.sidx-container a:hover { color:#fff !important; }
+.sidx-container .sidx-pagination .sidx-page.sidx-selected { background:#a6192e !important; color:#fff !important; border-radius:2px !important; }
+.sidx-wrap { width:100%; max-width:100%; box-sizing:border-box; }

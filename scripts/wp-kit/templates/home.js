@@ -45,7 +45,7 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
       ],
     ),
 
-    // 2. Search Bar Placeholder
+    // 2. Search Bar Placeholder — swap to Showcase IDX shortcode when plugin is live
     section(
       {
         padding: { unit: "px", top: 0, right: 24, bottom: 60, left: 24, isLinked: false },
@@ -58,21 +58,23 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
             markup: `
 <div class="vg-card" style="background:#0f0f0f;padding:32px;margin-top:-60px;position:relative;z-index:5;">
   <div style="display:flex;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:24px;">
-    <span style="font-family:Montserrat;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;border-bottom:2px solid #d2203a;padding-bottom:8px;">Buy</span>
-    <span style="font-family:Montserrat;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a6a6a6;">Rent</span>
-    <span style="font-family:Montserrat;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a6a6a6;">Commercial</span>
+    <span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;border-bottom:2px solid #d2203a;padding-bottom:8px;">Buy</span>
+    <span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a6a6a6;">Rent</span>
+    <span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a6a6a6;">Commercial</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-    <input placeholder="Location" style="background:#000;border:1px solid rgba(255,255,255,0.1);padding:14px;color:#fff;border-radius:2px;" />
-    <input placeholder="Price Range" style="background:#000;border:1px solid rgba(255,255,255,0.1);padding:14px;color:#fff;border-radius:2px;" />
-    <input placeholder="Beds" style="background:#000;border:1px solid rgba(255,255,255,0.1);padding:14px;color:#fff;border-radius:2px;" />
-    <a href="/properties" class="vg-button-primary" style="text-align:center;">Search</a>
-  </div>
-  <p style="margin-top:16px;font-size:11px;color:#a6a6a6;font-family:Montserrat;letter-spacing:2px;text-transform:uppercase;">
-    Popular: Miami Beach · Aventura · Brickell · Fort Lauderdale · Palm Beach
-  </p>
-  <p style="margin-top:16px;font-size:11px;color:#d2203a;font-style:italic;">
-    IDX feed coming soon — replace this block with your IDX plugin shortcode.
+  <form action="/properties/" method="get" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    <input name="location" placeholder="Location" style="background:#000;border:1px solid rgba(209,209,209,0.30);padding:14px;color:#fff;border-radius:2px;font-family:'Raleway',sans-serif;" />
+    <input name="price" placeholder="Price Range" style="background:#000;border:1px solid rgba(209,209,209,0.30);padding:14px;color:#fff;border-radius:2px;font-family:'Raleway',sans-serif;" />
+    <input name="beds" placeholder="Beds" style="background:#000;border:1px solid rgba(209,209,209,0.30);padding:14px;color:#fff;border-radius:2px;font-family:'Raleway',sans-serif;" />
+    <button type="submit" class="vg-button-primary" style="border:none;cursor:pointer;">Search</button>
+  </form>
+  <p style="margin-top:16px;font-size:11px;color:#a6a6a6;font-family:Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;">
+    Popular:
+    <a href="/neighborhoods/miami-beach/" style="color:#d1d1d1;text-decoration:none;">Miami Beach</a> ·
+    <a href="/neighborhoods/aventura/" style="color:#d1d1d1;text-decoration:none;">Aventura</a> ·
+    <a href="/neighborhoods/brickell/" style="color:#d1d1d1;text-decoration:none;">Brickell</a> ·
+    <a href="/neighborhoods/fort-lauderdale/" style="color:#d1d1d1;text-decoration:none;">Fort Lauderdale</a> ·
+    <a href="/neighborhoods/palm-beach/" style="color:#d1d1d1;text-decoration:none;">Palm Beach</a>
   </p>
 </div>`,
           }),
