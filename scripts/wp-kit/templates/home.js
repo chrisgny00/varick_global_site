@@ -172,7 +172,7 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
     .slice(0, 8)
     .map(
       (s) => `
-  <a href="/${s.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px;">
+  <a href="/services/${s.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px;">
     <div style="width:44px;height:44px;border-radius:50%;background:rgba(166,25,46,0.1);border:1px solid rgba(166,25,46,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#d2203a;font-size:18px;">◆</div>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;font-weight:400;margin:0;">${s.title}</h3>
     <p style="margin-top:12px;color:#a6a6a6;font-size:13px;line-height:1.6;">${s.short}</p>
@@ -242,7 +242,7 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
           html({
             markup: `
 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px 16px;">
-  ${neighborhoods.map((n) => `<a href="/${n.slug}/" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:#d1d1d1;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(209,209,209,0.10);display:block;transition:color .15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#d1d1d1'">${n.name}</a>`).join("")}
+  ${neighborhoods.map((n) => `<a href="/neighborhoods/${n.slug}/" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:#d1d1d1;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(209,209,209,0.10);display:block;transition:color .15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#d1d1d1'">${n.name}</a>`).join("")}
 </div>
 <p style="margin-top:36px;font-size:12px;color:#a6a6a6;text-align:center;letter-spacing:2px;text-transform:uppercase;font-family:Montserrat,sans-serif;">
   Don't see your market? <a href="/contact/" style="color:#d1d1d1;text-decoration:underline;text-underline-offset:3px;">Speak with an advisor</a>

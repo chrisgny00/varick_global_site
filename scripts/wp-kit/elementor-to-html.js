@@ -138,8 +138,16 @@ function pageTitle(t) {
 }
 
 // CSS is served from CDN — pages link to it rather than embedding 20KB inline.
-// File lives at dist/vg-style.css, served via jsDelivr from the GitHub repo.
+// Source of truth: scripts/wp-kit/vg-style.css → copied to dist/ on build,
+// served via jsDelivr from the GitHub repo.
 const CDN_CSS_URL = 'https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude/build-site-from-markdown-MQkyz/dist/vg-style.css';
+
+// Copy the canonical CSS file into dist on each build so the CDN stays in sync.
+const cssSrc = path.join(__dirname, "vg-style.css");
+const cssDest = path.join(root, "dist", "vg-style.css");
+if (fs.existsSync(cssSrc)) {
+  fs.copyFileSync(cssSrc, cssDest);
+}
 
 // Stylesheet that mirrors the Elementor custom CSS — injected once per page.
 const PAGE_CSS = `
@@ -183,13 +191,13 @@ const SITE_FOOTER = `
       <h4>Services</h4>
       <ul>
         <li><a href="/services/">All Services</a></li>
-        <li><a href="/buyer-seller-services/">Buyer &amp; Seller Services</a></li>
-        <li><a href="/tenant-representation/">Tenant Representation</a></li>
-        <li><a href="/landlord-representation/">Landlord Representation</a></li>
-        <li><a href="/lease-renewal/">Lease Renewal</a></li>
-        <li><a href="/valuation/">Valuation &amp; Advisory</a></li>
-        <li><a href="/investment-sales/">Investment Sales</a></li>
-        <li><a href="/foreclosures/">Foreclosures</a></li>
+        <li><a href="/services/buyer-seller-services/">Buyer &amp; Seller Services</a></li>
+        <li><a href="/services/tenant-representation/">Tenant Representation</a></li>
+        <li><a href="/services/landlord-representation/">Landlord Representation</a></li>
+        <li><a href="/services/lease-renewal/">Lease Renewal</a></li>
+        <li><a href="/services/valuation/">Valuation &amp; Advisory</a></li>
+        <li><a href="/services/investment-sales/">Investment Sales</a></li>
+        <li><a href="/services/foreclosures/">Foreclosures</a></li>
         <li><a href="/new-development/">New Development</a></li>
       </ul>
     </div>
@@ -199,10 +207,10 @@ const SITE_FOOTER = `
         <li><a href="/commercial/">Commercial</a></li>
         <li><a href="/land/">Land</a></li>
         <li><a href="/hoa/">HOA Division</a></li>
-        <li><a href="/hoa-advisory/">HOA Advisory</a></li>
-        <li><a href="/hoa-conversions/">HOA Conversions</a></li>
-        <li><a href="/receivership/">Receivership</a></li>
-        <li><a href="/hoa-sale/">HOA Sale &amp; Termination</a></li>
+        <li><a href="/services/hoa-advisory/">HOA Advisory</a></li>
+        <li><a href="/services/hoa-conversions/">HOA Conversions</a></li>
+        <li><a href="/services/receivership/">Receivership</a></li>
+        <li><a href="/services/hoa-sale/">HOA Sale &amp; Termination</a></li>
       </ul>
     </div>
     <div class="vg-footer__col">
@@ -213,10 +221,10 @@ const SITE_FOOTER = `
         <li><a href="/elite/#entertainment">Entertainment Services</a></li>
         <li><a href="/elite/#investment">Investment Division</a></li>
         <li><a href="/advisors/">All Advisors</a></li>
-        <li><a href="/chris-gallego/">Chris Gallego</a></li>
-        <li><a href="/nina-vazquez/">Nina Vazquez</a></li>
-        <li><a href="/alfredo-morejon/">Alfredo Morejon</a></li>
-        <li><a href="/gloria-grullon/">Gloria Grullon</a></li>
+        <li><a href="/advisors/chris-gallego/">Chris Gallego</a></li>
+        <li><a href="/advisors/nina-vazquez/">Nina Vazquez</a></li>
+        <li><a href="/advisors/alfredo-morejon/">Alfredo Morejon</a></li>
+        <li><a href="/advisors/gloria-grullon/">Gloria Grullon</a></li>
       </ul>
     </div>
     <div class="vg-footer__col">
@@ -225,7 +233,7 @@ const SITE_FOOTER = `
         <li><a href="/home/">Home</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/properties/">Properties</a></li>
-        <li><a href="/valuation/">Valuation</a></li>
+        <li><a href="/services/valuation/">Valuation</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/privacy/">Privacy</a></li>
@@ -236,30 +244,30 @@ const SITE_FOOTER = `
   <div class="vg-footer__sitemap">
     <h4>Neighborhoods We Serve</h4>
     <div class="vg-footer__neighborhoods">
-      <a href="/miami-beach/">Miami Beach</a>
-      <a href="/brickell/">Brickell</a>
-      <a href="/coconut-grove/">Coconut Grove</a>
-      <a href="/coral-gables/">Coral Gables</a>
-      <a href="/aventura/">Aventura</a>
-      <a href="/bal-harbour/">Bal Harbour</a>
-      <a href="/surfside/">Surfside</a>
-      <a href="/key-biscayne/">Key Biscayne</a>
-      <a href="/fort-lauderdale/">Fort Lauderdale</a>
-      <a href="/hollywood/">Hollywood</a>
-      <a href="/hallandale-beach/">Hallandale Beach</a>
-      <a href="/pompano-beach/">Pompano Beach</a>
-      <a href="/deerfield-beach/">Deerfield Beach</a>
-      <a href="/weston/">Weston</a>
-      <a href="/davie/">Davie</a>
-      <a href="/plantation/">Plantation</a>
-      <a href="/palm-beach/">Palm Beach</a>
-      <a href="/boca-raton/">Boca Raton</a>
-      <a href="/delray-beach/">Delray Beach</a>
-      <a href="/wellington/">Wellington</a>
-      <a href="/west-palm-beach/">West Palm Beach</a>
-      <a href="/jupiter/">Jupiter</a>
-      <a href="/palm-beach-gardens/">Palm Beach Gardens</a>
-      <a href="/boynton-beach/">Boynton Beach</a>
+      <a href="/neighborhoods/miami-beach/">Miami Beach</a>
+      <a href="/neighborhoods/brickell/">Brickell</a>
+      <a href="/neighborhoods/coconut-grove/">Coconut Grove</a>
+      <a href="/neighborhoods/coral-gables/">Coral Gables</a>
+      <a href="/neighborhoods/aventura/">Aventura</a>
+      <a href="/neighborhoods/bal-harbour/">Bal Harbour</a>
+      <a href="/neighborhoods/surfside/">Surfside</a>
+      <a href="/neighborhoods/key-biscayne/">Key Biscayne</a>
+      <a href="/neighborhoods/fort-lauderdale/">Fort Lauderdale</a>
+      <a href="/neighborhoods/hollywood/">Hollywood</a>
+      <a href="/neighborhoods/hallandale-beach/">Hallandale Beach</a>
+      <a href="/neighborhoods/pompano-beach/">Pompano Beach</a>
+      <a href="/neighborhoods/deerfield-beach/">Deerfield Beach</a>
+      <a href="/neighborhoods/weston/">Weston</a>
+      <a href="/neighborhoods/davie/">Davie</a>
+      <a href="/neighborhoods/plantation/">Plantation</a>
+      <a href="/neighborhoods/palm-beach/">Palm Beach</a>
+      <a href="/neighborhoods/boca-raton/">Boca Raton</a>
+      <a href="/neighborhoods/delray-beach/">Delray Beach</a>
+      <a href="/neighborhoods/wellington/">Wellington</a>
+      <a href="/neighborhoods/west-palm-beach/">West Palm Beach</a>
+      <a href="/neighborhoods/jupiter/">Jupiter</a>
+      <a href="/neighborhoods/palm-beach-gardens/">Palm Beach Gardens</a>
+      <a href="/neighborhoods/boynton-beach/">Boynton Beach</a>
     </div>
   </div>
 

@@ -17,7 +17,7 @@ module.exports = function buildAgents({ agents }) {
   ${agents
     .map(
       (a) => `
-  <a href="/${a.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+  <a href="/advisors/${a.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
     <div style="aspect-ratio:4/5;background:linear-gradient(135deg,#14060a,#0a0a0a 50%,#1a0a14);display:flex;align-items:center;justify-content:center;">
       <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:rgba(255,255,255,0.06);letter-spacing:6px;">${a.name.split(" ").map((w) => w[0]).join("")}</div>
     </div>
