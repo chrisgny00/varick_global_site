@@ -69,7 +69,7 @@ module.exports = function buildNeighborhoodSingle(n, { related = [] } = {}) {
   ${related
     .map(
       (r) => `
-  <a href="/neighborhoods/${r.slug}" class="vg-card" style="display:block;padding:20px;text-decoration:none;color:inherit;">
+  <a href="/${r.slug}" class="vg-card" style="display:block;padding:20px;text-decoration:none;color:inherit;">
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;font-weight:400;margin:0;">${r.name}</h3>
     <div style="font-size:12px;color:#a6a6a6;margin-top:6px;">${r.stats.medianPrice} median</div>
   </a>`,

@@ -40,7 +40,7 @@ module.exports = function buildServiceSingle(service, { related = [] } = {}) {
         .map(
           (r) => `
       <li style="margin-bottom:16px;">
-        <a href="${r.slug ? `/services/${r.slug}` : "/contact"}" style="color:#fff;text-decoration:none;">${r.title}</a>
+        <a href="${r.slug ? `/${r.slug}` : "/contact"}" style="color:#fff;text-decoration:none;">${r.title}</a>
         ${r.short ? `<p style="margin:6px 0 0;color:#a6a6a6;font-size:12px;">${r.short}</p>` : ""}
       </li>`,
         )

@@ -33,7 +33,7 @@ module.exports = function buildHOA() {
   ${offerings
     .map(
       (o) => `
-  <a href="/services/${o.slug}" class="vg-card" style="display:block;padding:32px;text-decoration:none;color:inherit;">
+  <a href="/${o.slug}" class="vg-card" style="display:block;padding:32px;text-decoration:none;color:inherit;">
     <div style="width:48px;height:48px;border-radius:50%;background:rgba(166,25,46,0.1);border:1px solid rgba(166,25,46,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#d2203a;">◆</div>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:400;margin:0;">${o.title}</h3>
     <p style="margin-top:12px;color:#a6a6a6;line-height:1.7;">${o.desc}</p>

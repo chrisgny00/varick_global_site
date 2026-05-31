@@ -172,7 +172,7 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
     .slice(0, 8)
     .map(
       (s) => `
-  <a href="/services/${s.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px;">
+  <a href="/${s.slug}" style="text-decoration:none;color:inherit;display:block;background:#0f0f0f;border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px;">
     <div style="width:44px;height:44px;border-radius:50%;background:rgba(166,25,46,0.1);border:1px solid rgba(166,25,46,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#d2203a;font-size:18px;">◆</div>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;font-weight:400;margin:0;">${s.title}</h3>
     <p style="margin-top:12px;color:#a6a6a6;font-size:13px;line-height:1.6;">${s.short}</p>
@@ -240,24 +240,13 @@ module.exports = function buildHome({ services, properties, neighborhoods }) {
           textEditor({ text: "From the Atlantic coastline to the Intracoastal — twenty-four communities across Miami-Dade, Broward and Palm Beach counties." }),
           spacer({ size: 48 }),
           html({
-            markup: (() => {
-              return `
-<div class="vg-neighborhood-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-  ${neighborhoods.map((n) => `
-  <a href="/neighborhoods/${n.slug}/" class="vg-neighborhood-card" style="display:block;position:relative;text-decoration:none;border-radius:4px;overflow:hidden;border:1px solid rgba(209,209,209,0.18);aspect-ratio:4/3;background:#0f0f0f;">
-    <img loading="lazy" src="${n.photo || `https://picsum.photos/seed/varick-${n.slug}/600/450`}" alt="${n.name}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/varick-${n.slug}/600/450';" />
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,10,0.0) 35%, rgba(10,10,10,0.45) 60%, rgba(10,10,10,0.92) 100%);"></div>
-    <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;">
-      <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#d1d1d1;">${n.county}</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#fff;line-height:1.15;margin-top:4px;">${n.name}</div>
-    </div>
-    <span style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(10,10,10,0.55);border:1px solid rgba(209,209,209,0.35);color:#d1d1d1;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:Montserrat,sans-serif;">→</span>
-  </a>`).join("")}
+            markup: `
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px 16px;">
+  ${neighborhoods.map((n) => `<a href="/${n.slug}/" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:#d1d1d1;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(209,209,209,0.10);display:block;transition:color .15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#d1d1d1'">${n.name}</a>`).join("")}
 </div>
 <p style="margin-top:36px;font-size:12px;color:#a6a6a6;text-align:center;letter-spacing:2px;text-transform:uppercase;font-family:Montserrat,sans-serif;">
-  Don't see your market? <a href="/contact/" style="color:#d1d1d1;text-decoration:underline;text-underline-offset:3px;">Speak with an advisor →</a>
-</p>`;
-            })(),
+  Don't see your market? <a href="/contact/" style="color:#d1d1d1;text-decoration:underline;text-underline-offset:3px;">Speak with an advisor</a>
+</p>`,
           }),
         ]),
       ],
