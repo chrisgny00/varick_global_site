@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap");
-/* === Block-theme chrome reset (Twenty Twenty-Five, Spectra One, et al.) === */
+/* === Block-theme chrome reset (Twenty Twenty-Five, Spectra One, Bento, et al.) === */
 /* Kill theme headers/footers and any injected chrome — our JS relocator
    handles the DOM move; this CSS fires before JS for a no-FOUC guarantee. */
 
-/* Spectra One specific */
+/* Spectra One / Bento / generic block-theme specific */
 .site-header, .ast-primary-header-bar, .ast-above-header,
 .ast-below-header, .site-footer, .ast-footer-area,
 .footer-widget-area, header#masthead, footer#colophon,
-[class*="spectra-"], [class*="uagb-"] { display:none !important; }
+[class*="spectra-"], [class*="uagb-"],
+/* Bento ships a Header/Footer template part with site title + nav */
+.wp-block-template-part[area="header"],
+.wp-block-template-part[area="footer"] { display:none !important; }
 
 /* Generic block theme */
 .wp-site-blocks > header,
