@@ -140,7 +140,9 @@ function pageTitle(t) {
 // CSS is served from CDN — pages link to it rather than embedding 20KB inline.
 // Source of truth: scripts/wp-kit/vg-style.css → copied to dist/ on build,
 // served via jsDelivr from the GitHub repo.
-const CDN_CSS_URL = 'https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude/build-site-from-markdown-MQkyz/dist/vg-style.css';
+// IMPORTANT: branch name `claude/build-site-from-markdown-MQkyz` contains a `/`,
+// which jsDelivr would misparse as a path separator. URL-encode the `/` as %2F.
+const CDN_CSS_URL = 'https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css';
 
 // Copy the canonical CSS file into dist on each build so the CDN stays in sync.
 const cssSrc = path.join(__dirname, "vg-style.css");
