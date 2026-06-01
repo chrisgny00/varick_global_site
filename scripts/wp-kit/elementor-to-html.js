@@ -303,7 +303,10 @@ const RELOCATOR_JS = `
   function vgScrubChrome() {
     // Kill the WordPress.com promo / upgrade / "gift the author" bar in every form.
     var promoSelectors = [
+      /* WordPress.com promo / upgrade / gift author bars */
       '#wpadminbar',
+      'a[href*="wordpress.com/plans"]',
+      'a[href*="upgrade"][href*="wordpress"]',
       '.masterbar',
       '.wpcom-masterbar',
       '.wpcom-action-bar',

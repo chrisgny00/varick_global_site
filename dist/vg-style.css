@@ -75,6 +75,59 @@ body .vg-page > main,
 body .vg-page > footer {
   margin-top: 0 !important;
 }
+
+/* === Bento (classic real-estate theme) overrides === */
+/* Bento renders page title in a light-grey banner ABOVE post content
+   on certain pages (privacy, faq). Hide it. */
+.page-header,
+.page-title,
+.entry-title,
+header.page-header,
+.elementor-page-title,
+.bento-page-title,
+.banner-title,
+.page-banner,
+.breadcrumbs,
+.breadcrumb-trail,
+section.page-banner,
+section.page-title-section,
+.page-title-section,
+.wp-block-post-title,
+h1.entry-title,
+h1.post-title,
+h1.page-title {
+  display:none !important;
+}
+
+/* Bento default link color leaks into our header nav. Force VG silver. */
+.vg-page .vg-header__nav a,
+.vg-page .vg-header__nav a:link,
+.vg-page .vg-header__nav a:visited,
+body .vg-page .vg-header__nav a,
+body .vg-page .vg-header__brand,
+body .vg-page .vg-header__brand:link,
+body .vg-page .vg-header__phone,
+body .vg-page .vg-header__phone:link {
+  color: #d1d1d1 !important;
+}
+.vg-page .vg-header__nav a:hover,
+body .vg-page .vg-header__nav a:hover { color:#fff !important; }
+body .vg-page .vg-header__brand span:first-child { color:#fff !important; }
+body .vg-page .vg-header__brand .vg-mark { color:#d2203a !important; }
+
+/* Force VG palette on every link in our page — Bento likes to inject teal/green */
+.vg-page a,
+.vg-page a:link,
+.vg-page a:visited {
+  color: inherit;
+}
+.vg-page .vg-button-primary,
+.vg-page .vg-button-primary:link,
+.vg-page .vg-button-primary:visited { color:#fff !important; background-color:#a6192e !important; }
+.vg-page .vg-button-outline,
+.vg-page .vg-button-outline:link,
+.vg-page .vg-button-outline:visited { color:#d1d1d1 !important; }
+
 .posts-navigation,
 .is-position-sticky,
 .skip-link { display:none !important; }
