@@ -145,7 +145,7 @@ function pageTitle(t) {
 // Cache buster: append commit short hash so browser treats every CSS update as
 // a new resource. Without this, browsers (especially incognito) hold onto the
 // previous CSS file indefinitely even after Ctrl+Shift+R.
-const CDN_CSS_VERSION = '20260601c';
+const CDN_CSS_VERSION = '20260601d';
 const CDN_CSS_URL = `https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css?v=${CDN_CSS_VERSION}`;
 
 // Copy the canonical CSS file into dist on each build so the CDN stays in sync.

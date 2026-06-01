@@ -1,38 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap");
 
 /* ================================================================
-   NUCLEAR CHROME RESET — applied to every page rendered by ANY theme
-   Hides everything in <body> that isn't OUR .vg-page or a script/style.
-   Relies on :has() (Chrome 105+, Safari 15.4+, Firefox 121+) — supports
-   ~96% of browsers as of 2025. Older browsers fall back to per-selector
-   rules below.
+   CHROME RESET — fires before JS relocator runs.
+   Targets ONLY known theme chrome by class/id, never hides parent
+   wrappers that contain our .vg-page. The aggressive "hide everything"
+   rule only applies AFTER the JS adds `.vg-relocated` to body, by
+   which time our .vg-page is guaranteed a direct child of body.
    ================================================================ */
 html { background:#0a0a0a !important; }
 body { background:#0a0a0a !important; margin:0 !important; padding:0 !important; }
 
-/* If the body has a .vg-page, hide every direct body child that isn't:
-   - our .vg-page
-   - inline <script> or <style>
-   - the WordPress admin bar (only visible to logged-in admins) */
-body:has(.vg-page) > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
+/* AFTER JS relocates our .vg-page to body, hide everything else */
+body.vg-relocated > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
   display:none !important;
 }
 
-/* Same rule applied through the page-content wrapper that Bento and TT4
-   inject. Hides Bento's page-title banner and TT4's entry-header. */
-.wp-block-post-content:has(.vg-page) > *:not(.vg-page):not(script):not(style),
-.entry-content:has(.vg-page) > *:not(.vg-page):not(script):not(style),
-main.wp-block-group:has(.vg-page) > *:not(.vg-page):not(script):not(style) {
-  display:none !important;
-}
-
-/* Also kill anything that comes BEFORE our .vg-page in the body */
-body > *:not(.vg-page) ~ .vg-page,
-.wp-block-post-content > *:not(.vg-page) ~ .vg-page,
-.entry-content > *:not(.vg-page) ~ .vg-page {
-  position: relative;
-  z-index: 1;
-}
+/* BEFORE JS runs (no .vg-relocated class yet), use specific selectors
+   to hide known chrome — but never touch parent wrappers */
+.wp-block-post-title,
+header.entry-header,
+.entry-header,
+.page-banner,
+section.page-title-section,
+.page-title-section,
+h1.page-title,
+h1.entry-title,
+.bento-page-title,
+.banner-title,
+.breadcrumbs,
+.breadcrumb-trail { display:none !important; }
 
 /* === Block-theme chrome reset (Twenty Twenty-Five, Spectra One, Bento, et al.) === */
 /* Kill theme headers/footers and any injected chrome — our JS relocator
