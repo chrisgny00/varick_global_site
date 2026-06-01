@@ -1,4 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap");
+
+/* ================================================================
+   NUCLEAR CHROME RESET — applied to every page rendered by ANY theme
+   Hides everything in <body> that isn't OUR .vg-page or a script/style.
+   Relies on :has() (Chrome 105+, Safari 15.4+, Firefox 121+) — supports
+   ~96% of browsers as of 2025. Older browsers fall back to per-selector
+   rules below.
+   ================================================================ */
+html { background:#0a0a0a !important; }
+body { background:#0a0a0a !important; margin:0 !important; padding:0 !important; }
+
+/* If the body has a .vg-page, hide every direct body child that isn't:
+   - our .vg-page
+   - inline <script> or <style>
+   - the WordPress admin bar (only visible to logged-in admins) */
+body:has(.vg-page) > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
+  display:none !important;
+}
+
+/* Same rule applied through the page-content wrapper that Bento and TT4
+   inject. Hides Bento's page-title banner and TT4's entry-header. */
+.wp-block-post-content:has(.vg-page) > *:not(.vg-page):not(script):not(style),
+.entry-content:has(.vg-page) > *:not(.vg-page):not(script):not(style),
+main.wp-block-group:has(.vg-page) > *:not(.vg-page):not(script):not(style) {
+  display:none !important;
+}
+
+/* Also kill anything that comes BEFORE our .vg-page in the body */
+body > *:not(.vg-page) ~ .vg-page,
+.wp-block-post-content > *:not(.vg-page) ~ .vg-page,
+.entry-content > *:not(.vg-page) ~ .vg-page {
+  position: relative;
+  z-index: 1;
+}
+
 /* === Block-theme chrome reset (Twenty Twenty-Five, Spectra One, Bento, et al.) === */
 /* Kill theme headers/footers and any injected chrome — our JS relocator
    handles the DOM move; this CSS fires before JS for a no-FOUC guarantee. */

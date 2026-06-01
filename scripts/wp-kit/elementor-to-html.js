@@ -142,7 +142,11 @@ function pageTitle(t) {
 // served via jsDelivr from the GitHub repo.
 // IMPORTANT: branch name `claude/build-site-from-markdown-MQkyz` contains a `/`,
 // which jsDelivr would misparse as a path separator. URL-encode the `/` as %2F.
-const CDN_CSS_URL = 'https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css';
+// Cache buster: append commit short hash so browser treats every CSS update as
+// a new resource. Without this, browsers (especially incognito) hold onto the
+// previous CSS file indefinitely even after Ctrl+Shift+R.
+const CDN_CSS_VERSION = '20260601c';
+const CDN_CSS_URL = `https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css?v=${CDN_CSS_VERSION}`;
 
 // Copy the canonical CSS file into dist on each build so the CDN stays in sync.
 const cssSrc = path.join(__dirname, "vg-style.css");
@@ -346,15 +350,41 @@ const RELOCATOR_JS = `
   function vgRelocate() {
     var page = document.querySelector('.vg-page');
     if (!page) return;
-    document.querySelectorAll('header.wp-block-template-part, footer.wp-block-template-part, .wp-block-template-part, .site-header, header#masthead, .site-footer, footer#colophon, .ast-primary-header-bar, .ast-footer-area').forEach(function (n) { n.remove(); });
+    /* Remove every wp-block-template-part, site-header, page-banner, etc. */
+    document.querySelectorAll([
+      'header.wp-block-template-part', 'footer.wp-block-template-part', '.wp-block-template-part',
+      '.site-header', 'header#masthead', '.site-footer', 'footer#colophon',
+      '.ast-primary-header-bar', '.ast-footer-area',
+      /* Bento page-title banner — any of these patterns */
+      '.page-banner', '.page-header', 'header.entry-header', '.entry-header',
+      '.page-title-section', 'section.page-title-section', '.banner-title',
+      'h1.page-title', 'h1.entry-title', '.wp-block-post-title',
+      /* WordPress.com promo bars (newer patterns) */
+      '[class*="upgrade-nudge"]', '[class*="action-bar"]', '[id*="action-bar"]'
+    ].join(',')).forEach(function (n) { n.remove(); });
+
+    /* Move .vg-page directly under <body> so no theme wrapper can interfere */
     if (page.parentNode !== document.body) {
       document.body.insertBefore(page, document.body.firstChild);
     }
+
+    /* Hide every direct body child that isn't ours */
     Array.prototype.slice.call(document.body.children).forEach(function (child) {
       if (child !== page && child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE' && child.id !== 'wpadminbar') {
         child.style.display = 'none';
       }
     });
+
+    /* Also walk one level deeper — Bento nests page-banners inside .entry-content */
+    document.querySelectorAll('.entry-content, .wp-block-post-content, .post-content, main').forEach(function (wrap) {
+      if (wrap === page || wrap.contains(page)) return;
+      Array.prototype.slice.call(wrap.children).forEach(function (child) {
+        if (child !== page && !child.contains(page) && child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE') {
+          child.style.display = 'none';
+        }
+      });
+    });
+
     document.body.classList.add('vg-relocated');
     vgScrubChrome();
   }
