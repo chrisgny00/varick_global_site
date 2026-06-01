@@ -160,7 +160,7 @@ const PAGE_CSS = `
 const SITE_HEADER = `
 <header class="vg-header">
   <div class="vg-header__inner">
-    <a href="/home/" class="vg-header__brand"><span>VARICK</span><span class="vg-mark">GLOBAL</span></a>
+    <a href="/" class="vg-header__brand"><span>VARICK</span><span class="vg-mark">GLOBAL</span></a>
     <nav class="vg-header__nav">
       <a href="/services/">Services</a>
       <a href="/commercial/">Commercial</a>
@@ -232,7 +232,7 @@ const SITE_FOOTER = `
     <div class="vg-footer__col">
       <h4>Company</h4>
       <ul>
-        <li><a href="/home/">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/properties/">Properties</a></li>
         <li><a href="/services/valuation/">Valuation</a></li>
