@@ -145,7 +145,7 @@ function pageTitle(t) {
 // Cache buster: append commit short hash so browser treats every CSS update as
 // a new resource. Without this, browsers (especially incognito) hold onto the
 // previous CSS file indefinitely even after Ctrl+Shift+R.
-const CDN_CSS_VERSION = '20260601d';
+const CDN_CSS_VERSION = '20260601e';
 const CDN_CSS_URL = `https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css?v=${CDN_CSS_VERSION}`;
 
 // Copy the canonical CSS file into dist on each build so the CDN stays in sync.
@@ -375,9 +375,11 @@ const RELOCATOR_JS = `
       }
     });
 
-    /* Also walk one level deeper — Bento nests page-banners inside .entry-content */
-    document.querySelectorAll('.entry-content, .wp-block-post-content, .post-content, main').forEach(function (wrap) {
-      if (wrap === page || wrap.contains(page)) return;
+    /* Also walk one level deeper — Bento nests page-banners inside .entry-content.
+       SAFETY: skip any wrapper that is OUR .vg-page or any descendant of it.
+       Without this guard, our internal <main> matches and its children get hidden. */
+    document.querySelectorAll('.entry-content, .wp-block-post-content, .post-content').forEach(function (wrap) {
+      if (wrap === page || page.contains(wrap) || wrap.contains(page)) return;
       Array.prototype.slice.call(wrap.children).forEach(function (child) {
         if (child !== page && !child.contains(page) && child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE') {
           child.style.display = 'none';
