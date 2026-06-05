@@ -139,7 +139,7 @@ body .vg-page .vg-header__brand,
 body .vg-page .vg-header__brand:link,
 body .vg-page .vg-header__phone,
 body .vg-page .vg-header__phone:link {
-  color: #d1d1d1 !important;
+  color: #BEBBBB !important;
 }
 .vg-page .vg-header__nav a:hover,
 body .vg-page .vg-header__nav a:hover { color:#fff !important; }
@@ -157,7 +157,7 @@ body .vg-page .vg-header__brand .vg-mark { color:#d2203a !important; }
 .vg-page .vg-button-primary:visited { color:#fff !important; background-color:#a6192e !important; }
 .vg-page .vg-button-outline,
 .vg-page .vg-button-outline:link,
-.vg-page .vg-button-outline:visited { color:#d1d1d1 !important; }
+.vg-page .vg-button-outline:visited { color:#BEBBBB !important; }
 
 .posts-navigation,
 .is-position-sticky,
@@ -244,8 +244,69 @@ header#header, header.site-header, footer#footer, footer.site-footer,
   --vg-card: #0f0f0f;
   --vg-crimson: #a6192e;
   --vg-vivid: #d2203a;
-  --vg-silver: #d1d1d1;
+  --vg-silver: #BEBBBB;      /* warmer silver — replaces #BEBBBB */
   --vg-pewter: #a6a6a6;
+  --vg-midnight: #2F243A;    /* moody dark with warmth — section variant */
+  --vg-almond: #FAC9B8;      /* warm peach-blush highlight — decorative accents */
+  --vg-salmon: #DB8A74;      /* warm complementary to crimson — hover states */
+}
+
+/* === New palette accents (subtle, deliberate) === */
+
+/* Every other main section gets the Midnight Violet tint instead of pure black.
+   Adds depth on long pages without losing the dark luxury feel. */
+.vg-page main > section:nth-of-type(even) {
+  background-color: #14101c !important;   /* midnight violet tinted darker */
+  background-image: linear-gradient(180deg, rgba(47,36,58,0.18), rgba(47,36,58,0)) !important;
+}
+.vg-page main > section:nth-of-type(odd) {
+  background-color: #0a0a0a !important;
+}
+
+/* Outline buttons hover → warm salmon instead of cold white */
+.vg-page .vg-button-outline:hover {
+  color: #fff !important;
+  border-color: #DB8A74 !important;
+  background-color: rgba(219,138,116,0.10) !important;
+}
+
+/* Social icon hover → salmon warmth */
+.vg-page .vg-footer__social a:hover {
+  color: #fff !important;
+  border-color: #DB8A74 !important;
+  background-color: rgba(219,138,116,0.12) !important;
+}
+
+/* Section heading underline gets the almond highlight instead of pure silver */
+.vg-page main h2::after {
+  background: linear-gradient(90deg, #d2203a 0%, #FAC9B8 100%) !important;
+}
+
+/* Newsletter / "Weekly Briefing" card on Market Insights → almond silk accent */
+.vg-page .vg-card.accent-top {
+  border-top: 2px solid #FAC9B8 !important;
+  box-shadow: 0 0 0 1px rgba(250,201,184,0.08), 0 8px 28px rgba(0,0,0,0.35);
+}
+
+/* "Read More" links and category counts get warm almond-tinted hover */
+.vg-page main article a:hover h3,
+.vg-page main article:hover h3 {
+  color: #FAC9B8 !important;
+  transition: color .25s ease;
+}
+
+/* Italic accent word in headings — keep crimson by default, but allow .italic-warm
+   variant in almond on hero/Elite pages where it should feel softer */
+.vg-page em.italic-warm { color: #FAC9B8 !important; }
+
+/* Neighborhood / property card hover — subtle salmon border lift */
+.vg-page .vg-neighborhood-card:hover,
+.vg-page article.vg-card:hover {
+  border-color: rgba(219,138,116,0.40) !important;
+  box-shadow: 0 8px 28px rgba(219,138,116,0.06);
+}
+
+/* === End palette accents === */
 }
 html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#0a0a0a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
 
@@ -288,32 +349,32 @@ body > .vg-page {
 .vg-badge { display:inline-flex; align-items:center; font-family:'Montserrat',sans-serif; font-weight:700; font-size:10px; letter-spacing:1.8px; text-transform:uppercase; padding:6px 12px; border:1px solid rgba(166,25,46,0.3); background:rgba(166,25,46,0.1); color:#d2203a; border-radius:2px; }
 .vg-badge.gold { color:#d4a93a; background:rgba(184,149,42,0.1); border-color:rgba(184,149,42,0.4); }
 .vg-badge.elite { color:#a78bff; background:rgba(139,96,255,0.15); border-color:rgba(139,96,255,0.4); }
-.vg-badge.silver { color:#d1d1d1; background:rgba(209,209,209,0.08); border-color:rgba(209,209,209,0.25); }
+.vg-badge.silver { color:#BEBBBB; background:rgba(190,187,187,0.08); border-color:rgba(190,187,187,0.25); }
 .vg-badge.neutral { color:#a6a6a6; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1); }
-.vg-text-silver { color:#d1d1d1 !important; }
-.vg-divider-silver { border-top:1px solid rgba(209,209,209,0.18) !important; }
+.vg-text-silver { color:#BEBBBB !important; }
+.vg-divider-silver { border-top:1px solid rgba(190,187,187,0.18) !important; }
 .vg-button-primary { display:inline-block; background-color:#a6192e !important; color:#fff !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; font-size:11px !important; border-radius:2px !important; padding:14px 28px !important; text-decoration:none; }
 .vg-button-primary:hover { background-color:#d2203a !important; }
-.vg-button-outline { display:inline-block; background-color:transparent !important; color:#d1d1d1 !important; border:1px solid rgba(209,209,209,0.35) !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; font-size:11px !important; border-radius:2px !important; padding:14px 28px !important; text-decoration:none; }
+.vg-button-outline { display:inline-block; background-color:transparent !important; color:#BEBBBB !important; border:1px solid rgba(190,187,187,0.35) !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; font-size:11px !important; border-radius:2px !important; padding:14px 28px !important; text-decoration:none; }
 .vg-button-outline:hover { color:#fff !important; border-color:#d2203a !important; background-color:rgba(210,32,58,0.08) !important; }
 .vg-button-elite { display:inline-block; background-color:#8b60ff !important; color:#fff !important; font-family:'Montserrat',sans-serif !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; font-size:11px !important; border-radius:2px !important; padding:14px 28px !important; text-decoration:none; }
 .vg-button-elite:hover { background-color:#a78bff !important; }
 h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:300; color:#fff; }
 
-/* === Silver remap & accents: weave #d1d1d1 throughout the body === */
+/* === Silver remap & accents: weave #BEBBBB throughout the body === */
 .vg-page [style*="color:#a6a6a6"],
 .vg-page [style*="color: #a6a6a6"],
-.vg-page [style*="color:rgba(255,255,255,0.9)"] { color: #d1d1d1 !important; }
-.vg-page p, .vg-page main p { color: #d1d1d1 !important; }
-.vg-page main li, .vg-page main figcaption, .vg-page main blockquote { color: #d1d1d1 !important; }
+.vg-page [style*="color:rgba(255,255,255,0.9)"] { color: #BEBBBB !important; }
+.vg-page p, .vg-page main p { color: #BEBBBB !important; }
+.vg-page main li, .vg-page main figcaption, .vg-page main blockquote { color: #BEBBBB !important; }
 
 /* Silver hairlines on common hairline borders */
 .vg-page [style*="border:1px solid rgba(255,255,255,0.08)"],
 .vg-page [style*="border-top:1px solid rgba(255,255,255,0.08)"],
 .vg-page [style*="border-bottom:1px solid rgba(255,255,255,0.08)"] {
-  border-color: rgba(209,209,209,0.22) !important;
+  border-color: rgba(190,187,187,0.22) !important;
 }
-.vg-page .vg-card { border-color: rgba(209,209,209,0.22) !important; }
+.vg-page .vg-card { border-color: rgba(190,187,187,0.22) !important; }
 
 /* Section heading accent line (crimson → silver gradient) under every h2 inside main */
 .vg-page main h2::after {
@@ -322,36 +383,36 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
   width:64px;
   height:2px;
   margin-top:18px;
-  background:linear-gradient(90deg, #d2203a 0%, #d1d1d1 100%);
+  background:linear-gradient(90deg, #d2203a 0%, #BEBBBB 100%);
 }
 .vg-page main [style*="text-align:center"] h2::after,
 .vg-page main h2[style*="text-align:center"]::after { margin-left:auto; margin-right:auto; }
 
 /* Eyebrow / small caps labels — silver on even cards for visual rhythm */
 .vg-page div[style*="display:grid"] > *:nth-child(even) [style*="color:#d2203a"]:not(em):not(.vg-button-primary):not(.vg-button-outline):not(.vg-button-elite) {
-  color: #d1d1d1 !important;
+  color: #BEBBBB !important;
 }
 
 /* Top hairline on every section divides them with a subtle silver line */
-.vg-page main > section + section { border-top: 1px solid rgba(209,209,209,0.10); }
+.vg-page main > section + section { border-top: 1px solid rgba(190,187,187,0.10); }
 
 /* Force silver on the property-card location and meta lines */
 .vg-page a[href^="/properties/"] > div:last-child > div:nth-child(3),
-.vg-page a[href^="/properties/"] > div:last-child > div:last-child { color: #d1d1d1 !important; }
+.vg-page a[href^="/properties/"] > div:last-child > div:last-child { color: #BEBBBB !important; }
 
 /* === VG site header (injected at top of every page) === */
-.vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(209,209,209,0.18); }
+.vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(190,187,187,0.18); }
 .vg-header__inner { max-width:1440px; margin:0 auto; height:72px; padding:0 clamp(16px, 3vw, 32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .vg-header__brand { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; letter-spacing:3px; color:#fff; text-decoration:none; display:inline-flex; gap:8px; align-items:baseline; white-space:nowrap; }
 .vg-header__brand .vg-mark { color:#d2203a; }
 .vg-header__nav { display:none; gap:clamp(14px, 1.8vw, 28px); align-items:center; }
-.vg-header__nav a { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; transition:color .15s; white-space:nowrap; }
+.vg-header__nav a { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:#BEBBBB; text-decoration:none; transition:color .15s; white-space:nowrap; }
 .vg-header__nav a:hover { color:#fff; }
 .vg-header__cta { display:none; align-items:center; gap:16px; }
-.vg-header__phone { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#d1d1d1; text-decoration:none; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.vg-header__phone { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#BEBBBB; text-decoration:none; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
 .vg-header__phone:hover { color:#fff; }
 .vg-header__cta .vg-button-primary { padding:10px 20px !important; font-size:10px !important; }
-.vg-header__menu-toggle { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; background:transparent; border:1px solid rgba(209,209,209,0.3); color:#d1d1d1; cursor:pointer; border-radius:2px; }
+.vg-header__menu-toggle { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; background:transparent; border:1px solid rgba(190,187,187,0.3); color:#BEBBBB; cursor:pointer; border-radius:2px; }
 .vg-header__menu-toggle svg { width:20px; height:20px; }
 @media (min-width:900px) {
   .vg-header__nav, .vg-header__cta { display:inline-flex; }
@@ -359,31 +420,31 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 }
 
 /* === VG site footer === */
-.vg-footer { margin-top:96px; background:#050505; border-top:1px solid rgba(209,209,209,0.18); padding:64px clamp(16px, 4vw, 48px) 32px; }
+.vg-footer { margin-top:96px; background:#050505; border-top:1px solid rgba(190,187,187,0.18); padding:64px clamp(16px, 4vw, 48px) 32px; }
 .vg-footer__grid { max-width:1440px; margin:0 auto; display:grid; gap:48px; grid-template-columns:1fr; }
 @media (min-width:640px) { .vg-footer__grid { grid-template-columns:repeat(2,1fr); } }
 @media (min-width:900px) { .vg-footer__grid { grid-template-columns:repeat(3,1fr); } }
 @media (min-width:1200px) { .vg-footer__grid { grid-template-columns:1.2fr 1fr 1fr 1fr 1fr; } }
 .vg-footer h4 { font-family:'Montserrat',sans-serif !important; font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin:0 0 20px; }
-.vg-footer a { color:#d1d1d1; text-decoration:none; font-size:13px; line-height:1.9; }
+.vg-footer a { color:#BEBBBB; text-decoration:none; font-size:13px; line-height:1.9; }
 .vg-footer a:hover { color:#fff; }
 .vg-footer__col ul { list-style:none; padding:0; margin:0; }
-.vg-footer__contact p { color:#d1d1d1; font-size:13px; line-height:1.7; margin:8px 0; }
+.vg-footer__contact p { color:#BEBBBB; font-size:13px; line-height:1.7; margin:8px 0; }
 .vg-footer__contact .vg-mark { color:#d2203a; }
 
 /* Neighborhoods sitemap row */
-.vg-footer__sitemap { max-width:1440px; margin:56px auto 0; padding-top:32px; border-top:1px solid rgba(209,209,209,0.18); }
+.vg-footer__sitemap { max-width:1440px; margin:56px auto 0; padding-top:32px; border-top:1px solid rgba(190,187,187,0.18); }
 .vg-footer__sitemap h4 { font-family:'Montserrat',sans-serif !important; font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin:0 0 18px; }
 .vg-footer__neighborhoods { display:grid; gap:6px 24px; grid-template-columns:repeat(2, 1fr); }
 @media (min-width:640px) { .vg-footer__neighborhoods { grid-template-columns:repeat(3, 1fr); } }
 @media (min-width:900px) { .vg-footer__neighborhoods { grid-template-columns:repeat(4, 1fr); } }
 @media (min-width:1200px) { .vg-footer__neighborhoods { grid-template-columns:repeat(6, 1fr); } }
 .vg-footer__neighborhoods a { color:#a6a6a6; text-decoration:none; font-size:12px; line-height:1.8; transition:color .15s; }
-.vg-footer__neighborhoods a:hover { color:#d1d1d1; }
+.vg-footer__neighborhoods a:hover { color:#BEBBBB; }
 
-.vg-footer__bottom { max-width:1440px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(209,209,209,0.18); display:flex; flex-direction:column; gap:20px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
+.vg-footer__bottom { max-width:1440px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(190,187,187,0.18); display:flex; flex-direction:column; gap:20px; align-items:center; justify-content:space-between; font-size:12px; color:#a6a6a6; }
 .vg-footer__bottom a { color:#a6a6a6; text-decoration:none; }
-.vg-footer__bottom a:hover { color:#d1d1d1; }
+.vg-footer__bottom a:hover { color:#BEBBBB; }
 @media (min-width:768px) { .vg-footer__bottom { flex-direction:row; } }
 
 /* Social icons */
@@ -391,7 +452,7 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-footer__social a {
   display:inline-flex; align-items:center; justify-content:center;
   width:36px; height:36px; border-radius:50%;
-  border:1px solid rgba(209,209,209,0.25);
+  border:1px solid rgba(190,187,187,0.25);
   color:#a6a6a6;
   transition: color .15s, border-color .15s, background-color .15s, transform .15s;
 }
@@ -469,7 +530,7 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 24px rgba(210,32,58,0.45), 0 2px 6px rgba(0,0,0,0.4);
-  border: 2px solid rgba(209,209,209,0.25);
+  border: 2px solid rgba(190,187,187,0.25);
   text-decoration: none;
   transition: transform .15s, background-color .15s, box-shadow .15s;
 }
@@ -478,7 +539,7 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(210,32,58,0.55), 0 2px 6px rgba(0,0,0,0.4);
 }
-.vg-chat-bubble:focus-visible { outline: 2px solid #d1d1d1; outline-offset: 3px; }
+.vg-chat-bubble:focus-visible { outline: 2px solid #BEBBBB; outline-offset: 3px; }
 
 /* === Make the palette tokens visible throughout the page body === */
 /* Pewter #A6A6A6 — tertiary metadata / micro-text */
@@ -496,12 +557,12 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-page main td,
 .vg-page main blockquote,
 .vg-page main .vg-text-silver {
-  color: #d1d1d1 !important;
+  color: #BEBBBB !important;
 }
 /* Subtle silver-tinted background panel on every other section for depth */
 .vg-page main > section:nth-of-type(even) {
   background-color: #0d0d0d !important;
-  background-image: linear-gradient(180deg, rgba(209,209,209,0.025), rgba(209,209,209,0)) !important;
+  background-image: linear-gradient(180deg, rgba(190,187,187,0.025), rgba(190,187,187,0)) !important;
 }
 .vg-page main > section:nth-of-type(odd) {
   background-color: #0a0a0a !important;
@@ -513,11 +574,11 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-page input:not([type]),
 .vg-page textarea,
 .vg-page select {
-  border-color: rgba(209,209,209,0.30) !important;
+  border-color: rgba(190,187,187,0.30) !important;
 }
 .vg-page input:focus,
 .vg-page textarea:focus,
 .vg-page select:focus {
-  border-color: #d1d1d1 !important;
+  border-color: #BEBBBB !important;
   outline: none;
 }
