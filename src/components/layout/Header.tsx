@@ -71,8 +71,8 @@ export function Header() {
     <header
       className="sticky top-0 z-50 border-b backdrop-blur"
       style={{
-        backgroundColor: "rgba(10,10,10,0.95)",
-        borderBottomColor: "rgba(166,25,46,0.3)",
+        backgroundColor: "rgba(47,36,58,0.95)",
+        borderBottomColor: "rgba(219,138,116,0.3)",
       }}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 md:px-10">

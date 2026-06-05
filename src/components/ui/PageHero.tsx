@@ -21,7 +21,7 @@ export function PageHero({
           {parts[0]}
           <em
             className={variant === "elite" ? "italic" : "italic-accent"}
-            style={variant === "elite" ? { color: "#a78bff" } : undefined}
+            style={variant === "elite" ? { color: "#fac9b8" } : undefined}
           >
             {italicWord}
           </em>
@@ -38,8 +38,8 @@ export function PageHero({
       style={{
         background:
           variant === "elite"
-            ? "linear-gradient(135deg, #050510 0%, #0a0520 50%, #0d0308 100%)"
-            : "linear-gradient(135deg, #0a0a0a 0%, #14060a 50%, #0a0a0a 100%)",
+            ? "linear-gradient(135deg, #1f1828 0%, #444054 50%, #2f243a 100%)"
+            : "linear-gradient(135deg, #2f243a 0%, #3a2e47 50%, #2f243a 100%)",
       }}
     >
       <div className="absolute inset-0 diagonal-lines opacity-40 pointer-events-none" />
@@ -48,7 +48,7 @@ export function PageHero({
           {eyebrow && (
             <div
               className="eyebrow mb-5"
-              style={variant === "elite" ? { color: "#a78bff" } : undefined}
+              style={variant === "elite" ? { color: "#fac9b8" } : undefined}
             >
               {eyebrow}
             </div>

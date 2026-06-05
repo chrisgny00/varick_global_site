@@ -110,12 +110,12 @@ export function ConciergeChat({ mode = "default" }: { mode?: "default" | "elite"
                     ? {
                         backgroundColor:
                           mode === "elite"
-                            ? "rgba(139,96,255,0.12)"
-                            : "rgba(210,32,58,0.12)",
+                            ? "rgba(250,201,184,0.12)"
+                            : "rgba(219,138,116,0.14)",
                         borderColor:
                           mode === "elite"
-                            ? "rgba(139,96,255,0.3)"
-                            : "rgba(210,32,58,0.3)",
+                            ? "rgba(250,201,184,0.3)"
+                            : "rgba(219,138,116,0.3)",
                       }
                     : {}
                 }

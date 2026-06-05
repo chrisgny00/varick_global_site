@@ -35,7 +35,7 @@ export default function AgentsPage() {
                   className="aspect-[4/5] relative overflow-hidden flex items-center justify-center"
                   style={{
                     background:
-                      "linear-gradient(135deg, #14060a 0%, #0a0a0a 50%, #1a0a14 100%)",
+                      "linear-gradient(135deg, #3a2e47 0%, #2f243a 50%, #3a2e47 100%)",
                   }}
                 >
                   <div className="diagonal-lines absolute inset-0 opacity-50" />

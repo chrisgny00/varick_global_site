@@ -15,7 +15,7 @@ export function Hero() {
       className="relative min-h-[92vh] flex items-center overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #0a0a0a 0%, #1a0508 50%, #0a0a0a 100%)",
+          "linear-gradient(135deg, #2f243a 0%, #3a2e47 50%, #2f243a 100%)",
       }}
     >
       <div
@@ -26,7 +26,7 @@ export function Hero() {
         className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-30"
         style={{
           background:
-            "radial-gradient(circle, rgba(166,25,46,0.25) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(219,138,116,0.25) 0%, transparent 70%)",
         }}
         aria-hidden
       />

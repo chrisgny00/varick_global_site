@@ -45,7 +45,7 @@ export function PropertyMatcher() {
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at top right, rgba(139,96,255,0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(166,25,46,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse at top right, rgba(250,201,184,0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(219,138,116,0.14) 0%, transparent 60%)",
         }}
       />
       <div className="relative">

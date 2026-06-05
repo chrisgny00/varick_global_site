@@ -33,7 +33,7 @@ export default async function AgentPage({ params }: { params: Promise<{ slug: st
         className="pt-24 pb-16 md:pt-32"
         style={{
           background:
-            "linear-gradient(135deg, #0a0a0a 0%, #14060a 50%, #0a0a0a 100%)",
+            "linear-gradient(135deg, #2f243a 0%, #3a2e47 50%, #2f243a 100%)",
         }}
       >
         <Container>

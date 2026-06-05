@@ -1,23 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vg-crimson: #a6192e;
-  --color-vg-vivid: #d2203a;
-  --color-vg-onyx: #111111;
-  --color-vg-void: #000000;
-  --color-vg-pewter: #a6a6a6;
-  --color-vg-silver: #d1d1d1;
+  --color-vg-crimson: #db8a74;
+  --color-vg-vivid: #db8a74;
+  --color-vg-almond: #fac9b8;
+  --color-vg-onyx: #2f243a;
+  --color-vg-void: #1f1828;
+  --color-vg-pewter: #bebbbb;
+  --color-vg-silver: #bebbbb;
   --color-vg-cream: #f5f2ed;
   --color-vg-gold: #b8952a;
   --color-vg-gold-light: #d4a93a;
   --color-vg-white: #ffffff;
-  --color-vg-deep: #0a0a0a;
-  --color-vg-card: #0f0f0f;
+  --color-vg-deep: #2f243a;
+  --color-vg-card: #3a2e47;
 
-  --color-elite-violet: #8b60ff;
-  --color-elite-violet-light: #a78bff;
-  --color-elite-navy: #050510;
-  --color-elite-navy-2: #0f0520;
+  --color-elite-violet: #fac9b8;
+  --color-elite-violet-light: #fac9b8;
+  --color-elite-navy: #1f1828;
+  --color-elite-navy-2: #444054;
 
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-raleway), "Raleway", system-ui, sans-serif;
@@ -31,10 +32,10 @@
 }
 
 :root {
-  --background: #0a0a0a;
+  --background: #2f243a;
   --foreground: #ffffff;
   --hairline: rgba(255, 255, 255, 0.08);
-  --crimson-border: rgba(166, 25, 46, 0.3);
+  --crimson-border: rgba(219, 138, 116, 0.3);
 }
 
 html,
