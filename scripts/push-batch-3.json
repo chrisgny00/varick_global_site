@@ -1,0 +1,62 @@
+[
+  {
+    "generated_slug": "commercial",
+    "live_id": 4246,
+    "live_url": "/commercial/",
+    "title": "Commercial"
+  },
+  {
+    "generated_slug": "advisors",
+    "live_id": 4326,
+    "live_url": "/advisors/",
+    "title": "Advisors"
+  },
+  {
+    "generated_slug": "services/landlord-representation",
+    "live_id": 4333,
+    "live_url": "/services/landlord-representation/",
+    "title": "Landlord Representation"
+  },
+  {
+    "generated_slug": "services/investment-sales",
+    "live_id": 4338,
+    "live_url": "/services/investment-sales/",
+    "title": "Investment Sales"
+  },
+  {
+    "generated_slug": "services/hoa-sale",
+    "live_id": 4342,
+    "live_url": "/services/hoa-sale/",
+    "title": "HOA Sale & Termination"
+  },
+  {
+    "generated_slug": "neighborhoods/miami-beach",
+    "live_id": 4348,
+    "live_url": "/neighborhoods/miami-beach/",
+    "title": "Miami Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/bal-harbour",
+    "live_id": 4352,
+    "live_url": "/neighborhoods/bal-harbour/",
+    "title": "Bal Harbour Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/hallandale-beach",
+    "live_id": 4358,
+    "live_url": "/neighborhoods/hallandale-beach/",
+    "title": "Hallandale Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/plantation",
+    "live_id": 4362,
+    "live_url": "/neighborhoods/plantation/",
+    "title": "Plantation Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/west-palm-beach",
+    "live_id": 4370,
+    "live_url": "/neighborhoods/west-palm-beach/",
+    "title": "West Palm Beach Real Estate"
+  }
+]

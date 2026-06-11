@@ -1,0 +1,62 @@
+[
+  {
+    "generated_slug": "services",
+    "live_id": 4321,
+    "live_url": "/services/",
+    "title": "Services"
+  },
+  {
+    "generated_slug": "properties",
+    "live_id": 4279,
+    "live_url": "/properties/",
+    "title": "Properties"
+  },
+  {
+    "generated_slug": "services/tenant-representation",
+    "live_id": 4332,
+    "live_url": "/services/tenant-representation/",
+    "title": "Tenant Representation"
+  },
+  {
+    "generated_slug": "services/foreclosures",
+    "live_id": 4337,
+    "live_url": "/services/foreclosures/",
+    "title": "Foreclosures"
+  },
+  {
+    "generated_slug": "services/receivership",
+    "live_id": 4341,
+    "live_url": "/services/receivership/",
+    "title": "Receivership"
+  },
+  {
+    "generated_slug": "agents/gloria-grullon",
+    "live_id": 4347,
+    "live_url": "/advisors/gloria-grullon/",
+    "title": "Gloria Grullon"
+  },
+  {
+    "generated_slug": "neighborhoods/aventura",
+    "live_id": 4351,
+    "live_url": "/neighborhoods/aventura/",
+    "title": "Aventura Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/hollywood",
+    "live_id": 4356,
+    "live_url": "/neighborhoods/hollywood/",
+    "title": "Hollywood Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/davie",
+    "live_id": 4361,
+    "live_url": "/neighborhoods/davie/",
+    "title": "Davie Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/wellington",
+    "live_id": 4366,
+    "live_url": "/neighborhoods/wellington/",
+    "title": "Wellington Real Estate"
+  }
+]

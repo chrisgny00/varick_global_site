@@ -1,0 +1,314 @@
+[
+  {
+    "generated_slug": "home",
+    "live_id": 4313,
+    "live_url": "/",
+    "title": "Home"
+  },
+  {
+    "generated_slug": "about",
+    "live_id": 4320,
+    "live_url": "/about/",
+    "title": "About"
+  },
+  {
+    "generated_slug": "services",
+    "live_id": 4321,
+    "live_url": "/services/",
+    "title": "Services"
+  },
+  {
+    "generated_slug": "commercial",
+    "live_id": 4246,
+    "live_url": "/commercial/",
+    "title": "Commercial"
+  },
+  {
+    "generated_slug": "hoa",
+    "live_id": 4323,
+    "live_url": "/hoa/",
+    "title": "HOA Division"
+  },
+  {
+    "generated_slug": "land",
+    "live_id": 4324,
+    "live_url": "/land/",
+    "title": "Land"
+  },
+  {
+    "generated_slug": "elite",
+    "live_id": 4325,
+    "live_url": "/elite/",
+    "title": "VG Elite"
+  },
+  {
+    "generated_slug": "properties",
+    "live_id": 4279,
+    "live_url": "/properties/",
+    "title": "Properties"
+  },
+  {
+    "generated_slug": "advisors",
+    "live_id": 4326,
+    "live_url": "/advisors/",
+    "title": "Advisors"
+  },
+  {
+    "generated_slug": "contact",
+    "live_id": 1100,
+    "live_url": "/contact/",
+    "title": "Contact"
+  },
+  {
+    "generated_slug": "faq",
+    "live_id": 4328,
+    "live_url": "/faq/",
+    "title": "FAQ"
+  },
+  {
+    "generated_slug": "privacy",
+    "live_id": 748,
+    "live_url": "/privacy/",
+    "title": "Privacy"
+  },
+  {
+    "generated_slug": "services/tenant-representation",
+    "live_id": 4332,
+    "live_url": "/services/tenant-representation/",
+    "title": "Tenant Representation"
+  },
+  {
+    "generated_slug": "services/landlord-representation",
+    "live_id": 4333,
+    "live_url": "/services/landlord-representation/",
+    "title": "Landlord Representation"
+  },
+  {
+    "generated_slug": "services/buyer-seller-services",
+    "live_id": 4334,
+    "live_url": "/services/buyer-seller-services/",
+    "title": "Buyer & Seller Services"
+  },
+  {
+    "generated_slug": "services/lease-renewal",
+    "live_id": 4335,
+    "live_url": "/services/lease-renewal/",
+    "title": "Lease Renewal"
+  },
+  {
+    "generated_slug": "services/valuation",
+    "live_id": 4336,
+    "live_url": "/services/valuation/",
+    "title": "Valuation & Advisory"
+  },
+  {
+    "generated_slug": "services/foreclosures",
+    "live_id": 4337,
+    "live_url": "/services/foreclosures/",
+    "title": "Foreclosures"
+  },
+  {
+    "generated_slug": "services/investment-sales",
+    "live_id": 4338,
+    "live_url": "/services/investment-sales/",
+    "title": "Investment Sales"
+  },
+  {
+    "generated_slug": "services/new-development",
+    "live_id": 4534,
+    "live_url": "/services/new-development/",
+    "title": "New Development"
+  },
+  {
+    "generated_slug": "services/hoa-advisory",
+    "live_id": 4340,
+    "live_url": "/services/hoa-advisory/",
+    "title": "HOA Advisory"
+  },
+  {
+    "generated_slug": "services/hoa-conversions",
+    "live_id": 4343,
+    "live_url": "/services/hoa-conversions/",
+    "title": "HOA Conversions"
+  },
+  {
+    "generated_slug": "services/receivership",
+    "live_id": 4341,
+    "live_url": "/services/receivership/",
+    "title": "Receivership"
+  },
+  {
+    "generated_slug": "services/hoa-sale",
+    "live_id": 4342,
+    "live_url": "/services/hoa-sale/",
+    "title": "HOA Sale & Termination"
+  },
+  {
+    "generated_slug": "agents/chris-gallego",
+    "live_id": 4344,
+    "live_url": "/advisors/chris-gallego/",
+    "title": "Chris Gallego"
+  },
+  {
+    "generated_slug": "agents/nina-vazquez",
+    "live_id": 4345,
+    "live_url": "/advisors/nina-vazquez/",
+    "title": "Nina Vazquez"
+  },
+  {
+    "generated_slug": "agents/alfredo-morejon",
+    "live_id": 4346,
+    "live_url": "/advisors/alfredo-morejon/",
+    "title": "Alfredo Morejon"
+  },
+  {
+    "generated_slug": "agents/gloria-grullon",
+    "live_id": 4347,
+    "live_url": "/advisors/gloria-grullon/",
+    "title": "Gloria Grullon"
+  },
+  {
+    "generated_slug": "neighborhoods/miami-beach",
+    "live_id": 4348,
+    "live_url": "/neighborhoods/miami-beach/",
+    "title": "Miami Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/brickell",
+    "live_id": 4349,
+    "live_url": "/neighborhoods/brickell/",
+    "title": "Brickell Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/coconut-grove",
+    "live_id": 4350,
+    "live_url": "/neighborhoods/coconut-grove/",
+    "title": "Coconut Grove Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/coral-gables",
+    "live_id": 4357,
+    "live_url": "/neighborhoods/coral-gables/",
+    "title": "Coral Gables Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/aventura",
+    "live_id": 4351,
+    "live_url": "/neighborhoods/aventura/",
+    "title": "Aventura Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/bal-harbour",
+    "live_id": 4352,
+    "live_url": "/neighborhoods/bal-harbour/",
+    "title": "Bal Harbour Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/surfside",
+    "live_id": 4353,
+    "live_url": "/neighborhoods/surfside/",
+    "title": "Surfside Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/key-biscayne",
+    "live_id": 4354,
+    "live_url": "/neighborhoods/key-biscayne/",
+    "title": "Key Biscayne Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/fort-lauderdale",
+    "live_id": 4355,
+    "live_url": "/neighborhoods/fort-lauderdale/",
+    "title": "Fort Lauderdale Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/hollywood",
+    "live_id": 4356,
+    "live_url": "/neighborhoods/hollywood/",
+    "title": "Hollywood Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/hallandale-beach",
+    "live_id": 4358,
+    "live_url": "/neighborhoods/hallandale-beach/",
+    "title": "Hallandale Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/pompano-beach",
+    "live_id": 4359,
+    "live_url": "/neighborhoods/pompano-beach/",
+    "title": "Pompano Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/deerfield-beach",
+    "live_id": 4369,
+    "live_url": "/neighborhoods/deerfield-beach/",
+    "title": "Deerfield Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/weston",
+    "live_id": 4360,
+    "live_url": "/neighborhoods/weston/",
+    "title": "Weston Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/davie",
+    "live_id": 4361,
+    "live_url": "/neighborhoods/davie/",
+    "title": "Davie Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/plantation",
+    "live_id": 4362,
+    "live_url": "/neighborhoods/plantation/",
+    "title": "Plantation Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/palm-beach",
+    "live_id": 4363,
+    "live_url": "/neighborhoods/palm-beach/",
+    "title": "Palm Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/boca-raton",
+    "live_id": 4364,
+    "live_url": "/neighborhoods/boca-raton/",
+    "title": "Boca Raton Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/delray-beach",
+    "live_id": 4365,
+    "live_url": "/neighborhoods/delray-beach/",
+    "title": "Delray Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/wellington",
+    "live_id": 4366,
+    "live_url": "/neighborhoods/wellington/",
+    "title": "Wellington Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/west-palm-beach",
+    "live_id": 4370,
+    "live_url": "/neighborhoods/west-palm-beach/",
+    "title": "West Palm Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/jupiter",
+    "live_id": 4367,
+    "live_url": "/neighborhoods/jupiter/",
+    "title": "Jupiter Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/palm-beach-gardens",
+    "live_id": 4371,
+    "live_url": "/neighborhoods/palm-beach-gardens/",
+    "title": "Palm Beach Gardens Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/boynton-beach",
+    "live_id": 4368,
+    "live_url": "/neighborhoods/boynton-beach/",
+    "title": "Boynton Beach Real Estate"
+  }
+]

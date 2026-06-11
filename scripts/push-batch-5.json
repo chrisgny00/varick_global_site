@@ -1,0 +1,62 @@
+[
+  {
+    "generated_slug": "land",
+    "live_id": 4324,
+    "live_url": "/land/",
+    "title": "Land"
+  },
+  {
+    "generated_slug": "faq",
+    "live_id": 4328,
+    "live_url": "/faq/",
+    "title": "FAQ"
+  },
+  {
+    "generated_slug": "services/lease-renewal",
+    "live_id": 4335,
+    "live_url": "/services/lease-renewal/",
+    "title": "Lease Renewal"
+  },
+  {
+    "generated_slug": "services/hoa-advisory",
+    "live_id": 4340,
+    "live_url": "/services/hoa-advisory/",
+    "title": "HOA Advisory"
+  },
+  {
+    "generated_slug": "agents/nina-vazquez",
+    "live_id": 4345,
+    "live_url": "/advisors/nina-vazquez/",
+    "title": "Nina Vazquez"
+  },
+  {
+    "generated_slug": "neighborhoods/coconut-grove",
+    "live_id": 4350,
+    "live_url": "/neighborhoods/coconut-grove/",
+    "title": "Coconut Grove Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/key-biscayne",
+    "live_id": 4354,
+    "live_url": "/neighborhoods/key-biscayne/",
+    "title": "Key Biscayne Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/deerfield-beach",
+    "live_id": 4369,
+    "live_url": "/neighborhoods/deerfield-beach/",
+    "title": "Deerfield Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/boca-raton",
+    "live_id": 4364,
+    "live_url": "/neighborhoods/boca-raton/",
+    "title": "Boca Raton Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/palm-beach-gardens",
+    "live_id": 4371,
+    "live_url": "/neighborhoods/palm-beach-gardens/",
+    "title": "Palm Beach Gardens Real Estate"
+  }
+]

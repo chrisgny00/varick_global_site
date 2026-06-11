@@ -1,0 +1,62 @@
+[
+  {
+    "generated_slug": "hoa",
+    "live_id": 4323,
+    "live_url": "/hoa/",
+    "title": "HOA Division"
+  },
+  {
+    "generated_slug": "contact",
+    "live_id": 1100,
+    "live_url": "/contact/",
+    "title": "Contact"
+  },
+  {
+    "generated_slug": "services/buyer-seller-services",
+    "live_id": 4334,
+    "live_url": "/services/buyer-seller-services/",
+    "title": "Buyer & Seller Services"
+  },
+  {
+    "generated_slug": "services/new-development",
+    "live_id": 4534,
+    "live_url": "/services/new-development/",
+    "title": "New Development"
+  },
+  {
+    "generated_slug": "agents/chris-gallego",
+    "live_id": 4344,
+    "live_url": "/advisors/chris-gallego/",
+    "title": "Chris Gallego"
+  },
+  {
+    "generated_slug": "neighborhoods/brickell",
+    "live_id": 4349,
+    "live_url": "/neighborhoods/brickell/",
+    "title": "Brickell Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/surfside",
+    "live_id": 4353,
+    "live_url": "/neighborhoods/surfside/",
+    "title": "Surfside Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/pompano-beach",
+    "live_id": 4359,
+    "live_url": "/neighborhoods/pompano-beach/",
+    "title": "Pompano Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/palm-beach",
+    "live_id": 4363,
+    "live_url": "/neighborhoods/palm-beach/",
+    "title": "Palm Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/jupiter",
+    "live_id": 4367,
+    "live_url": "/neighborhoods/jupiter/",
+    "title": "Jupiter Real Estate"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "generated_slug": "about",
+    "live_id": 4320,
+    "live_url": "/about/",
+    "title": "About"
+  },
+  {
+    "generated_slug": "elite",
+    "live_id": 4325,
+    "live_url": "/elite/",
+    "title": "VG Elite"
+  },
+  {
+    "generated_slug": "privacy",
+    "live_id": 748,
+    "live_url": "/privacy/",
+    "title": "Privacy"
+  },
+  {
+    "generated_slug": "services/valuation",
+    "live_id": 4336,
+    "live_url": "/services/valuation/",
+    "title": "Valuation & Advisory"
+  },
+  {
+    "generated_slug": "services/hoa-conversions",
+    "live_id": 4343,
+    "live_url": "/services/hoa-conversions/",
+    "title": "HOA Conversions"
+  },
+  {
+    "generated_slug": "agents/alfredo-morejon",
+    "live_id": 4346,
+    "live_url": "/advisors/alfredo-morejon/",
+    "title": "Alfredo Morejon"
+  },
+  {
+    "generated_slug": "neighborhoods/coral-gables",
+    "live_id": 4357,
+    "live_url": "/neighborhoods/coral-gables/",
+    "title": "Coral Gables Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/fort-lauderdale",
+    "live_id": 4355,
+    "live_url": "/neighborhoods/fort-lauderdale/",
+    "title": "Fort Lauderdale Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/weston",
+    "live_id": 4360,
+    "live_url": "/neighborhoods/weston/",
+    "title": "Weston Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/delray-beach",
+    "live_id": 4365,
+    "live_url": "/neighborhoods/delray-beach/",
+    "title": "Delray Beach Real Estate"
+  },
+  {
+    "generated_slug": "neighborhoods/boynton-beach",
+    "live_id": 4368,
+    "live_url": "/neighborhoods/boynton-beach/",
+    "title": "Boynton Beach Real Estate"
+  }
+]
