@@ -6,8 +6,8 @@
   --color-vg-almond: #fac9b8;
   --color-vg-onyx: #2f243a;
   --color-vg-void: #1f1828;
-  --color-vg-pewter: #bebbbb;
-  --color-vg-silver: #bebbbb;
+  --color-vg-pewter: #d1d1d1;
+  --color-vg-silver: #d1d1d1;
   --color-vg-cream: #f5f2ed;
   --color-vg-gold: #b8952a;
   --color-vg-gold-light: #d4a93a;
@@ -34,7 +34,7 @@
 :root {
   --background: #2f243a;
   --foreground: #ffffff;
-  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline: rgba(209, 209, 209, 0.18);
   --crimson-border: rgba(219, 138, 116, 0.3);
 }
 

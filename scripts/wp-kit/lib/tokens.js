@@ -2,18 +2,19 @@
 // Keep these in sync with src/app/globals.css.
 
 const colors = [
-  { _id: "primary", title: "Primary", color: "#a6192e" }, // vg-crimson
-  { _id: "secondary", title: "Accent", color: "#d2203a" }, // vg-vivid
+  { _id: "primary", title: "Primary", color: "#db8a74" }, // vg-salmon
+  { _id: "secondary", title: "Accent", color: "#db8a74" }, // vg-salmon (same)
   { _id: "text", title: "Text", color: "#ffffff" },
-  { _id: "accent", title: "Pewter", color: "#a6a6a6" },
-  { _id: "vg_onyx", title: "Onyx", color: "#111111" },
-  { _id: "vg_deep", title: "Deep", color: "#0a0a0a" },
-  { _id: "vg_card", title: "Card", color: "#0f0f0f" },
+  { _id: "accent", title: "Silver", color: "#d1d1d1" },
+  { _id: "vg_onyx", title: "Onyx", color: "#2f243a" },
+  { _id: "vg_deep", title: "Deep", color: "#2f243a" },
+  { _id: "vg_card", title: "Card", color: "#3a2e47" },
+  { _id: "vg_almond", title: "Almond", color: "#fac9b8" },
   { _id: "vg_gold", title: "Gold", color: "#b8952a" },
   { _id: "vg_gold_light", title: "Gold Light", color: "#d4a93a" },
-  { _id: "elite_violet", title: "Elite Violet", color: "#8b60ff" },
-  { _id: "elite_violet_light", title: "Elite Violet Light", color: "#a78bff" },
-  { _id: "elite_navy", title: "Elite Navy", color: "#050510" },
+  { _id: "elite_violet", title: "Elite Almond", color: "#fac9b8" },
+  { _id: "elite_violet_light", title: "Elite Almond Light", color: "#fac9b8" },
+  { _id: "elite_navy", title: "Elite Midnight", color: "#1f1828" },
 ];
 
 const fonts = [
@@ -26,10 +27,30 @@ const fonts = [
 // CSS that the kit injects into Elementor's Site Settings → Custom CSS.
 const customCss = `
 /* Varick Global — kit custom CSS */
+
+/* === Hide WordPress.com promo bars + "Powered by" credits ===
+   Overshoots intentionally — wpcom rotates action-bar class names. */
+#wpadminbar, .masterbar, .wpcom-masterbar, .wp-com-bar,
+.wpcom-action-bar, .wpcom-upgrade-nudge, .upgrade-nudge, .notice-upgrade,
+#actionbar, .actionbar, .wpcom-actionbar, .cta-link-side-bar,
+.wpcom-gift-banner, .wpcom-gift, .wpcom-jitm, .jitm-banner,
+[class*="wpcom-action-bar"], [class*="wpcom-upgrade"], [class*="wpcom-gift"],
+[class*="wpcom-jitm"], [class*="gift-author"], [class*="gift-the-author"],
+[class*="enjoy-this-site"], [class*="actionbar"], [id*="actionbar"],
+iframe[name*="wpcom"], iframe[name*="actionbar"], iframe[name*="action-bar"],
+iframe[src*="wordpress.com/action-bar"],
+iframe[src*="wordpress.com/wp-content/mu-plugins/actionbar"],
+iframe[src*="public-api.wordpress.com"],
+iframe[title*="WordPress.com"], iframe[title*="Action Bar"],
+.powered-by-wpcom, .wpcom-site-credit, .site-info-wpcom,
+[class*="powered-by-wordpress"], [class*="powered-by-wp"]
+{ display: none !important; visibility: hidden !important; height: 0 !important; }
+html, body { margin-top: 0 !important; padding-top: 0 !important; }
+
 :root {
-  --vg-hairline: rgba(255,255,255,0.08);
+  --vg-hairline: rgba(209,209,209,0.18);
 }
-body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; font-weight: 300; }
+body { background: #2f243a; color: #ffffff; font-family: "Raleway", sans-serif; font-weight: 300; }
 
 .eyebrow, .eyebrow * {
   font-family: "Montserrat", sans-serif !important;
@@ -37,11 +58,11 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
   font-size: 11px !important;
   letter-spacing: 3px !important;
   text-transform: uppercase !important;
-  color: #d2203a !important;
+  color: #db8a74 !important;
   line-height: 1 !important;
 }
 
-.italic-accent em, .italic-accent i { color: #d2203a; font-style: italic; }
+.italic-accent em, .italic-accent i { color: #db8a74; font-style: italic; }
 
 .diagonal-lines {
   background-image: repeating-linear-gradient(
@@ -54,12 +75,12 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
 }
 
 .vg-card {
-  background: #0f0f0f;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #3a2e47;
+  border: 1px solid rgba(209,209,209,0.18);
   border-radius: 4px;
 }
 
-.vg-card.accent-top { border-top: 2px solid #a6192e; }
+.vg-card.accent-top { border-top: 2px solid #db8a74; }
 
 .vg-badge {
   display: inline-flex;
@@ -70,22 +91,22 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
   letter-spacing: 1.8px;
   text-transform: uppercase;
   padding: 6px 12px;
-  border: 1px solid rgba(166,25,46,0.3);
-  background: rgba(166,25,46,0.1);
-  color: #d2203a;
+  border: 1px solid rgba(219,138,116,0.3);
+  background: rgba(219,138,116,0.1);
+  color: #db8a74;
   border-radius: 2px;
 }
 
 .vg-badge.gold { color: #d4a93a; background: rgba(184,149,42,0.1); border-color: rgba(184,149,42,0.4); }
-.vg-badge.elite { color: #a78bff; background: rgba(139,96,255,0.15); border-color: rgba(139,96,255,0.4); }
-.vg-badge.neutral { color: #a6a6a6; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+.vg-badge.elite { color: #fac9b8; background: rgba(250,201,184,0.15); border-color: rgba(250,201,184,0.4); }
+.vg-badge.neutral { color: #d1d1d1; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
 
-.elite-page { background: #050510 !important; }
-.elite-page .italic-accent em, .elite-page .italic-accent i { color: #a78bff; }
-.elite-page .eyebrow, .elite-page .eyebrow * { color: #a78bff !important; }
+.elite-page { background: #1f1828 !important; }
+.elite-page .italic-accent em, .elite-page .italic-accent i { color: #fac9b8; }
+.elite-page .eyebrow, .elite-page .eyebrow * { color: #fac9b8 !important; }
 
 .vg-button-primary {
-  background-color: #a6192e !important;
+  background-color: #db8a74 !important;
   color: #ffffff !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 700 !important;
@@ -95,7 +116,7 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
   border-radius: 2px !important;
   padding: 14px 28px !important;
 }
-.vg-button-primary:hover { background-color: #d2203a !important; }
+.vg-button-primary:hover { background-color: #db8a74 !important; }
 
 .vg-button-outline {
   background-color: transparent !important;
@@ -109,10 +130,10 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
   border-radius: 2px !important;
   padding: 14px 28px !important;
 }
-.vg-button-outline:hover { color: #d2203a !important; border-color: #d2203a !important; }
+.vg-button-outline:hover { color: #db8a74 !important; border-color: #db8a74 !important; }
 
 .vg-button-elite {
-  background-color: #8b60ff !important;
+  background-color: #fac9b8 !important;
   color: #ffffff !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 700 !important;
@@ -122,7 +143,7 @@ body { background: #0a0a0a; color: #ffffff; font-family: "Raleway", sans-serif; 
   border-radius: 2px !important;
   padding: 14px 28px !important;
 }
-.vg-button-elite:hover { background-color: #a78bff !important; }
+.vg-button-elite:hover { background-color: #fac9b8 !important; }
 
 h1, h2, h3, h4, h5 { font-family: "Cormorant Garamond", serif !important; font-weight: 300; color: #ffffff; }
 .elementor-heading-title { font-family: "Cormorant Garamond", serif !important; }

@@ -45,8 +45,8 @@ const socials = [
 export function Footer() {
   return (
     <footer
-      className="mt-32 border-t bg-[#1f1828]"
-      style={{ borderTopColor: "rgba(219,138,116,0.3)" }}
+      className="mt-32 border-t-2 bg-[#2a2335]"
+      style={{ borderTopColor: "#d1d1d1" }}
     >
       <div className="mx-auto max-w-[1440px] px-6 md:px-12 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -86,7 +86,7 @@ export function Footer() {
 
         <div
           className="mt-14 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-6"
-          style={{ borderTopColor: "rgba(255,255,255,0.08)" }}
+          style={{ borderTopColor: "rgba(209,209,209,0.25)" }}
         >
           <p className="text-xs text-vg-pewter">
             © {new Date().getFullYear()} Varick Global Real Estate Advisors. All rights reserved.
@@ -99,7 +99,8 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-vg-pewter hover:border-vg-vivid hover:text-vg-vivid transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border text-vg-pewter hover:border-vg-vivid hover:text-vg-vivid transition-colors"
+                style={{ borderColor: "rgba(209,209,209,0.3)" }}
               >
                 <Icon className="h-4 w-4" />
               </a>

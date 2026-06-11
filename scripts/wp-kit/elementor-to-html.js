@@ -145,7 +145,7 @@ function pageTitle(t) {
 // Cache buster: append commit short hash so browser treats every CSS update as
 // a new resource. Without this, browsers (especially incognito) hold onto the
 // previous CSS file indefinitely even after Ctrl+Shift+R.
-const CDN_CSS_VERSION = '20260602a';
+const CDN_CSS_VERSION = '20260611a';
 const CDN_CSS_URL = `https://cdn.jsdelivr.net/gh/chrisgny00/varick_global_site@claude%2Fbuild-site-from-markdown-MQkyz/dist/vg-style.css?v=${CDN_CSS_VERSION}`;
 
 // Copy the canonical CSS file into dist on each build so the CDN stays in sync.
@@ -339,13 +339,23 @@ const RELOCATOR_JS = `
     Array.prototype.slice.call(document.body.children).forEach(function (n) {
       if (!n || !n.textContent) return;
       var t = n.textContent.trim();
-      if (/(Enjoy this site|Gift the author|WordPress\\.com plan)/i.test(t) && t.length < 300) {
+      if (/(Enjoy this site|Gift the author|WordPress\\.com plan|Powered by WordPress)/i.test(t) && t.length < 400) {
+        n.remove();
+      }
+    });
+    // Walk one level deeper — wpcom sometimes nests the promo inside an outer wrapper.
+    Array.prototype.slice.call(document.body.querySelectorAll('body > * > div, body > * > section, body > * > aside')).forEach(function (n) {
+      if (!n || !n.textContent) return;
+      var t = n.textContent.trim();
+      if (/(Enjoy this site|Gift the author|WordPress\\.com plan)/i.test(t) && t.length < 400) {
         n.remove();
       }
     });
     // The promo can also live above <body> in the html root — null out top margins.
     document.documentElement.style.marginTop = '0';
     document.body.style.marginTop = '0';
+    document.documentElement.style.paddingTop = '0';
+    document.body.style.paddingTop = '0';
   }
   function vgRelocate() {
     var page = document.querySelector('.vg-page');
@@ -397,7 +407,13 @@ const RELOCATOR_JS = `
     vgInit();
   }
   // Re-scrub on a short interval in case WordPress.com injects the promo bar after load.
-  var n = 0; var t = setInterval(function () { vgScrubChrome(); if (++n > 20) clearInterval(t); }, 250);
+  // 60 ticks × 250ms = 15s of vigilance, enough for late-loading scripts.
+  var n = 0; var t = setInterval(function () { vgScrubChrome(); if (++n > 60) clearInterval(t); }, 250);
+  // Belt-and-suspenders: MutationObserver removes any wpcom chrome injected later.
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(function () { vgScrubChrome(); })
+      .observe(document.documentElement, { childList: true, subtree: true });
+  }
 })();
 </script>
 `;
