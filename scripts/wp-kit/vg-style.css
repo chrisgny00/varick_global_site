@@ -7,8 +7,8 @@
    rule only applies AFTER the JS adds `.vg-relocated` to body, by
    which time our .vg-page is guaranteed a direct child of body.
    ================================================================ */
-html { background:#2f243a !important; }
-body { background:#2f243a !important; margin:0 !important; padding:0 !important; }
+html { background:#362b43 !important; }
+body { background:#362b43 !important; margin:0 !important; padding:0 !important; }
 
 /* AFTER JS relocates our .vg-page to body, hide everything else */
 body.vg-relocated > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
@@ -277,8 +277,8 @@ article,
   margin-right: 0 !important;
 }
 
-body { padding:0 !important; margin:0 !important; overflow-x:hidden; background:#2f243a !important; }
-html { background:#2f243a !important; }
+body { padding:0 !important; margin:0 !important; overflow-x:hidden; background:#362b43 !important; }
+html { background:#362b43 !important; }
 
 /* === Houzez selector reset (kept in case theme switches back) === */
 header#header, header.site-header, footer#footer, footer.site-footer,
@@ -287,28 +287,28 @@ header#header, header.site-header, footer#footer, footer.site-footer,
 
 /* === Varick page styles === */
 :root {
-  --vg-hairline: rgba(255,255,255,0.08);
-  --vg-deep: #2f243a;
-  --vg-card: #3a2e47;
+  --vg-hairline: rgba(209,209,209,0.22);
+  --vg-deep: #362b43;
+  --vg-card: #463956;
   --vg-crimson: #db8a74;
   --vg-vivid: #db8a74;
-  --vg-silver: #d1d1d1;      /* warmer silver — replaces #d1d1d1 */
+  --vg-silver: #d1d1d1;
   --vg-pewter: #d1d1d1;
-  --vg-midnight: #2F243A;    /* moody dark with warmth — section variant */
-  --vg-almond: #FAC9B8;      /* warm peach-blush highlight — decorative accents */
-  --vg-salmon: #DB8A74;      /* warm complementary to crimson — hover states */
+  --vg-midnight: #362b43;    /* lifted midnight — softer than #2f243a */
+  --vg-almond: #fac9b8;
+  --vg-salmon: #db8a74;
 }
 
-/* === New palette accents (subtle, deliberate) === */
+/* === New palette accents (lighter pass) === */
 
-/* Every other main section gets the Midnight Violet tint instead of pure black.
-   Adds depth on long pages without losing the dark luxury feel. */
+/* Every other main section: lift the base to brighter grape so the page
+   doesn't read as one dark slab. Subtle silver wash on top adds dimension. */
 .vg-page main > section:nth-of-type(even) {
-  background-color: #3a2e47 !important;   /* vintage grape lift */
-  background-image: linear-gradient(180deg, rgba(47,36,58,0.18), rgba(47,36,58,0)) !important;
+  background-color: #463956 !important;   /* lifted vintage grape */
+  background-image: linear-gradient(180deg, rgba(209,209,209,0.05), rgba(209,209,209,0)) !important;
 }
 .vg-page main > section:nth-of-type(odd) {
-  background-color: #2f243a !important;
+  background-color: #362b43 !important;   /* lifted midnight base */
 }
 
 /* Outline buttons hover → warm salmon instead of cold white */
@@ -356,7 +356,7 @@ header#header, header.site-header, footer#footer, footer.site-footer,
 
 /* === End palette accents === */
 }
-html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#2f243a !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
+html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#362b43 !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
 
 /* The single most important rule: break out of any container WordPress puts around us. */
 body > .vg-page,
@@ -392,7 +392,7 @@ body > .vg-page {
 }
 
 .eyebrow { font-family:'Montserrat',sans-serif !important; font-weight:700 !important; font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#db8a74 !important; line-height:1 !important; }
-.vg-card { background:#3a2e47; border:1px solid rgba(209,209,209,0.18); border-radius:4px; }
+.vg-card { background:#463956; border:1px solid rgba(209,209,209,0.30); border-radius:4px; }
 .vg-card.accent-top { border-top:2px solid #db8a74; }
 .vg-badge { display:inline-flex; align-items:center; font-family:'Montserrat',sans-serif; font-weight:700; font-size:10px; letter-spacing:1.8px; text-transform:uppercase; padding:6px 12px; border:1px solid rgba(219,138,116,0.3); background:rgba(219,138,116,0.1); color:#db8a74; border-radius:2px; }
 .vg-badge.gold { color:#d4a93a; background:rgba(184,149,42,0.1); border-color:rgba(184,149,42,0.4); }
@@ -449,7 +449,7 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 .vg-page a[href^="/properties/"] > div:last-child > div:last-child { color: #d1d1d1 !important; }
 
 /* === VG site header (injected at top of every page) === */
-.vg-header { position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(209,209,209,0.18); }
+.vg-header { position:sticky; top:0; z-index:50; background:rgba(54,43,67,0.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid rgba(209,209,209,0.30); }
 .vg-header__inner { max-width:1440px; margin:0 auto; height:72px; padding:0 clamp(16px, 3vw, 32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .vg-header__brand { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; letter-spacing:3px; color:#fff; text-decoration:none; display:inline-flex; gap:8px; align-items:baseline; white-space:nowrap; }
 .vg-header__brand .vg-mark { color:#db8a74; }
@@ -468,7 +468,7 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 }
 
 /* === VG site footer === */
-.vg-footer { margin-top:96px; background:#2a2335; border-top:2px solid #d1d1d1; padding:64px clamp(16px, 4vw, 48px) 32px; }
+.vg-footer { margin-top:96px; background:#3d3149; border-top:2px solid #d1d1d1; padding:64px clamp(16px, 4vw, 48px) 32px; }
 .vg-footer__grid { max-width:1440px; margin:0 auto; display:grid; gap:48px; grid-template-columns:1fr; }
 @media (min-width:640px) { .vg-footer__grid { grid-template-columns:repeat(2,1fr); } }
 @media (min-width:900px) { .vg-footer__grid { grid-template-columns:repeat(3,1fr); } }
@@ -609,11 +609,11 @@ h1,h2,h3,h4,h5 { font-family:'Cormorant Garamond',serif !important; font-weight:
 }
 /* Subtle silver-tinted background panel on every other section for depth */
 .vg-page main > section:nth-of-type(even) {
-  background-color: #3a2e47 !important;
-  background-image: linear-gradient(180deg, rgba(209,209,209,0.025), rgba(209,209,209,0)) !important;
+  background-color: #463956 !important;
+  background-image: linear-gradient(180deg, rgba(209,209,209,0.06), rgba(209,209,209,0)) !important;
 }
 .vg-page main > section:nth-of-type(odd) {
-  background-color: #2f243a !important;
+  background-color: #362b43 !important;
 }
 /* Search form / input fields — silver border */
 .vg-page input[type="text"],

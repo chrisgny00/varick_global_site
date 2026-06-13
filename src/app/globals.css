@@ -4,21 +4,21 @@
   --color-vg-crimson: #db8a74;
   --color-vg-vivid: #db8a74;
   --color-vg-almond: #fac9b8;
-  --color-vg-onyx: #2f243a;
-  --color-vg-void: #1f1828;
+  --color-vg-onyx: #362b43;
+  --color-vg-void: #2a2335;
   --color-vg-pewter: #d1d1d1;
   --color-vg-silver: #d1d1d1;
   --color-vg-cream: #f5f2ed;
   --color-vg-gold: #b8952a;
   --color-vg-gold-light: #d4a93a;
   --color-vg-white: #ffffff;
-  --color-vg-deep: #2f243a;
-  --color-vg-card: #3a2e47;
+  --color-vg-deep: #362b43;
+  --color-vg-card: #463956;
 
   --color-elite-violet: #fac9b8;
   --color-elite-violet-light: #fac9b8;
-  --color-elite-navy: #1f1828;
-  --color-elite-navy-2: #444054;
+  --color-elite-navy: #2a2335;
+  --color-elite-navy-2: #514c63;
 
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-raleway), "Raleway", system-ui, sans-serif;
@@ -32,9 +32,9 @@
 }
 
 :root {
-  --background: #2f243a;
+  --background: #362b43;
   --foreground: #ffffff;
-  --hairline: rgba(209, 209, 209, 0.18);
+  --hairline: rgba(209, 209, 209, 0.22);
   --crimson-border: rgba(219, 138, 116, 0.3);
 }
 
