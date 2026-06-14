@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "services",
+    "id": 4321
+  },
+  {
+    "slug": "services/foreclosures",
+    "id": 4337
+  },
+  {
+    "slug": "neighborhoods/pompano-beach",
+    "id": 4359
+  },
+  {
+    "slug": "neighborhoods/weston",
+    "id": 4360
+  },
+  {
+    "slug": "neighborhoods/brickell",
+    "id": 4349
+  }
+]
