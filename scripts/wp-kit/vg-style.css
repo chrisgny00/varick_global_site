@@ -10,6 +10,14 @@
 html { background:#362b43 !important; }
 body { background:#362b43 !important; margin:0 !important; padding:0 !important; }
 
+/* SAFETY: .vg-page must always render. Belt-and-suspenders against any
+   chrome-killer rule or theme override that might try to hide it. */
+.vg-page, body > .vg-page, body.vg-relocated > .vg-page {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* AFTER JS relocates our .vg-page to body, hide everything else */
 body.vg-relocated > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
   display:none !important;
@@ -355,7 +363,6 @@ header#header, header.site-header, footer#footer, footer.site-footer,
 }
 
 /* === End palette accents === */
-}
 html, body, .elementor-canvas, .page-template-elementor_canvas, .vg-page { background:#362b43 !important; color:#fff; font-family:'Raleway',sans-serif; font-weight:300; }
 
 /* The single most important rule: break out of any container WordPress puts around us. */
