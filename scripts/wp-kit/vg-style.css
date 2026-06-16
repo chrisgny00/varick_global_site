@@ -10,17 +10,69 @@
 html { background:#362b43 !important; }
 body { background:#362b43 !important; margin:0 !important; padding:0 !important; }
 
-/* SAFETY: .vg-page must always render. Belt-and-suspenders against any
-   chrome-killer rule or theme override that might try to hide it. */
-.vg-page, body > .vg-page, body.vg-relocated > .vg-page {
+/* SAFETY: .vg-page must ALWAYS render, no matter what.
+   This is the single most important rule — it overrides every theme
+   default, JS relocator failure, or aggressive chrome-killer side effect. */
+.vg-page,
+body .vg-page,
+body > .vg-page,
+body.vg-relocated > .vg-page,
+.entry-content .vg-page,
+.wp-block-post-content .vg-page,
+.post-content .vg-page,
+main .vg-page {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  position: relative !important;
 }
+.vg-page * {
+  visibility: visible !important;
+}
+/* Make sure body itself never goes display:none accidentally */
+body { display: block !important; }
 
-/* AFTER JS relocates our .vg-page to body, hide everything else */
-body.vg-relocated > *:not(.vg-page):not(script):not(style):not(#wpadminbar) {
-  display:none !important;
+/* TARGETED chrome removal — no broad "hide everything" rules.
+   We list every wpcom/theme chrome class explicitly so .vg-page and
+   its wrappers are never collateral damage. */
+#wpadminbar,
+.masterbar,
+.wpcom-masterbar,
+.wp-com-bar,
+.wpcom-action-bar,
+.wpcom-upgrade-nudge,
+.upgrade-nudge,
+.notice-upgrade,
+.atavist-bar,
+#actionbar,
+.actionbar,
+.wpcom-actionbar,
+.cta-link-side-bar,
+.wpcom-gift-banner,
+.wpcom-gift,
+.wpcom-jitm,
+.jitm-banner,
+[class*="wpcom-action-bar"],
+[class*="wpcom-upgrade"],
+[class*="wpcom-gift"],
+[class*="wpcom-jitm"],
+[class*="gift-author"],
+[class*="gift-the-author"],
+[class*="enjoy-this-site"],
+iframe[name*="wpcom"],
+iframe[name*="actionbar"],
+iframe[name*="action-bar"],
+iframe[src*="wordpress.com/action-bar"],
+iframe[src*="public-api.wordpress.com"],
+iframe[title*="WordPress.com"],
+iframe[title*="Action Bar"],
+.powered-by-wpcom,
+.wpcom-site-credit,
+.site-info-wpcom,
+[class*="powered-by-wordpress"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
 }
 
 /* BEFORE JS runs (no .vg-relocated class yet), use specific selectors
