@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "about",
+    "id": 4320,
+    "url": "/about/"
+  },
+  {
+    "slug": "properties",
+    "id": 4279,
+    "url": "/properties/"
+  },
+  {
+    "slug": "services/landlord-representation",
+    "id": 4333,
+    "url": "/services/landlord-representation/"
+  },
+  {
+    "slug": "services/new-development",
+    "id": 4534,
+    "url": "/services/new-development/"
+  },
+  {
+    "slug": "agents/nina-vazquez",
+    "id": 4345,
+    "url": "/advisors/nina-vazquez/"
+  },
+  {
+    "slug": "neighborhoods/coral-gables",
+    "id": 4357,
+    "url": "/neighborhoods/coral-gables/"
+  },
+  {
+    "slug": "neighborhoods/hollywood",
+    "id": 4356,
+    "url": "/neighborhoods/hollywood/"
+  },
+  {
+    "slug": "neighborhoods/plantation",
+    "id": 4362,
+    "url": "/neighborhoods/plantation/"
+  },
+  {
+    "slug": "neighborhoods/jupiter",
+    "id": 4367,
+    "url": "/neighborhoods/jupiter/"
+  }
+]

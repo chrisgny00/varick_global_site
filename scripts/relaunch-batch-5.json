@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "hoa",
+    "id": 4323,
+    "url": "/hoa/"
+  },
+  {
+    "slug": "faq",
+    "id": 4328,
+    "url": "/faq/"
+  },
+  {
+    "slug": "services/valuation",
+    "id": 4336,
+    "url": "/services/valuation/"
+  },
+  {
+    "slug": "services/receivership",
+    "id": 4341,
+    "url": "/services/receivership/"
+  },
+  {
+    "slug": "neighborhoods/miami-beach",
+    "id": 4348,
+    "url": "/neighborhoods/miami-beach/"
+  },
+  {
+    "slug": "neighborhoods/surfside",
+    "id": 4353,
+    "url": "/neighborhoods/surfside/"
+  },
+  {
+    "slug": "neighborhoods/deerfield-beach",
+    "id": 4369,
+    "url": "/neighborhoods/deerfield-beach/"
+  },
+  {
+    "slug": "neighborhoods/delray-beach",
+    "id": 4365,
+    "url": "/neighborhoods/delray-beach/"
+  }
+]

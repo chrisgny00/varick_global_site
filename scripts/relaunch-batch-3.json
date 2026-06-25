@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "services",
+    "id": 4321,
+    "url": "/services/"
+  },
+  {
+    "slug": "advisors",
+    "id": 4326,
+    "url": "/advisors/"
+  },
+  {
+    "slug": "services/buyer-seller-services",
+    "id": 4334,
+    "url": "/services/buyer-seller-services/"
+  },
+  {
+    "slug": "services/hoa-advisory",
+    "id": 4340,
+    "url": "/services/hoa-advisory/"
+  },
+  {
+    "slug": "agents/alfredo-morejon",
+    "id": 4346,
+    "url": "/advisors/alfredo-morejon/"
+  },
+  {
+    "slug": "neighborhoods/aventura",
+    "id": 4351,
+    "url": "/neighborhoods/aventura/"
+  },
+  {
+    "slug": "neighborhoods/hallandale-beach",
+    "id": 4358,
+    "url": "/neighborhoods/hallandale-beach/"
+  },
+  {
+    "slug": "neighborhoods/palm-beach",
+    "id": 4363,
+    "url": "/neighborhoods/palm-beach/"
+  },
+  {
+    "slug": "neighborhoods/palm-beach-gardens",
+    "id": 4371,
+    "url": "/neighborhoods/palm-beach-gardens/"
+  }
+]

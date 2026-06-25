@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "home",
+    "id": 4313,
+    "url": "/"
+  },
+  {
+    "slug": "elite",
+    "id": 4325,
+    "url": "/elite/"
+  },
+  {
+    "slug": "services/tenant-representation",
+    "id": 4332,
+    "url": "/services/tenant-representation/"
+  },
+  {
+    "slug": "services/investment-sales",
+    "id": 4338,
+    "url": "/services/investment-sales/"
+  },
+  {
+    "slug": "agents/chris-gallego",
+    "id": 4344,
+    "url": "/advisors/chris-gallego/"
+  },
+  {
+    "slug": "neighborhoods/coconut-grove",
+    "id": 4350,
+    "url": "/neighborhoods/coconut-grove/"
+  },
+  {
+    "slug": "neighborhoods/fort-lauderdale",
+    "id": 4355,
+    "url": "/neighborhoods/fort-lauderdale/"
+  },
+  {
+    "slug": "neighborhoods/davie",
+    "id": 4361,
+    "url": "/neighborhoods/davie/"
+  },
+  {
+    "slug": "neighborhoods/west-palm-beach",
+    "id": 4370,
+    "url": "/neighborhoods/west-palm-beach/"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "slug": "home",
+    "id": 4313,
+    "url": "/"
+  },
+  {
+    "slug": "about",
+    "id": 4320,
+    "url": "/about/"
+  },
+  {
+    "slug": "services",
+    "id": 4321,
+    "url": "/services/"
+  },
+  {
+    "slug": "commercial",
+    "id": 4246,
+    "url": "/commercial/"
+  },
+  {
+    "slug": "hoa",
+    "id": 4323,
+    "url": "/hoa/"
+  },
+  {
+    "slug": "land",
+    "id": 4324,
+    "url": "/land/"
+  },
+  {
+    "slug": "elite",
+    "id": 4325,
+    "url": "/elite/"
+  },
+  {
+    "slug": "properties",
+    "id": 4279,
+    "url": "/properties/"
+  },
+  {
+    "slug": "advisors",
+    "id": 4326,
+    "url": "/advisors/"
+  },
+  {
+    "slug": "contact",
+    "id": 1100,
+    "url": "/contact/"
+  },
+  {
+    "slug": "faq",
+    "id": 4328,
+    "url": "/faq/"
+  },
+  {
+    "slug": "privacy",
+    "id": 748,
+    "url": "/privacy/"
+  },
+  {
+    "slug": "services/tenant-representation",
+    "id": 4332,
+    "url": "/services/tenant-representation/"
+  },
+  {
+    "slug": "services/landlord-representation",
+    "id": 4333,
+    "url": "/services/landlord-representation/"
+  },
+  {
+    "slug": "services/buyer-seller-services",
+    "id": 4334,
+    "url": "/services/buyer-seller-services/"
+  },
+  {
+    "slug": "services/lease-renewal",
+    "id": 4335,
+    "url": "/services/lease-renewal/"
+  },
+  {
+    "slug": "services/valuation",
+    "id": 4336,
+    "url": "/services/valuation/"
+  },
+  {
+    "slug": "services/foreclosures",
+    "id": 4337,
+    "url": "/services/foreclosures/"
+  },
+  {
+    "slug": "services/investment-sales",
+    "id": 4338,
+    "url": "/services/investment-sales/"
+  },
+  {
+    "slug": "services/new-development",
+    "id": 4534,
+    "url": "/services/new-development/"
+  },
+  {
+    "slug": "services/hoa-advisory",
+    "id": 4340,
+    "url": "/services/hoa-advisory/"
+  },
+  {
+    "slug": "services/hoa-conversions",
+    "id": 4343,
+    "url": "/services/hoa-conversions/"
+  },
+  {
+    "slug": "services/receivership",
+    "id": 4341,
+    "url": "/services/receivership/"
+  },
+  {
+    "slug": "services/hoa-sale",
+    "id": 4342,
+    "url": "/services/hoa-sale/"
+  },
+  {
+    "slug": "agents/chris-gallego",
+    "id": 4344,
+    "url": "/advisors/chris-gallego/"
+  },
+  {
+    "slug": "agents/nina-vazquez",
+    "id": 4345,
+    "url": "/advisors/nina-vazquez/"
+  },
+  {
+    "slug": "agents/alfredo-morejon",
+    "id": 4346,
+    "url": "/advisors/alfredo-morejon/"
+  },
+  {
+    "slug": "agents/gloria-grullon",
+    "id": 4347,
+    "url": "/advisors/gloria-grullon/"
+  },
+  {
+    "slug": "neighborhoods/miami-beach",
+    "id": 4348,
+    "url": "/neighborhoods/miami-beach/"
+  },
+  {
+    "slug": "neighborhoods/brickell",
+    "id": 4349,
+    "url": "/neighborhoods/brickell/"
+  },
+  {
+    "slug": "neighborhoods/coconut-grove",
+    "id": 4350,
+    "url": "/neighborhoods/coconut-grove/"
+  },
+  {
+    "slug": "neighborhoods/coral-gables",
+    "id": 4357,
+    "url": "/neighborhoods/coral-gables/"
+  },
+  {
+    "slug": "neighborhoods/aventura",
+    "id": 4351,
+    "url": "/neighborhoods/aventura/"
+  },
+  {
+    "slug": "neighborhoods/bal-harbour",
+    "id": 4352,
+    "url": "/neighborhoods/bal-harbour/"
+  },
+  {
+    "slug": "neighborhoods/surfside",
+    "id": 4353,
+    "url": "/neighborhoods/surfside/"
+  },
+  {
+    "slug": "neighborhoods/key-biscayne",
+    "id": 4354,
+    "url": "/neighborhoods/key-biscayne/"
+  },
+  {
+    "slug": "neighborhoods/fort-lauderdale",
+    "id": 4355,
+    "url": "/neighborhoods/fort-lauderdale/"
+  },
+  {
+    "slug": "neighborhoods/hollywood",
+    "id": 4356,
+    "url": "/neighborhoods/hollywood/"
+  },
+  {
+    "slug": "neighborhoods/hallandale-beach",
+    "id": 4358,
+    "url": "/neighborhoods/hallandale-beach/"
+  },
+  {
+    "slug": "neighborhoods/pompano-beach",
+    "id": 4359,
+    "url": "/neighborhoods/pompano-beach/"
+  },
+  {
+    "slug": "neighborhoods/deerfield-beach",
+    "id": 4369,
+    "url": "/neighborhoods/deerfield-beach/"
+  },
+  {
+    "slug": "neighborhoods/weston",
+    "id": 4360,
+    "url": "/neighborhoods/weston/"
+  },
+  {
+    "slug": "neighborhoods/davie",
+    "id": 4361,
+    "url": "/neighborhoods/davie/"
+  },
+  {
+    "slug": "neighborhoods/plantation",
+    "id": 4362,
+    "url": "/neighborhoods/plantation/"
+  },
+  {
+    "slug": "neighborhoods/palm-beach",
+    "id": 4363,
+    "url": "/neighborhoods/palm-beach/"
+  },
+  {
+    "slug": "neighborhoods/boca-raton",
+    "id": 4364,
+    "url": "/neighborhoods/boca-raton/"
+  },
+  {
+    "slug": "neighborhoods/delray-beach",
+    "id": 4365,
+    "url": "/neighborhoods/delray-beach/"
+  },
+  {
+    "slug": "neighborhoods/wellington",
+    "id": 4366,
+    "url": "/neighborhoods/wellington/"
+  },
+  {
+    "slug": "neighborhoods/west-palm-beach",
+    "id": 4370,
+    "url": "/neighborhoods/west-palm-beach/"
+  },
+  {
+    "slug": "neighborhoods/jupiter",
+    "id": 4367,
+    "url": "/neighborhoods/jupiter/"
+  },
+  {
+    "slug": "neighborhoods/palm-beach-gardens",
+    "id": 4371,
+    "url": "/neighborhoods/palm-beach-gardens/"
+  },
+  {
+    "slug": "neighborhoods/boynton-beach",
+    "id": 4368,
+    "url": "/neighborhoods/boynton-beach/"
+  }
+]

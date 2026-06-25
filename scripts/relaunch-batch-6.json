@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "land",
+    "id": 4324,
+    "url": "/land/"
+  },
+  {
+    "slug": "privacy",
+    "id": 748,
+    "url": "/privacy/"
+  },
+  {
+    "slug": "services/foreclosures",
+    "id": 4337,
+    "url": "/services/foreclosures/"
+  },
+  {
+    "slug": "services/hoa-sale",
+    "id": 4342,
+    "url": "/services/hoa-sale/"
+  },
+  {
+    "slug": "neighborhoods/brickell",
+    "id": 4349,
+    "url": "/neighborhoods/brickell/"
+  },
+  {
+    "slug": "neighborhoods/key-biscayne",
+    "id": 4354,
+    "url": "/neighborhoods/key-biscayne/"
+  },
+  {
+    "slug": "neighborhoods/weston",
+    "id": 4360,
+    "url": "/neighborhoods/weston/"
+  },
+  {
+    "slug": "neighborhoods/wellington",
+    "id": 4366,
+    "url": "/neighborhoods/wellington/"
+  }
+]
