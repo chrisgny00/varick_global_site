@@ -1,5 +1,56 @@
 # Varick Global — Reboot & Operations SOP
 
+---
+
+## CURRENT STATE — WordPress.com (as of 2026-07-14)
+
+**Site:** varickglobal.com  
+**Platform:** WordPress.com Atomic — site ID `220982231`  
+**Theme:** Twenty Twenty-Four (`pub/twentytwentyfour`) — **do not switch themes**  
+**CSS:** jsDelivr CDN from branch `claude/build-site-from-markdown-MQkyz`  
+**Pre-built HTML:** `/tmp/page_{id}.html` (52 files)  
+**Page map:** `scripts/relaunch-map.json`
+
+### Quick-fix: single blank page
+
+1. Identify the page ID from `scripts/relaunch-map.json`
+2. Push via MCP content-authoring tool:
+   - operation: `pages.update`
+   - params: `{"id": PAGE_ID, "status": "publish", "content": "<contents of /tmp/page_ID.html>", "user_confirmed": true}`
+3. Verify in incognito with `Ctrl+Shift+R`
+
+### Quick-fix: all pages blank (theme reset)
+
+```
+wpcom-mcp-site → theme.set → {"theme": "pub/twentytwentyfour"}
+```
+
+Then hard-reload in incognito. If still blank, re-push pages individually.
+
+### CSS cache bust (style changes)
+
+1. Edit `dist/vg-style.css`
+2. Bump version in all HTML files:
+   ```bash
+   VERSION=20260715a
+   for f in /tmp/page_*.html; do sed -i "s/v=20260620a/v=$VERSION/g" "$f"; done
+   ```
+3. Commit + push to `claude/build-site-from-markdown-MQkyz`
+4. Re-push affected pages via MCP
+
+### Page ID reference
+
+| Pages | IDs |
+|---|---|
+| Core (Home, About, Services, Commercial, HOA, Land, Elite, Properties, Advisors, Contact, FAQ, Privacy) | 4313, 4320, 4321, 4246, 4323, 4324, 4325, 4279, 4326, 1100, 4328, 748 |
+| Service sub-pages | 4332–4338, 4534, 4340–4343 |
+| Advisor profiles | 4344–4346 |
+| Miami-Dade neighborhoods | 4347–4353, 4357 |
+| Broward neighborhoods | 4354–4356, 4358–4362, 4369 |
+| Palm Beach neighborhoods | 4363–4368, 4370, 4371 |
+
+---
+
 > **Read this first.** This is the authoritative document for how the website runs, how to update it, and how to avoid the failure modes we hit during the WordPress.com phase. If something isn't in this doc, ask before doing it — that's how the previous problems happened.
 
 ---
