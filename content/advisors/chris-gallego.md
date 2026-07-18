@@ -1,13 +1,12 @@
 ---
-title: Chris Gallego
 slug: chris-gallego
-role: Founder & Principal Broker
-order: 1
-initials: CG
+name: Chris Gallego
+title: Founder & Principal Broker
 email: chris@varickglobal.com
 phone: "786.352.7547"
+image: /images/advisors/chris-gallego.jpg
 specialties: [Luxury Residential, Commercial Investment, HOA Advisory]
-photo: /images/advisors/chris-gallego.jpg
+order: 1
 seo:
   title: Chris Gallego — Founder, Varick Global
   description: Founder and principal broker of Varick Global, with two decades of South Florida real estate experience spanning luxury residential, commercial investment, and HOA advisory.
