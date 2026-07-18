@@ -14,8 +14,8 @@ export const colors = {
   vgCard: "#463956",
   eliteViolet: "#fac9b8",
   eliteVioletLight: "#fac9b8",
-  eliteNavy: "#1f1828",
-  eliteNavy2: "#444054",
+  eliteNavy: "#2a2335",
+  eliteNavy2: "#514c63",
 } as const;
 
 export const fonts = {

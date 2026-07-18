@@ -106,7 +106,7 @@ export default async function NeighborhoodPage({ params }: { params: Promise<{ s
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: "Home", url: "/" },
-              { name: "Neighborhoods", url: "/properties" },
+              { name: "Neighborhoods", url: "/neighborhoods" },
               { name: n.name, url: `/neighborhoods/${n.slug}` },
             ]),
           ),

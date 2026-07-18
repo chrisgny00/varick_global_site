@@ -63,7 +63,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": ["RealEstateAgent", "LocalBusiness"],
     name: siteConfig.name,
-    image: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}/logo.svg`,
     "@id": siteConfig.url,
     url: siteConfig.url,
     telephone: siteConfig.phone,
