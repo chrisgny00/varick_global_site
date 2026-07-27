@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vg-crimson: #db8a74;
-  --color-vg-vivid: #db8a74;
-  --color-vg-almond: #fac9b8;
-  --color-vg-onyx: #362b43;
-  --color-vg-void: #2a2335;
-  --color-vg-pewter: #d1d1d1;
+  --color-vg-crimson: #a6192e;
+  --color-vg-vivid: #d2203a;
+  --color-vg-almond: #d2203a;
+  --color-vg-onyx: #111111;
+  --color-vg-void: #000000;
+  --color-vg-pewter: #a6a6a6;
   --color-vg-silver: #d1d1d1;
-  --color-vg-cream: #f5f2ed;
-  --color-vg-gold: #b8952a;
-  --color-vg-gold-light: #d4a93a;
+  --color-vg-cream: #d1d1d1;
+  --color-vg-gold: #a6192e;
+  --color-vg-gold-light: #d2203a;
   --color-vg-white: #ffffff;
-  --color-vg-deep: #362b43;
-  --color-vg-card: #463956;
+  --color-vg-deep: #111111;
+  --color-vg-card: #1a1a1a;
 
-  --color-elite-violet: #fac9b8;
-  --color-elite-violet-light: #fac9b8;
-  --color-elite-navy: #2a2335;
-  --color-elite-navy-2: #514c63;
+  --color-elite-violet: #a6192e;
+  --color-elite-violet-light: #d2203a;
+  --color-elite-navy: #000000;
+  --color-elite-navy-2: #111111;
 
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-raleway), "Raleway", system-ui, sans-serif;
@@ -32,10 +32,10 @@
 }
 
 :root {
-  --background: #362b43;
+  --background: #111111;
   --foreground: #ffffff;
-  --hairline: rgba(209, 209, 209, 0.22);
-  --crimson-border: rgba(219, 138, 116, 0.3);
+  --hairline: rgba(209, 209, 209, 0.15);
+  --crimson-border: rgba(166, 25, 46, 0.35);
 }
 
 html,

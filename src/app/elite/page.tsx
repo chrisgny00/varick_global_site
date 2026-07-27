@@ -60,14 +60,14 @@ export default function ElitePage() {
         className="relative pt-36 pb-32 overflow-hidden"
         style={{
           background:
-            "linear-gradient(135deg, #1f1828 0%, #444054 50%, #2f243a 100%)",
+            "linear-gradient(135deg, #000000 0%, #111111 50%, #0a0a0a 100%)",
         }}
       >
         <div
           className="absolute inset-0 opacity-40 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at top right, rgba(250,201,184,0.22) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(184,149,42,0.12) 0%, transparent 60%)",
+              "radial-gradient(ellipse at top right, rgba(166,25,46,0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(166,25,46,0.08) 0%, transparent 60%)",
           }}
         />
         <div
@@ -87,7 +87,7 @@ export default function ElitePage() {
             </div>
             <h1 className="display-hero text-white">
               Exclusive Access.{" "}
-              <em className="italic" style={{ color: "#fac9b8" }}>
+              <em className="italic" style={{ color: "#d2203a" }}>
                 Extraordinary Living.
               </em>
             </h1>
@@ -107,14 +107,14 @@ export default function ElitePage() {
         </Container>
       </section>
 
-      <section className="py-20" style={{ background: "#1f1828" }}>
+      <section className="py-20" style={{ background: "#111111" }}>
         <Container>
           <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-5" style={{ color: "#fac9b8" }}>
+            <div className="eyebrow mb-5" style={{ color: "#d2203a" }}>
               Service Pillars
             </div>
             <h2 className="display-h2 text-white">
-              Three divisions. <em className="italic" style={{ color: "#fac9b8" }}>One standard.</em>
+              Three divisions. <em className="italic" style={{ color: "#d2203a" }}>One standard.</em>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -123,12 +123,12 @@ export default function ElitePage() {
                 key={p.id}
                 id={p.id}
                 className="bg-elite-navy-2 border rounded-[4px] p-8 relative overflow-hidden"
-                style={{ borderColor: "rgba(250,201,184,0.25)" }}
+                style={{ borderColor: "rgba(166,25,46,0.3)" }}
               >
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-elite-violet/15 border border-elite-violet/40 text-elite-violet-light mb-6">
                   <p.icon className="h-5 w-5" />
                 </div>
-                <div className="eyebrow mb-3" style={{ color: "#fac9b8" }}>
+                <div className="eyebrow mb-3" style={{ color: "#d2203a" }}>
                   {p.eyebrow}
                 </div>
                 <h3 className="display-h3 text-white">{p.title}</h3>
@@ -139,41 +139,41 @@ export default function ElitePage() {
         </Container>
       </section>
 
-      <section className="py-20" style={{ background: "#1f1828" }}>
+      <section className="py-20" style={{ background: "#111111" }}>
         <Container>
           <div
             className="border rounded-[4px] p-10 md:p-14 text-center"
             style={{
-              borderColor: "rgba(250,201,184,0.3)",
+              borderColor: "rgba(166,25,46,0.35)",
               background:
-                "linear-gradient(135deg, rgba(250,201,184,0.06) 0%, rgba(184,149,42,0.04) 100%)",
+                "linear-gradient(135deg, rgba(166,25,46,0.08) 0%, rgba(166,25,46,0.04) 100%)",
             }}
           >
-            <div className="font-accent text-[10px] font-bold uppercase tracking-[6px] mb-4" style={{ color: "#fac9b8" }}>
+            <div className="font-accent text-[10px] font-bold uppercase tracking-[6px] mb-4" style={{ color: "#d2203a" }}>
               Brand Lockup
             </div>
             <div className="font-display text-7xl md:text-8xl font-light text-white tracking-[8px]">
-              VG <em className="italic" style={{ color: "#fac9b8" }}>ELITE</em>
+              VG <em className="italic" style={{ color: "#d2203a" }}>ELITE</em>
             </div>
             <div className="mt-8 flex items-center justify-center gap-4">
-              <Swatch color="#db8a74" label="Salmon" />
-              <Swatch color="#fac9b8" label="Almond" />
-              <Swatch color="#b8952a" label="Gold" />
+              <Swatch color="#a6192e" label="Deep Red" />
+              <Swatch color="#d2203a" label="Vivid Red" />
+              <Swatch color="#111111" label="Near Black" />
               <Swatch color="#1f1828" label="Midnight" />
-              <Swatch color="#444054" label="Grape" />
+              <Swatch color="#a6a6a6" label="Mid Gray" />
             </div>
           </div>
         </Container>
       </section>
 
-      <section id="access" className="py-20" style={{ background: "#1f1828" }}>
+      <section id="access" className="py-20" style={{ background: "#111111" }}>
         <Container>
           <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-5" style={{ color: "#fac9b8" }}>
+            <div className="eyebrow mb-5" style={{ color: "#d2203a" }}>
               Access Tiers
             </div>
             <h2 className="display-h2 text-white">
-              What Elite <em className="italic" style={{ color: "#fac9b8" }}>access</em> looks like
+              What Elite <em className="italic" style={{ color: "#d2203a" }}>access</em> looks like
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -181,9 +181,9 @@ export default function ElitePage() {
               <div
                 key={t.title}
                 className="bg-elite-navy-2 border rounded-[4px] p-8"
-                style={{ borderColor: "rgba(250,201,184,0.25)" }}
+                style={{ borderColor: "rgba(166,25,46,0.3)" }}
               >
-                <t.icon className="h-6 w-6 mb-5" style={{ color: "#b8952a" }} />
+                <t.icon className="h-6 w-6 mb-5" style={{ color: "#a6192e" }} />
                 <h3 className="display-h3 text-white">{t.title}</h3>
                 <p className="mt-3 text-vg-pewter leading-relaxed">{t.desc}</p>
               </div>
@@ -196,14 +196,14 @@ export default function ElitePage() {
         id="inquiry"
         className="py-24"
         style={{
-          background: "linear-gradient(135deg, #1f1828 0%, #2f243a 100%)",
+          background: "linear-gradient(135deg, #000000 0%, #111111 100%)",
         }}
       >
         <Container>
           <div className="max-w-2xl mx-auto text-center">
             <Badge variant="elite">Private Inquiry</Badge>
             <h2 className="display-h2 text-white mt-5">
-              By <em className="italic" style={{ color: "#fac9b8" }}>invitation</em> only
+              By <em className="italic" style={{ color: "#d2203a" }}>invitation</em> only
             </h2>
             <p className="mt-5 text-vg-pewter">
               The VG Elite division operates by referral and invitation. Complete a brief private
@@ -221,7 +221,7 @@ export default function ElitePage() {
               placeholder="Full name"
               name="name"
               className="w-full bg-black/40 border px-4 py-3.5 text-white placeholder:text-vg-pewter focus:outline-none rounded-[2px]"
-              style={{ borderColor: "rgba(250,201,184,0.3)" }}
+              style={{ borderColor: "rgba(166,25,46,0.35)" }}
             />
             <input
               required
@@ -229,20 +229,20 @@ export default function ElitePage() {
               placeholder="Email"
               name="email"
               className="w-full bg-black/40 border px-4 py-3.5 text-white placeholder:text-vg-pewter focus:outline-none rounded-[2px]"
-              style={{ borderColor: "rgba(250,201,184,0.3)" }}
+              style={{ borderColor: "rgba(166,25,46,0.35)" }}
             />
             <input
               placeholder="Referred by (optional)"
               name="referral"
               className="w-full bg-black/40 border px-4 py-3.5 text-white placeholder:text-vg-pewter focus:outline-none rounded-[2px]"
-              style={{ borderColor: "rgba(250,201,184,0.3)" }}
+              style={{ borderColor: "rgba(166,25,46,0.35)" }}
             />
             <textarea
               required
               name="brief"
               placeholder="A brief, confidential description of how we can help"
               className="w-full bg-black/40 border px-4 py-3.5 text-white placeholder:text-vg-pewter min-h-[140px] focus:outline-none rounded-[2px]"
-              style={{ borderColor: "rgba(250,201,184,0.3)" }}
+              style={{ borderColor: "rgba(166,25,46,0.35)" }}
             />
             <ButtonLink href="mailto:info@varickglobal.com?subject=VG Elite Inquiry" variant="elite" className="w-full" size="lg">
               Submit Private Inquiry

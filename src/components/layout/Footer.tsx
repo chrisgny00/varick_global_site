@@ -45,8 +45,8 @@ const socials = [
 export function Footer() {
   return (
     <footer
-      className="mt-32 border-t-2 bg-[#2a2335]"
-      style={{ borderTopColor: "#d1d1d1" }}
+      className="mt-32 border-t-2 bg-[#000000]"
+      style={{ borderTopColor: "#a6192e" }}
     >
       <div className="mx-auto max-w-[1440px] px-6 md:px-12 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
