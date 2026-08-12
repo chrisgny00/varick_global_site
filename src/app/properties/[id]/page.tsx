@@ -38,7 +38,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
       <section
         className="pt-24 pb-12"
         style={{
-          background: "linear-gradient(135deg, #2f243a 0%, #3a2e47 50%, #2f243a 100%)",
+          background: "#1A1A1A",
         }}
       >
         <Container>
@@ -113,7 +113,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(135deg, #3a2e47 0%, #2f243a 50%, #3a2e47 100%)",
+                  "#2A2A2A",
               }}
             />
             <div className="diagonal-lines absolute inset-0 opacity-50" />

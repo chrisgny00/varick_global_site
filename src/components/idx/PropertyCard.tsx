@@ -15,7 +15,7 @@ export function PropertyCard({ property }: { property: Property }) {
       <div
         className="relative aspect-[4/3] overflow-hidden"
         style={{
-          background: `linear-gradient(135deg, #3a2e47 0%, #2f243a 50%, #3a2e47 100%)`,
+          background: "#2A2A2A",
         }}
       >
         <div className="diagonal-lines absolute inset-0 opacity-50" />

@@ -21,7 +21,7 @@ export function IconBadge({
     gold: "bg-vg-gold/10 text-vg-gold-light border border-vg-gold/30",
     elite: "bg-elite-violet/15 text-elite-violet-light border border-elite-violet/30",
     gradient:
-      "text-white border border-elite-violet/40 bg-[linear-gradient(135deg,#a6192e_0%,#d2203a_100%)]",
+      "text-white border border-vg-crimson/40 bg-[linear-gradient(135deg,#B32338_0%,#DC2745_100%)]",
   };
   return (
     <div

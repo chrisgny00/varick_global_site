@@ -71,8 +71,8 @@ export function Header() {
     <header
       className="sticky top-0 z-50 border-b backdrop-blur"
       style={{
-        backgroundColor: "rgba(47,36,58,0.95)",
-        borderBottomColor: "rgba(219,138,116,0.3)",
+        backgroundColor: "rgba(26,26,26,0.96)",
+        borderBottomColor: "rgba(179,35,56,0.3)",
       }}
     >
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 md:px-10">
@@ -87,7 +87,7 @@ export function Header() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+17863527547"
-            className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-vg-pewter hover:text-white inline-flex items-center gap-1.5"
+            className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white/65 hover:text-white inline-flex items-center gap-1.5"
           >
             <Phone className="h-3.5 w-3.5" />
             786.352.7547
@@ -117,7 +117,7 @@ function NavLink({ item }: { item: NavItem }) {
     return (
       <Link
         href={item.href}
-        className="font-accent text-[11px] font-bold uppercase tracking-[1.8px] text-vg-pewter hover:text-white transition-colors"
+        className="font-accent text-[11px] font-bold uppercase tracking-[1.8px] text-white/65 hover:text-white transition-colors"
       >
         {item.label}
       </Link>

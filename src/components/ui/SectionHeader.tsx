@@ -38,7 +38,7 @@ export function SectionHeader({
       )}
     >
       {eyebrow && <div className="eyebrow mb-5">{eyebrow}</div>}
-      <h2 className="display-h2 text-white">{renderTitle()}</h2>
+      <h2 className="display-h2 text-vg-onyx">{renderTitle()}</h2>
       {subtitle && (
         <p className="mt-5 text-vg-pewter text-base md:text-[15px] leading-relaxed">
           {subtitle}

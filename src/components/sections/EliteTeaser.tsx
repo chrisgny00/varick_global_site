@@ -10,14 +10,14 @@ export function EliteTeaser() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(135deg, #000000 0%, #111111 50%, #0a0a0a 100%)",
+            "linear-gradient(135deg, #3A2569 0%, #1A1A1A 50%, #3A2569 100%)",
         }}
       />
       <div
         className="absolute inset-0 -z-10 opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(250,201,184,0.18) 0%, transparent 60%)",
+            "radial-gradient(ellipse at center, rgba(109,71,217,0.22) 0%, transparent 60%)",
         }}
       />
 
@@ -28,9 +28,9 @@ export function EliteTeaser() {
             <Badge variant="gold">By Invitation Only</Badge>
           </div>
           <h2 className="display-h2 text-white">
-            Sports & Entertainment. <em className="italic" style={{ color: "#d2203a" }}>Extraordinary Living.</em>
+            Sports & Entertainment. <em className="italic" style={{ color: "#8B60FF" }}>Extraordinary Living.</em>
           </h2>
-          <p className="mt-5 text-vg-pewter leading-relaxed max-w-2xl">
+          <p className="mt-5 text-white/60 leading-relaxed max-w-2xl">
             VG Elite is Varick Global's invitation-only division for professional athletes,
             entertainers, and high-net-worth executives — a discreet, NDA-protected advisory
             with access to off-market inventory and white-glove relocation services.

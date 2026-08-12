@@ -14,8 +14,7 @@ export function Hero() {
     <section
       className="relative min-h-[92vh] flex items-center overflow-hidden"
       style={{
-        background:
-          "linear-gradient(135deg, #2f243a 0%, #3a2e47 50%, #2f243a 100%)",
+        background: "#1A1A1A",
       }}
     >
       <div
@@ -26,7 +25,7 @@ export function Hero() {
         className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-30"
         style={{
           background:
-            "radial-gradient(circle, rgba(219,138,116,0.25) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(179,35,56,0.18) 0%, transparent 70%)",
         }}
         aria-hidden
       />
@@ -46,7 +45,7 @@ export function Hero() {
           </motion.h1>
           <motion.p
             variants={fade}
-            className="mt-7 max-w-xl text-lg text-vg-pewter leading-relaxed"
+            className="mt-7 max-w-xl text-lg text-white/60 leading-relaxed"
           >
             A discreet advisory for the South Florida luxury market — residential,
             commercial, HOA, and an invitation-only Sports & Entertainment division.
@@ -62,7 +61,7 @@ export function Hero() {
           </motion.div>
           <motion.div
             variants={fade}
-            className="mt-16 flex flex-wrap items-center gap-x-10 gap-y-3 text-[12px] text-vg-pewter"
+            className="mt-16 flex flex-wrap items-center gap-x-10 gap-y-3 text-[12px] text-white/50"
           >
             <span className="font-accent font-bold uppercase tracking-[2px]">Miami-Dade</span>
             <span className="font-accent font-bold uppercase tracking-[2px]">Broward</span>

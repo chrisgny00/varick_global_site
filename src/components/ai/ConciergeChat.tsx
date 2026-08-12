@@ -78,7 +78,7 @@ export function ConciergeChat({ mode = "default" }: { mode?: "default" | "elite"
 
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-40 w-[min(96vw,400px)] h-[min(72vh,560px)] bg-vg-card border rounded-[4px] flex flex-col shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+          className="fixed bottom-24 right-6 z-40 w-[min(96vw,400px)] h-[min(72vh,560px)] bg-vg-deep border rounded-[4px] flex flex-col shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
           style={{ borderColor: "rgba(255,255,255,0.10)" }}
         >
           <div
@@ -110,12 +110,12 @@ export function ConciergeChat({ mode = "default" }: { mode?: "default" | "elite"
                     ? {
                         backgroundColor:
                           mode === "elite"
-                            ? "rgba(250,201,184,0.12)"
-                            : "rgba(219,138,116,0.14)",
+                            ? "rgba(109,71,217,0.12)"
+                            : "rgba(179,35,56,0.12)",
                         borderColor:
                           mode === "elite"
-                            ? "rgba(250,201,184,0.3)"
-                            : "rgba(219,138,116,0.3)",
+                            ? "rgba(109,71,217,0.3)"
+                            : "rgba(179,35,56,0.3)",
                       }
                     : {}
                 }

@@ -1,24 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vg-crimson: #a6192e;
-  --color-vg-vivid: #d2203a;
-  --color-vg-almond: #d2203a;
-  --color-vg-onyx: #111111;
-  --color-vg-void: #000000;
-  --color-vg-pewter: #a6a6a6;
-  --color-vg-silver: #d1d1d1;
-  --color-vg-cream: #d1d1d1;
-  --color-vg-gold: #a6192e;
-  --color-vg-gold-light: #d2203a;
-  --color-vg-white: #ffffff;
-  --color-vg-deep: #111111;
-  --color-vg-card: #1a1a1a;
+  /* Brand - Main */
+  --color-vg-crimson: #B32338;
+  --color-vg-vivid: #DC2745;
+  --color-vg-crimson-soft: #F5D8DD;
+  --color-vg-gold: #C9A238;
+  --color-vg-gold-light: #DCB648;
+  --color-vg-gold-soft: #FAF3DC;
 
-  --color-elite-violet: #a6192e;
-  --color-elite-violet-light: #d2203a;
-  --color-elite-navy: #000000;
-  --color-elite-navy-2: #111111;
+  /* Neutrals - Warm Trio */
+  --color-vg-cream: #FAF8F4;
+  --color-vg-parchment: #F4EDE4;
+  --color-vg-stone: #ECE0D8;
+  --color-vg-white: #FFFFFF;
+
+  /* Text Stack */
+  --color-vg-onyx: #1A1A1A;
+  --color-vg-deep: #1A1A1A;
+  --color-vg-graphite: #333333;
+  --color-vg-pewter: #7A7773;
+  --color-vg-silver: #BAB8B0;
+  --color-vg-silver-light: #E2DDD4;
+
+  /* Card surface */
+  --color-vg-card: #1A1A1A;
+
+  /* Legacy aliases */
+  --color-vg-void: #1A1A1A;
+  --color-vg-almond: #F4EDE4;
+
+  /* VG Elite sub-brand */
+  --color-elite-violet: #6D47D9;
+  --color-elite-violet-light: #8B60FF;
+  --color-elite-navy: #3A2569;
+  --color-elite-navy-2: #1A1A1A;
 
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-raleway), "Raleway", system-ui, sans-serif;
@@ -32,10 +48,10 @@
 }
 
 :root {
-  --background: #111111;
-  --foreground: #ffffff;
-  --hairline: rgba(209, 209, 209, 0.15);
-  --crimson-border: rgba(166, 25, 46, 0.35);
+  --background: #FAF8F4;
+  --foreground: #1A1A1A;
+  --hairline: rgba(226, 221, 212, 0.6);
+  --crimson-border: rgba(179, 35, 56, 0.35);
 }
 
 html,
@@ -60,7 +76,7 @@ body {
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-vg-vivid);
+  color: var(--color-vg-crimson);
 }
 
 .display-hero {
@@ -87,7 +103,7 @@ body {
 
 .italic-accent {
   font-style: italic;
-  color: var(--color-vg-vivid);
+  color: var(--color-vg-crimson);
 }
 
 .hairline {
@@ -105,7 +121,7 @@ body {
 }
 
 *:focus-visible {
-  outline: 2px solid var(--color-vg-vivid);
+  outline: 2px solid var(--color-vg-crimson);
   outline-offset: 2px;
 }
 

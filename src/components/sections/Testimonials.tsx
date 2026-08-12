@@ -39,11 +39,11 @@ export function Testimonials() {
               style={{ borderColor: "rgba(255,255,255,0.08)" }}
             >
               <div className="font-display text-6xl text-vg-vivid leading-none mb-4">"</div>
-              <blockquote className="font-display italic text-lg text-white/90 leading-relaxed flex-1">
+              <blockquote className="font-display italic text-lg text-white/85 leading-relaxed flex-1">
                 {t.quote}
               </blockquote>
-              <figcaption className="mt-6 pt-5 border-t" style={{ borderTopColor: "rgba(255,255,255,0.08)" }}>
-                <div className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white">
+              <figcaption className="mt-6 pt-5 border-t" style={{ borderTopColor: "rgba(255,255,255,0.12)" }}>
+                <div className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white/90">
                   {t.name}
                 </div>
                 <div className="mt-1 text-[12px] text-vg-pewter">{t.title}</div>

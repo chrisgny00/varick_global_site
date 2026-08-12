@@ -38,8 +38,7 @@ export function CTABand({
     <section
       className="py-24 md:py-32 relative overflow-hidden"
       style={{
-        background:
-          "linear-gradient(135deg, #2f243a 0%, #3a2e47 100%)",
+        background: "#1A1A1A",
       }}
     >
       <div className="absolute inset-0 diagonal-lines opacity-50 pointer-events-none" />
