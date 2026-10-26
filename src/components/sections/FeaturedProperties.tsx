@@ -3,12 +3,23 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ButtonLink } from "@/components/ui/Button";
 import { PropertyCard } from "@/components/idx/PropertyCard";
-import { properties } from "@/lib/data/properties";
+import { fetchListings } from "@/lib/repliers";
+import { properties as mockProperties } from "@/lib/data/properties";
 
-export function FeaturedProperties() {
-  const featured = properties
-    .filter((p) => p.transactionType === "buy" && p.price >= 4_000_000)
-    .slice(0, 6);
+export async function FeaturedProperties() {
+  // Try Repliers first; fall back to mock data when key is absent
+  const { properties: live } = await fetchListings({
+    type: "sale",
+    minPrice: 2_000_000,
+    sortBy: "createdOnDesc",
+    resultsPerPage: 6,
+  });
+
+  const featured = live.length
+    ? live.slice(0, 6)
+    : mockProperties
+        .filter((p) => p.transactionType === "buy" && p.price >= 4_000_000)
+        .slice(0, 6);
 
   return (
     <section className="py-20 md:py-28">

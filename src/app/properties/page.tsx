@@ -3,7 +3,8 @@ import { PageHero } from "@/components/ui/PageHero";
 import { PropertyCard } from "@/components/idx/PropertyCard";
 import { FilterPanel } from "@/components/idx/FilterPanel";
 import { SearchBar } from "@/components/idx/SearchBar";
-import { properties, filterProperties, type PropertyFilters } from "@/lib/data/properties";
+import { fetchListings } from "@/lib/repliers";
+import { properties as mockProperties, filterProperties, type PropertyFilters } from "@/lib/data/properties";
 import { pageMeta, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -19,21 +20,42 @@ export default async function PropertiesPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
-  const toStr = (v: string | string[] | undefined) =>
-    Array.isArray(v) ? v[0] : v;
-  const filters: PropertyFilters = {
-    transactionType: toStr(sp.transactionType),
-    city: toStr(sp.city),
-    county: toStr(sp.county),
-    minPrice: sp.minPrice ? Number(toStr(sp.minPrice)) : undefined,
-    maxPrice: sp.maxPrice ? Number(toStr(sp.maxPrice)) : undefined,
-    beds: sp.beds ? Number(toStr(sp.beds)) : undefined,
-    baths: sp.baths ? Number(toStr(sp.baths)) : undefined,
-    propertyType: toStr(sp.propertyType),
-    q: toStr(sp.q),
-  };
+  const toStr = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
-  const results = filterProperties(properties, filters);
+  const txType = toStr(sp.transactionType);
+  const city = toStr(sp.city);
+  const minPrice = sp.minPrice ? Number(toStr(sp.minPrice)) : undefined;
+  const maxPrice = sp.maxPrice ? Number(toStr(sp.maxPrice)) : undefined;
+  const beds = sp.beds ? Number(toStr(sp.beds)) : undefined;
+
+  // Try Repliers live data; gracefully fall back to mock data
+  const { properties: live, total } = await fetchListings({
+    type: txType === "rent" ? "lease" : txType === "commercial" ? undefined : "sale",
+    class: txType === "commercial" ? "CommercialProperty" : undefined,
+    city,
+    minPrice,
+    maxPrice,
+    minBedrooms: beds,
+    resultsPerPage: 24,
+  });
+
+  const useLive = live.length > 0;
+
+  const results = useLive
+    ? live
+    : filterProperties(mockProperties, {
+        transactionType: txType,
+        city,
+        county: toStr(sp.county),
+        minPrice,
+        maxPrice,
+        beds,
+        baths: sp.baths ? Number(toStr(sp.baths)) : undefined,
+        propertyType: toStr(sp.propertyType),
+        q: toStr(sp.q),
+      } as PropertyFilters);
+
+  const count = useLive ? total : results.length;
 
   return (
     <>
@@ -56,15 +78,25 @@ export default async function PropertiesPage({
             <div className="lg:col-span-3">
               <FilterPanel />
             </div>
+
             <div className="lg:col-span-9">
               <div className="flex items-center justify-between mb-6">
                 <p className="text-vg-pewter text-sm">
-                  <span className="text-white font-medium">{results.length}</span>{" "}
-                  {results.length === 1 ? "listing" : "listings"}
+                  <span className="text-vg-onyx font-semibold">{count.toLocaleString()}</span>{" "}
+                  {count === 1 ? "listing" : "listings"}
+                  {useLive && (
+                    <span className="ml-2 font-accent text-[10px] font-bold uppercase tracking-[2px] text-vg-crimson">
+                      Live MLS
+                    </span>
+                  )}
                 </p>
               </div>
+
               {results.length === 0 ? (
-                <div className="bg-vg-card border rounded-[4px] p-12 text-center" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+                <div
+                  className="bg-vg-card border rounded-[4px] p-12 text-center"
+                  style={{ borderColor: "rgba(255,255,255,0.08)" }}
+                >
                   <p className="text-vg-pewter">
                     No listings match these filters. Try broadening your criteria.
                   </p>
