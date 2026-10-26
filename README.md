@@ -12,23 +12,24 @@ npm run dev   # http://localhost:3000
 
 ## Editing content
 
-All site copy lives in [`content/`](./content/) as markdown files. Edit a file,
-commit, push — Vercel auto-deploys within ~90 seconds. See `REBOOT_SOP.md` §2.
+All site copy lives in [`content/`](./content/) as markdown files. Edit a file
+and commit — sync to WordPress via the WordPress MCP or the WP REST API.
 
 - `content/site.md` — phone, email, address, social links, nav
 - `content/pages/*.md` — page-level copy (home, about, contact, etc.)
 - `content/services/*.md` — one file per service offering
 - `content/advisors/*.md` — one file per advisor
 - `content/neighborhoods/*.md` — one file per neighborhood
-- `content/properties/*.md` — one file per listing (will be replaced by IDX feed)
+- `content/properties/*.md` — static listings (live data comes from Repliers MLS)
 
 ## Deployment
 
-The site is deployed to **Vercel** from the `main` branch. Every commit to
-`main` triggers a production deploy. Pull requests get their own preview URL
-automatically.
+The site is hosted on **WordPress.com** (site ID: 220982231). Pages are
+published as Gutenberg drafts and reviewed before going live. Property listings
+are powered by the **Repliers MLS API** (Miami MLS, client-side key →
+`csr-api.repliers.io`).
 
-See `REBOOT_SOP.md` §1 for the initial deployment procedure.
+See `REBOOT_SOP.md` for the WordPress publishing workflow.
 
 ## Original spec
 

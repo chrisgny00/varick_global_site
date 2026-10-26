@@ -63,8 +63,7 @@ seo:
 # Editing the homepage
 
 Everything visible on the homepage is controlled by the frontmatter above.
-Edit any value, commit, and the site updates within ~90 seconds of Vercel
-detecting the change.
+Edit any value, commit, and sync to WordPress via the MCP or WP REST API.
 
 ## What goes where
 

@@ -1,6 +1,7 @@
 import type { Property, County, PropertyType, TransactionType, PropertyStatus } from "@/types";
 
-const BASE_URL = "https://api.repliers.io";
+// Client-side key → must use csr-api.repliers.io
+const BASE_URL = "https://csr-api.repliers.io";
 
 // ── Repliers API shapes ──────────────────────────────────────────────────────
 
