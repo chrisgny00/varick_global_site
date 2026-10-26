@@ -115,7 +115,7 @@ For the **neighborhood pages**, configure your IDX plugin to filter by city — 
 
 These rely on Next.js API routes that aren't included in the WordPress export. Options:
 
-- **Embed via iframe**: keep `npm run dev` (or deploy the Next.js app to Vercel) and embed the AI components as iframes inside Elementor HTML widgets.
+- **Embed via iframe**: keep `npm run dev` locally and embed the AI components as iframes inside WordPress HTML blocks.
 - **Use a WordPress chat plugin**: Tidio, Crisp, or Tawk.to — connect to Claude or OpenAI via Zapier / their API integrations.
 - **Custom widget**: a developer can rebuild the matcher/valuation as a WP plugin calling the same Anthropic/OpenAI endpoints.
 
