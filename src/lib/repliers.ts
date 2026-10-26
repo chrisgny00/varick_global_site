@@ -189,6 +189,7 @@ export interface ListingsQuery {
   maxPrice?: number;
   minBedrooms?: number;
   maxBedrooms?: number;
+  minBaths?: number;
   minSqft?: number;
   propertyType?: string;
   status?: string;
@@ -214,6 +215,7 @@ export async function fetchListings(query: ListingsQuery = {}): Promise<{
   if (query.maxPrice) params.set("maxPrice", String(query.maxPrice));
   if (query.minBedrooms) params.set("minBedrooms", String(query.minBedrooms));
   if (query.maxBedrooms) params.set("maxBedrooms", String(query.maxBedrooms));
+  if (query.minBaths) params.set("minBaths", String(query.minBaths));
   if (query.minSqft) params.set("minSqft", String(query.minSqft));
   params.set("resultsPerPage", String(query.resultsPerPage ?? 24));
   params.set("pageNum", String(query.pageNum ?? 1));

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, Phone, Search, Sparkles } from "lucide-react";
 import { Logo } from "./Logo";
 import { ButtonLink } from "@/components/ui/Button";
+import { AiSearchModal } from "@/components/search/AiSearchModal";
 import { cn } from "@/lib/cn";
 
 interface NavItem {
@@ -66,48 +67,89 @@ const nav: NavItem[] = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // ⌘K / Ctrl+K keyboard shortcut
+  useEffect(() => {
+    const fn = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen((o) => !o);
+      }
+    };
+    window.addEventListener("keydown", fn);
+    return () => window.removeEventListener("keydown", fn);
+  }, []);
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b backdrop-blur"
-      style={{
-        backgroundColor: "rgba(26,26,26,0.96)",
-        borderBottomColor: "rgba(179,35,56,0.3)",
-      }}
-    >
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 md:px-10">
-        <Logo />
+    <>
+      <header
+        className="sticky top-0 z-50 border-b backdrop-blur"
+        style={{
+          backgroundColor: "rgba(26,26,26,0.96)",
+          borderBottomColor: "rgba(179,35,56,0.3)",
+        }}
+      >
+        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 md:px-10">
+          <Logo />
 
-        <nav className="hidden lg:flex items-center gap-7">
-          {nav.map((item) => (
-            <NavLink key={item.href} item={item} />
-          ))}
-        </nav>
+          <nav className="hidden lg:flex items-center gap-7">
+            {nav.map((item) => (
+              <NavLink key={item.href} item={item} />
+            ))}
+          </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a
-            href="tel:+17863527547"
-            className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white/65 hover:text-white inline-flex items-center gap-1.5"
-          >
-            <Phone className="h-3.5 w-3.5" />
-            786.352.7547
-          </a>
-          <ButtonLink href="/contact" variant="primary" size="sm">
-            Schedule
-          </ButtonLink>
+          <div className="hidden lg:flex items-center gap-3">
+            {/* AI Search trigger */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="AI property search"
+              className="group flex items-center gap-2 h-9 px-3 rounded-[2px] border border-white/10 hover:border-vg-vivid/50 text-white/50 hover:text-white transition-all"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-vg-vivid" />
+              <span className="font-accent text-[10px] font-bold uppercase tracking-[2px]">
+                AI Search
+              </span>
+              <kbd className="hidden xl:inline-flex items-center gap-1 ml-1 font-accent text-[9px] text-white/25 border border-white/10 rounded px-1.5 py-0.5">
+                ⌘K
+              </kbd>
+            </button>
+
+            <a
+              href="tel:+17863527547"
+              className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white/65 hover:text-white inline-flex items-center gap-1.5 transition-colors"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              786.352.7547
+            </a>
+            <ButtonLink href="/contact" variant="primary" size="sm">
+              Schedule
+            </ButtonLink>
+          </div>
+
+          <div className="flex lg:hidden items-center gap-3">
+            <button
+              aria-label="AI search"
+              onClick={() => setSearchOpen(true)}
+              className="text-vg-vivid"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+            <button
+              aria-label="Open menu"
+              className="text-white"
+              onClick={() => setMobileOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
 
-        <button
-          aria-label="Open menu"
-          className="lg:hidden text-white"
-          onClick={() => setMobileOpen(true)}
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-      </div>
+        {mobileOpen && <MobileMenu nav={nav} onClose={() => setMobileOpen(false)} onSearch={() => { setMobileOpen(false); setSearchOpen(true); }} />}
+      </header>
 
-      {mobileOpen && <MobileMenu nav={nav} onClose={() => setMobileOpen(false)} />}
-    </header>
+      {searchOpen && <AiSearchModal onClose={() => setSearchOpen(false)} />}
+    </>
   );
 }
 
@@ -131,24 +173,22 @@ function NavLink({ item }: { item: NavItem }) {
     >
       <Link
         href={item.href}
-        className="inline-flex items-center gap-1 font-accent text-[11px] font-bold uppercase tracking-[1.8px] text-vg-pewter hover:text-white transition-colors"
+        className="inline-flex items-center gap-1 font-accent text-[11px] font-bold uppercase tracking-[1.8px] text-white/65 hover:text-white transition-colors"
       >
         {item.label}
-        <ChevronDown className="h-3 w-3" />
+        <ChevronDown className={cn("h-3 w-3 transition-transform", open && "rotate-180")} />
       </Link>
       {open && (
-        <div
-          className="absolute left-0 top-full pt-4"
-        >
+        <div className="absolute left-0 top-full pt-4">
           <div
-            className="min-w-[240px] border bg-vg-deep/98 backdrop-blur p-2 rounded-[2px]"
+            className="min-w-[240px] border bg-[rgba(26,26,26,0.99)] backdrop-blur p-2 rounded-[2px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.8)]"
             style={{ borderColor: "rgba(255,255,255,0.08)" }}
           >
             {item.children.map((c) => (
               <Link
                 key={c.href}
                 href={c.href}
-                className="block px-4 py-2.5 text-[13px] text-white/80 hover:bg-vg-crimson/10 hover:text-white rounded-[2px]"
+                className="block px-4 py-2.5 text-[13px] text-white/75 hover:bg-vg-crimson/10 hover:text-white rounded-[2px] transition-colors"
               >
                 {c.label}
               </Link>
@@ -160,16 +200,49 @@ function NavLink({ item }: { item: NavItem }) {
   );
 }
 
-function MobileMenu({ nav, onClose }: { nav: NavItem[]; onClose: () => void }) {
+function MobileMenu({
+  nav,
+  onClose,
+  onSearch,
+}: {
+  nav: NavItem[];
+  onClose: () => void;
+  onSearch: () => void;
+}) {
   return (
     <div className="fixed inset-0 z-50 bg-vg-deep flex flex-col">
-      <div className="flex h-16 items-center justify-between px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+      <div
+        className="flex h-16 items-center justify-between px-6 border-b"
+        style={{ borderColor: "rgba(255,255,255,0.08)" }}
+      >
         <Logo />
-        <button aria-label="Close menu" onClick={onClose} className="text-white">
-          <X className="h-6 w-6" />
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            aria-label="Search"
+            onClick={onSearch}
+            className="text-vg-vivid"
+          >
+            <Search className="h-5 w-5" />
+          </button>
+          <button aria-label="Close menu" onClick={onClose} className="text-white">
+            <X className="h-6 w-6" />
+          </button>
+        </div>
       </div>
+
       <nav className="flex-1 overflow-y-auto p-6 space-y-6">
+        {/* AI Search banner */}
+        <button
+          onClick={onSearch}
+          className="w-full flex items-center gap-3 bg-vg-crimson/10 border border-vg-crimson/25 rounded-[2px] px-4 py-3 text-left"
+        >
+          <Sparkles className="h-4 w-4 text-vg-vivid flex-shrink-0" />
+          <span className="font-accent text-[11px] font-bold uppercase tracking-[2px] text-white/80">
+            AI Property Search
+          </span>
+          <Search className="h-4 w-4 text-white/30 ml-auto" />
+        </button>
+
         {nav.map((item) => (
           <div key={item.href}>
             <Link
@@ -186,7 +259,7 @@ function MobileMenu({ nav, onClose }: { nav: NavItem[]; onClose: () => void }) {
                     key={c.href}
                     href={c.href}
                     onClick={onClose}
-                    className="block text-sm text-vg-pewter"
+                    className="block text-sm text-vg-pewter hover:text-white transition-colors"
                   >
                     {c.label}
                   </Link>
@@ -195,12 +268,18 @@ function MobileMenu({ nav, onClose }: { nav: NavItem[]; onClose: () => void }) {
             )}
           </div>
         ))}
+
+        <a
+          href="tel:+17863527547"
+          className="flex items-center gap-2 text-vg-pewter hover:text-white"
+        >
+          <Phone className="h-4 w-4 text-vg-vivid" /> 786.352.7547
+        </a>
+
         <Link
           href="/contact"
           onClick={onClose}
-          className={cn(
-            "block mt-8 text-center bg-vg-crimson text-white py-4 font-accent text-[11px] font-bold uppercase tracking-[2.5px]",
-          )}
+          className="block mt-2 text-center bg-vg-crimson text-white py-4 font-accent text-[11px] font-bold uppercase tracking-[2.5px] rounded-[2px] transition-colors hover:bg-vg-vivid"
         >
           Schedule Consultation
         </Link>

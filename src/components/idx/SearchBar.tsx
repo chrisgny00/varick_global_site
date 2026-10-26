@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 import { Input, Select, Label } from "@/components/ui/Input";
+import { AiSearchModal } from "@/components/search/AiSearchModal";
 import { cn } from "@/lib/cn";
 
 const tabs: { id: "buy" | "rent" | "commercial"; label: string }[] = [
@@ -23,6 +24,7 @@ const popular = [
 export function SearchBar() {
   const router = useRouter();
   const [tab, setTab] = useState<"buy" | "rent" | "commercial">("buy");
+  const [aiOpen, setAiOpen] = useState(false);
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
   const [beds, setBeds] = useState("");
@@ -44,10 +46,27 @@ export function SearchBar() {
   }
 
   return (
+    <>
+    {aiOpen && <AiSearchModal onClose={() => setAiOpen(false)} />}
     <div
       className="bg-vg-card/95 backdrop-blur border rounded-[4px] p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
       style={{ borderColor: "rgba(255,255,255,0.10)" }}
     >
+      {/* AI Search banner */}
+      <button
+        onClick={() => setAiOpen(true)}
+        className="w-full flex items-center gap-3 mb-6 bg-vg-crimson/8 border border-vg-crimson/20 hover:border-vg-crimson/40 rounded-[2px] px-4 py-3 text-left transition-colors group"
+      >
+        <Sparkles className="h-4 w-4 text-vg-vivid flex-shrink-0" />
+        <div className="flex-1 min-w-0">
+          <span className="font-display italic text-white/70 text-sm group-hover:text-white/90 transition-colors">
+            Try: "4 bedroom waterfront in Aventura under $8M"
+          </span>
+        </div>
+        <span className="font-accent text-[10px] font-bold uppercase tracking-[2px] text-vg-vivid whitespace-nowrap">
+          AI Search →
+        </span>
+      </button>
       <div className="flex gap-1 mb-6 border-b" style={{ borderBottomColor: "rgba(255,255,255,0.08)" }}>
         {tabs.map((t) => (
           <button
@@ -161,5 +180,6 @@ export function SearchBar() {
         </div>
       </form>
     </div>
+    </>
   );
 }
